@@ -66,7 +66,14 @@ export default defineNuxtConfig({
           src: 'https://cdn.jsdelivr.net/gh/surajit-singha-sisir/mastorsCDN@v1.1.01/mastors.js',
           type: 'module',
         },
+        // {
+        //   src: '/script.js',
+        //   type: 'module'
+        // }
       ],
     },
   },
+  css: [
+    '~/public/style.css',
+  ]
 })

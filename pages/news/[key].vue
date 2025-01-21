@@ -1,10 +1,6 @@
 <template>
     <div>
         <h1>{{ data }}</h1>
-        <!-- <h1>{{ news.title }}</h1>
-        <p>{{ news.body }}</p>
-        <p v-if="loading">Loading...</p>
-        <p v-if="error" class="error">{{ error }}</p> -->
     </div>
 </template>
 
@@ -18,7 +14,11 @@ const { data, error, refresh } = useFetch('https://fakestoreapi.com/products');
 console.log(data);
 console.log(key);
 
-
+useHead({
+    link: [
+        { rel: 'stylesheet', href: '/style.css' }
+    ]
+});
 </script>
 
 <style>

@@ -20,9 +20,8 @@
 
 <script setup>
 // GET REQUEST
-const { data, error } = await useFetch('/JSONS/sironam.json');
+const { data, error } = await useFetch('JSONS/sironam.json');
 const items = data;
-console.log(items);
 
 
 
@@ -56,4 +55,5 @@ console.log(items);
     }
 }
 </style>
+
 <!-- https://api.mediastack.com/v1/news?access_key=ad5ff9775fc34a3e55b815ae6b6f71fd -->
