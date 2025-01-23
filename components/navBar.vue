@@ -31,7 +31,7 @@
                             <NuxtLink to="cat/bidesh">বিদেশ</NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="cat/khela-dhula">খেলাধূলা</NuxtLink>
+                            <NuxtLink to="cat/khela-dhula">খেলাধুলা</NuxtLink>
                         </li>
                         <li>
                             <NuxtLink to="cat/dhormiyo">ধর্মীয়</NuxtLink>
@@ -78,127 +78,165 @@
         <!-- RESPONSIVE FOR 550PX -->
         <div class="parentResNav">
             <div class="parentResNavBG"></div>
+            
             <div class="childResNav">
                 <div class="resNav2">
                     <!-- NAV MENU 1 -->
-                    <a href="/" class="resNav2Menu">
+                    <NuxtLink to="cat/sara-desh" class="resNav2Menu">
                         <!-- MENU DETAILS-->
                         <ul class="resNav2MenuName navHover">
                             <i class="m-circle navIndicatorCircle"></i>
-                            <p>সর্বশেষ সংবাদ</p>
+                            <p>সারাদেশ</p>
                         </ul>
                         <!-- HORIZONTAL LINE -->
                         <div class="bottomBorder"></div>
-                    </a>
+                    </NuxtLink>
                     <!-- NAV MENU 2 -->
-                    <div class="resNav2Menu">
-                        <!-- MENU -->
+                    <NuxtLink to="cat/rajniti" class="resNav2Menu">
+                        <!-- MENU DETAILS-->
                         <ul class="resNav2MenuName navHover">
-                            <i class="m-circle"></i>
-                            <p>সর্বশেষ</p>
-                            <i class="bi bi-chevron-right"></i>
+                            <i class="m-circle navIndicatorCircle"></i>
+                            <p>রাজনীতি</p>
                         </ul>
-                        <!-- SUBMENUS -->
-                        <div class="resNavSubMenuBar">
-                            <a href="#a">
-                                <i class="bi bi-chevron-right"></i>
-                                <p>সিলেট</p>
-                            </a>
-
-                            <a href="#b">
-                                <i class="bi bi-chevron-right"></i>
-                                <p>সিলেট</p>
-                            </a>
-
-                            <a href="#c">
-                                <i class="bi bi-chevron-right"></i>
-                                <p>সিলেট</p>
-                            </a>
-
-                            <a href="#d">
-                                <i class="bi bi-chevron-right"></i>
-                                <p>সিলেট</p>
-                            </a>
-
-                            <a href="#e">
-                                <i class="bi bi-chevron-right"></i>
-                                <p>সিলেট</p>
-                            </a>
-
-                            <a href="#f">
-                                <i class="bi bi-chevron-right"></i>
-                                <p>সিলেট</p>
-                            </a>
-
-                        </div>
                         <!-- HORIZONTAL LINE -->
                         <div class="bottomBorder"></div>
-                    </div>
+                    </NuxtLink>
                     <!-- NAV MENU 3 -->
-                    <a href="#" class="resNav2Menu">
+                    <NuxtLink to="cat/bidesh" class="resNav2Menu">
                         <!-- MENU DETAILS-->
                         <ul class="resNav2MenuName navHover">
                             <i class="m-circle navIndicatorCircle"></i>
-                            <p>সর্বশেষ সংবাদ</p>
+                            <p>বিদেশ</p>
                         </ul>
                         <!-- HORIZONTAL LINE -->
                         <div class="bottomBorder"></div>
-                    </a>
+                    </NuxtLink>
                     <!-- NAV MENU 4 -->
-                    <a href="#" class="resNav2Menu">
+                    <NuxtLink to="cat/khela-dhula" class="resNav2Menu">
                         <!-- MENU DETAILS-->
                         <ul class="resNav2MenuName navHover">
                             <i class="m-circle navIndicatorCircle"></i>
-                            <p>সর্বশেষ সংবাদ</p>
+                            <p>খেলাধুলা</p>
                         </ul>
                         <!-- HORIZONTAL LINE -->
                         <div class="bottomBorder"></div>
-                    </a>
-
+                    </NuxtLink>
                     <!-- NAV MENU 5 -->
-                    <div class="resNav2Menu">
-                        <!-- MENU -->
+                    <NuxtLink to="cat/dhormiyo" class="resNav2Menu">
+                        <!-- MENU DETAILS-->
+                        <ul class="resNav2MenuName navHover">
+                            <i class="m-circle navIndicatorCircle"></i>
+                            <p>ধর্মীয়</p>
+                        </ul>
+                        <!-- HORIZONTAL LINE -->
+                        <div class="bottomBorder"></div>
+                    </NuxtLink>
+                    <!-- NAV MENU 6 -->
+                    <NuxtLink to="cat/binodon" class="resNav2Menu">
+                        <!-- MENU DETAILS-->
+                        <ul class="resNav2MenuName navHover">
+                            <i class="m-circle navIndicatorCircle"></i>
+                            <p>বিনোদন</p>
+                        </ul>
+                        <!-- HORIZONTAL LINE -->
+                        <div class="bottomBorder"></div>
+                    </NuxtLink>
+                    <!-- NAV MENU 7 -->
+                    <NuxtLink to="cat/orthoniti" class="resNav2Menu">
+                        <!-- MENU DETAILS-->
+                        <ul class="resNav2MenuName navHover">
+                            <i class="m-circle navIndicatorCircle"></i>
+                            <p>অর্থনীতি</p>
+                        </ul>
+                        <!-- HORIZONTAL LINE -->
+                        <div class="bottomBorder"></div>
+                    </NuxtLink>
+                    <!-- NAV MENU 8 -->
+                    <NuxtLink to="cat/motamot" class="resNav2Menu">
+                        <!-- MENU DETAILS-->
+                        <ul class="resNav2MenuName navHover">
+                            <i class="m-circle navIndicatorCircle"></i>
+                            <p>মতামত</p>
+                        </ul>
+                        <!-- HORIZONTAL LINE -->
+                        <div class="bottomBorder"></div>
+                    </NuxtLink>
+                    <!-- NAV MENU 9 -->
+                    <NuxtLink to="cat/oporadh" class="resNav2Menu">
+                        <!-- MENU DETAILS-->
+                        <ul class="resNav2MenuName navHover">
+                            <i class="m-circle navIndicatorCircle"></i>
+                            <p>অপরাধ</p>
+                        </ul>
+                        <!-- HORIZONTAL LINE -->
+                        <div class="bottomBorder"></div>
+                    </NuxtLink>
+                    <!-- NAV MENU 10 -->
+                    <NuxtLink to="cat/sahitya" class="resNav2Menu">
+                        <!-- MENU DETAILS-->
+                        <ul class="resNav2MenuName navHover">
+                            <i class="m-circle navIndicatorCircle"></i>
+                            <p>সাহিত্য</p>
+                        </ul>
+                        <!-- HORIZONTAL LINE -->
+                        <div class="bottomBorder"></div>
+                    </NuxtLink>
+                    <!-- NAV MENU 11 -->
+                    <NuxtLink to="cat/sompadokiyo" class="resNav2Menu">
+                        <!-- MENU DETAILS-->
+                        <ul class="resNav2MenuName navHover">
+                            <i class="m-circle navIndicatorCircle"></i>
+                            <p>সম্পাদকীয়</p>
+                        </ul>
+                        <!-- HORIZONTAL LINE -->
+                        <div class="bottomBorder"></div>
+                    </NuxtLink>
+                    <div class="pad-b--100"></div>
+
+                    <!-- SUBMENUS -->
+                    <!-- <div class="resNav2Menu">
+                        MENU
                         <ul class="resNav2MenuName navHover">
                             <i class="m-circle"></i>
                             <p>সর্বশেষ</p>
-                            <i class="bi bi-chevron-right"></i>
+                            <i class="m-chevron-right"></i>
                         </ul>
-                        <!-- SUBMENUS -->
+                        SUBMENUS
                         <div class="resNavSubMenuBar">
                             <a href="#a">
-                                <i class="bi bi-chevron-right"></i>
+                                <i class="m-chevron-right"></i>
                                 <p>সিলেট</p>
                             </a>
 
                             <a href="#b">
-                                <i class="bi bi-chevron-right"></i>
+                                <i class="m-chevron-right"></i>
                                 <p>সিলেট</p>
                             </a>
 
                             <a href="#c">
-                                <i class="bi bi-chevron-right"></i>
+                                <i class="m-chevron-right"></i>
                                 <p>সিলেট</p>
                             </a>
 
                             <a href="#d">
-                                <i class="bi bi-chevron-right"></i>
+                                <i class="m-chevron-right"></i>
                                 <p>সিলেট</p>
                             </a>
 
                             <a href="#e">
-                                <i class="bi bi-chevron-right"></i>
+                                <i class="m-chevron-right"></i>
                                 <p>সিলেট</p>
                             </a>
 
                             <a href="#f">
-                                <i class="bi bi-chevron-right"></i>
+                                <i class="m-chevron-right"></i>
                                 <p>সিলেট</p>
                             </a>
 
                         </div>
-                        <!-- HORIZONTAL LINE -->
+                        HORIZONTAL LINE
                         <div class="bottomBorder"></div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>

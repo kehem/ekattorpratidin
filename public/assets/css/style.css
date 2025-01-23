@@ -61,7 +61,7 @@ body {
   --linear-gradient-background: linear-gradient(90deg, #87c0f4, #5381ab);
 }
 
-/* SEFAULT SETTINGS */
+/* DEFAULT SETTINGS */
 a {
   color: var(--links);
   text-decoration: none;
@@ -181,7 +181,9 @@ li {
 .TopLeadContainer .row1 .leadcontent .overlay h4 {
   font-size: var(--topFontSize) !important;
 }
-
+.navFontSize {
+    font-size: var(--navFontSize);
+}
 /*---------------------------
     LEAD AND TOP START
 -------------------------- */
@@ -815,6 +817,7 @@ section.hamburger {
   height: 100vh;
   top: var(--navHeight);
   z-index: var(--navBarZIndex);
+  animation: fadeOpacityIn 0.2s ease;
 }
 
 .parentResNav .parentResNavBG {
@@ -822,6 +825,7 @@ section.hamburger {
   width: 100%;
   height: 100%;
   background-color: #000000d2;
+  /* animation: fadeOpacityIn 0.1s ease; */
 }
 
 .parentResNav .childResNav {
@@ -871,12 +875,12 @@ section.hamburger {
   position: relative;
   padding: 0.5rem;
   transition: all 0.3s ease;
-  animation: fadeOpacityOut 0.1s ease;
+  animation: fadeOpacityIn 0.2s ease;
 }
 
 .navHover:hover {
   width: 110%;
-  animation: fadeOpacityOut 0.3s ease;
+  animation: fadeOpacityIn 0.3s ease;
 }
 
 .navHover:hover::before {
@@ -896,10 +900,12 @@ section.hamburger {
 
 @keyframes fadeOpacityIn {
   from {
+    margin-left: -20%;
     opacity: 0;
   }
 
   to {
+    margin-left: 0;
     opacity: 1;
   }
 }
