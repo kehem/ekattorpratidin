@@ -8,9 +8,9 @@ import NavBar from '../components/NavBar.vue';
 <template>
     <div>
         <DateBlock />
-        <MarqueeBlock />
         <Logo />
         <NavBar />
+        <MarqueeBlock />
     </div>
 </template>
 

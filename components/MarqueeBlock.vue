@@ -8,9 +8,6 @@
                     <li v-for="item in items" :key="item.key">
                         <NuxtLink :to="`/news/${item.key}`">{{ item.title }}</NuxtLink>
                     </li>
-                    <!-- <li v-for="item in items" :key="item.key">
-                        <a :href="'https://ekattorpratidin.com/news/' + item.key">{{ item.title }}</a>
-                    </li> -->
                 </ul>
             </marquee>
         </div>
@@ -20,12 +17,14 @@
 
 <script setup>
 // GET REQUEST
-const { data, error } = await useFetch('JSONS/sironam.json');
+const { data, error } = await useFetch('https://newstest.kehem.com/testjson');
 const items = data;
 
 
 
+
 </script>
+
 
 <style>
 .marqueeBlock {
@@ -55,5 +54,4 @@ const items = data;
     }
 }
 </style>
-
 <!-- https://api.mediastack.com/v1/news?access_key=ad5ff9775fc34a3e55b815ae6b6f71fd -->

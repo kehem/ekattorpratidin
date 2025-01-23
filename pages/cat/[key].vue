@@ -2,7 +2,7 @@
     <div>
         <h1>{{ key }}</h1>
 
-        <p>{{ data[0] }}</p>
+        <p>{{ data }}</p>
     </div>
 </template>
 
@@ -12,11 +12,11 @@ import { useRoute } from 'vue-router';
 const route = useRoute();
 const key = route.params.key;
 
-const { data, error, refresh } = useFetch('https://fakestoreapi.com/products');
+const { data, error, refresh } = useFetch('https://newstest.kehem.com/testcategory');
 
 </script>
 
-<style>
+<style scoped>
 .error {
     color: red;
 }

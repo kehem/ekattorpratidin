@@ -6,20 +6,21 @@
                 <section class="childNav">
 
 
-                    <!-- HAMBURGER -->
+                    <!-- HAMBURGER 550px RESPONSIVE-->
                     <section class="hamburger" id="hamburger">
                         <div class="hambLine line-1"></div>
                         <div class="hambLine line-2"></div>
                         <div class="hambLine line-3"></div>
                     </section>
+                    <section class="logoAltHamb">
+                        <!-- LOGO -->
+                        <a href="/">
+                            <img class="h-i w-i" src="/ekattorpratidin-logo.svg" alt="">
+                        </a>
+                    </section>
 
                     <!-- NAV MENUS -->
                     <ul class="topNavMenu">
-                        <!-- HOME -->
-                        <li>
-                            <NuxtLink to="/"><img src="/assets/resource/homeIcon.svg" alt=""></NuxtLink>
-                        </li>
-
                         <li>
                             <NuxtLink to="cat/sara-desh">সারাদেশ</NuxtLink>
                         </li>
@@ -56,12 +57,12 @@
                     </ul>
 
                     <!-- DARK BACKGROUND -->
-                    <div class="darkBackground"></div>
+                    <div class="darkBackground" ref="darkBackground" @click="darkBackgroundClick"></div>
                     <!-- SEARCH BUTTON -->
-                    <section class="searchBar">
-                        <i class="bi bi-search"></i>
-                        <i class="bi bi-x"></i>
-                        <div class="searchBox">
+                    <section class="searchBar" @click="searchBar">
+                        <i class="m-search2" ref="search"></i>
+                        <i class="m-m-cross hide" ref="cross"></i>
+                        <div class="searchBox" ref="searchBoxContainer" @click.stop>
                             <input type="text" name="" id="searchBox" v-model.trim="searchQuery"
                                 placeholder="এখানে লিখুন...">
                             <input type="button" value="খুঁজুন" @click="triggerSearch">
@@ -74,15 +75,16 @@
             </nav>
             <!-- NAVMENU BAR END -->
         </div>
+        <!-- RESPONSIVE FOR 550PX -->
         <div class="parentResNav">
             <div class="parentResNavBG"></div>
             <div class="childResNav">
                 <div class="resNav2">
                     <!-- NAV MENU 1 -->
-                    <a href="#" class="resNav2Menu">
+                    <a href="/" class="resNav2Menu">
                         <!-- MENU DETAILS-->
                         <ul class="resNav2MenuName navHover">
-                            <i class="bi bi-circle-fill navIndicatorCircle"></i>
+                            <i class="m-circle navIndicatorCircle"></i>
                             <p>সর্বশেষ সংবাদ</p>
                         </ul>
                         <!-- HORIZONTAL LINE -->
@@ -92,7 +94,7 @@
                     <div class="resNav2Menu">
                         <!-- MENU -->
                         <ul class="resNav2MenuName navHover">
-                            <i class="bi bi-circle-fill"></i>
+                            <i class="m-circle"></i>
                             <p>সর্বশেষ</p>
                             <i class="bi bi-chevron-right"></i>
                         </ul>
@@ -136,7 +138,7 @@
                     <a href="#" class="resNav2Menu">
                         <!-- MENU DETAILS-->
                         <ul class="resNav2MenuName navHover">
-                            <i class="bi bi-circle-fill navIndicatorCircle"></i>
+                            <i class="m-circle navIndicatorCircle"></i>
                             <p>সর্বশেষ সংবাদ</p>
                         </ul>
                         <!-- HORIZONTAL LINE -->
@@ -146,7 +148,7 @@
                     <a href="#" class="resNav2Menu">
                         <!-- MENU DETAILS-->
                         <ul class="resNav2MenuName navHover">
-                            <i class="bi bi-circle-fill navIndicatorCircle"></i>
+                            <i class="m-circle navIndicatorCircle"></i>
                             <p>সর্বশেষ সংবাদ</p>
                         </ul>
                         <!-- HORIZONTAL LINE -->
@@ -157,7 +159,7 @@
                     <div class="resNav2Menu">
                         <!-- MENU -->
                         <ul class="resNav2MenuName navHover">
-                            <i class="bi bi-circle-fill"></i>
+                            <i class="m-circle"></i>
                             <p>সর্বশেষ</p>
                             <i class="bi bi-chevron-right"></i>
                         </ul>
@@ -208,6 +210,44 @@
 import { onMounted, onBeforeMount } from 'vue';
 const route = useRouter();
 const searchQuery = ref('');
+
+// Define refs
+const searchBoxContainer = ref(null);
+const darkBackground = ref(null);
+const cross = ref(null);
+const search = ref(null);
+const isOpen = ref(false);
+
+
+const searchBar = () => {
+
+    if (isOpen.value) {
+        // Close the search bar
+        searchBoxContainer.value?.classList.remove("visible");
+        darkBackground.value.style.top = "-100%";
+        cross.value.style.display = "none";
+        search.value.style.display = "block";
+    } else {
+        // Open the search bar
+        searchBoxContainer.value?.classList.add("visible");
+        darkBackground.value.style.top = "0";
+        cross.value.style.display = "block";
+        search.value.style.display = "none";
+    }
+    isOpen.value = !isOpen.value; // Toggle state
+};
+
+const darkBackgroundClick = () => {
+    searchBoxContainer.value?.classList.remove("visible");
+    darkBackground.value.style.top = "-100%";
+    search.value.style.display = "block";
+    cross.value.style.display = "none";
+    isOpen.value = false;
+};
+
+
+
+
 const triggerSearch = () => {
     if (searchQuery.value.trim()) {
         const freeSearch = encodeURIComponent(searchQuery.value);
@@ -218,8 +258,6 @@ const triggerSearch = () => {
 
 
 
-// Global variable declaration
-let isOpen = false;
 
 const openNav = () => {
     const hamburger = document.getElementById("hamburger");
@@ -248,7 +286,7 @@ const openNav = () => {
         resNav.style.transition = "margin-left 0.3s ease";
 
         document.body.style.overflow = "hidden";
-        isOpen = true;
+        isOpen.value = true;
     }
 
     function closeMenu() {
@@ -272,11 +310,11 @@ const openNav = () => {
         }, 300);
 
         document.body.style.overflow = "auto";
-        isOpen = false;
+        isOpen.value = false;
     }
 
     hamburger.onclick = function () {
-        if (isOpen) {
+        if (isOpen.value) {
             closeMenu();
         } else {
             openMenu();
@@ -284,7 +322,7 @@ const openNav = () => {
     };
 
     parentResNavBG.onclick = function () {
-        if (isOpen) {
+        if (isOpen.value) {
             closeMenu();
         }
     };
@@ -326,7 +364,6 @@ const subMenu = () => {
     });
 }
 
-// STARTS
 const fixedNav = () => {
     const parentResNav = document.querySelector(".parentResNav");
     parentResNav.classList.add("staticResNav");
@@ -342,41 +379,6 @@ const fixedNav = () => {
     };
 }
 
-const searchBarAnimation = () => {
-    const searchBar = document.querySelector(".searchBar");
-    const searchBox = document.querySelector(".searchBar .searchBox");
-    const darkBackground = document.querySelector(".darkBackground");
-    const cross = document.querySelector(".searchBar .bi-x");
-    const search = document.querySelector(".searchBar .bi-search");
-
-    searchBar.onclick = function () {
-        if (isOpen) {
-            searchBox.classList.remove("visible");
-            darkBackground.style.top = "-100%";
-            cross.style.display = "none";
-            search.style.display = "block";
-        } else {
-            searchBox.classList.add("visible");
-            darkBackground.style.top = "0";
-            cross.style.display = "block";
-            search.style.display = "none";
-        }
-        isOpen = !isOpen;
-    };
-
-    searchBox.onclick = function (event) {
-        event.stopPropagation();
-    };
-
-    darkBackground.onclick = function () {
-        searchBox.classList.remove("visible");
-        darkBackground.style.top = "-100%";
-        search.style.display = "block";
-        cross.style.display = "none";
-        isOpen = !isOpen;
-    };
-};
-
 
 
 
@@ -386,7 +388,6 @@ onMounted(() => {
     openNav();
     subMenu();
     fixedNav();
-    searchBarAnimation();
 });
 
 </script>
