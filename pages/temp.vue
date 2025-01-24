@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-const { loading, data } = useFetch('https://newstest.kehem.com/testsorbosesh');
+const { loading, data } = useFetch('https://newstest.kehem.com/api/leadtopnews');
 </script>
 
 <style>
