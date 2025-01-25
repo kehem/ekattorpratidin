@@ -1,10 +1,8 @@
 <template>
-    <div>
+    <a href="/" class="khorboreJaintaLogo border-set">
         <!-- LOGO -->
-        <a href="/" class="khorboreJaintaLogo border-set">
-            <img src="/ekattorpratidin-logo.svg" alt="">
-        </a>
-    </div>
+        <img src="/ekattorpratidin-logo.svg" alt="">
+    </a>
 </template>
 
 <script setup>

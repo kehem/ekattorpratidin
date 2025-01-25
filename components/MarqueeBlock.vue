@@ -6,7 +6,7 @@
                 onmouseout="this.start();">
                 <ul class="f gap-20 h-i text-center">
                     <li v-for="item in items" :key="item.key">
-                        <NuxtLink :to="`/news/${item.key}`">{{ item.title }}</NuxtLink>
+                        <NuxtLink :to="`/news/${item.news_id}`">{{ item.title }}</NuxtLink>
                     </li>
                 </ul>
             </marquee>
@@ -17,8 +17,10 @@
 
 <script setup>
 // GET REQUEST
-const { data, error } = await useFetch('https://newstest.kehem.com/testjson');
-const items = data;
+const { data, error } = await useFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/marquee.json');
+const items = data.value.marquee;
+console.log(items);
+
 
 
 

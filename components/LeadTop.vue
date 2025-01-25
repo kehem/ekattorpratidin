@@ -3,7 +3,7 @@
         <div class="topLeadContainerX">
             <NuxtLink :to="`/news/${data.lead.news_id}`" class="leadContainerX">
                 <div class="innerLeadX ">
-                    <img class="autoSetImg" :src="`https://newstest.kehem.com/${data.lead.image}`" alt="">
+                    <img class="autoSetImg" :src="`${data.lead.image}`" alt="">
                 </div>
                 <div class="leadTitleX">
                     <p class="text-dotted-2">{{ data.lead.title }}</p>
@@ -14,9 +14,9 @@
 
             <div class="topContainerX">
                 <!-- TOP NEWS -->
-                <NuxtLink v-for="item in data.top" :to="`${item.news_id}`"  class="topContentX">
+                <NuxtLink v-for="item in data.top" :to="`/news/${item.news_id}`"  class="topContentX">
                     <div class="topContentXImg">
-                        <img class="autoSetImg" :src="`https://newstest.kehem.com/${item.image}`" alt="">
+                        <img class="autoSetImg" :src="`${item.image}`" alt="">
                     </div>
                     <div class="topContentXTitle">
                         <p class="topContentXTitleText text-dotted-3">{{ item.title }}</p>
@@ -31,7 +31,7 @@
 
 <script setup>
 
-const { data } = useFetch('https://newstest.kehem.com/api/leadtopnews');
+const { data } = useFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/topLead.json');
 
 if (data.value) {
     const lead = data.value.lead;

@@ -1,9 +1,20 @@
-[
-  { "title": "Title 1", "key": "asd324" },
-  { "title": "Title 2", "key": "giu324" },
-  { "title": "Title 3", "key": "vk3q33" },
-  { "title": "Title 4", "key": "a98323" },
-  { "title": "Title 5", "key": "co34r4" },
-  { "title": "Title 6", "key": "d90434" },
-  { "title": "Title 7", "key": "gh943f" }
-]
+{
+  "marquee": [
+    {
+      "title": "শৈত্যপ্রবাহ ২ জেলায়, শীত বেড়ে যাওয়ার পূর্বাভাস",
+      "news_id": "e12V30y"
+    },
+    {
+      "title": "ছাত্ররা রাজনৈতিক দল গঠন করলে ‘সরকার থেকে বেরিয়ে আসা উচিত",
+      "news_id": "gBwv30a"
+    },
+    {
+      "title": "দল গঠন করলে ‘সরকার থেকে বেরিয়ে আসা উচিত",
+      "news_id": "eBwv3yK"
+    },
+    {
+      "title": "বিগত সরকারের দোসর’ ও ‘সুবিধাভোগী’ ট্যাগ কারা দেয়",
+      "news_id": "koH30Ap"
+    }
+  ]
+}

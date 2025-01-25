@@ -13,5 +13,12 @@ import LeadTop from '~/components/LeadTop.vue';
         <NavBar />
         <MarqueeBlock />
         <LeadTop />
+        <!-- AD-1 -->
+        <div class="big-ad fullWidth pad-tb--30">
+            <img class="w-100" src="http://dummyimage.com/1920x200" alt="">
+        </div>
+
+        <FrontCategory />
+        
     </div>
 </template>

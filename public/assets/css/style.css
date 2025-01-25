@@ -1,4 +1,4 @@
-@import url('https://fonts.maateen.me/kalpurush/font.css');
+@import url("https://fonts.maateen.me/kalpurush/font.css");
 body {
   position: relative;
   width: 100%;
@@ -12,7 +12,7 @@ body {
   --newsCat: #c70d0d;
   --newsBG: #f3f3f3;
   --links: #2b2a2a;
-  --linksHover: #5c0404;
+  --linksHover: #ff0000;
   --bulletinColor: #290c77;
   --bulletinColorHover: #09b63d;
   --timeColor: #4b4b4b;
@@ -69,10 +69,13 @@ a {
   transition: all 0.3s ease;
   font-family: "Kalpurush", sans-serif;
 }
+.fullWidth {
+  width: 90%;
+  margin: 0 auto;
+}
 
 a:hover {
   color: var(--linksHover);
-  transition: all 0.3s ease;
 }
 p {
   font-family: "Kalpurush", sans-serif;
@@ -134,7 +137,15 @@ li {
 .fixedResNav {
   position: fixed;
 }
-
+.newsCaption {
+  color: #ff0000;
+}
+a:hover .newsCaption {
+  color: #000;
+}
+a:hover {
+  text-decoration: underline;
+}
 /* ELLIPSIS TEXT WITH 3 LINE */
 .text__Ellipsis_3 {
   display: -webkit-box;
@@ -187,7 +198,7 @@ li {
   font-size: var(--topFontSize) !important;
 }
 .navFontSize {
-    font-size: var(--navFontSize);
+  font-size: var(--navFontSize);
 }
 /*---------------------------
     LEAD AND TOP START
@@ -374,7 +385,7 @@ li {
 
 .grid__3col .col .col1Heading {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   gap: 1rem;
   padding: 1rem 0;
   color: var(--newsCat);
@@ -617,13 +628,13 @@ nav.parentNav {
 }
 
 .parentNav .childNav {
+  position: relative;
   width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
   gap: 0.5rem;
-  position: relative;
 }
 
 /* NAVMENU BAR START */

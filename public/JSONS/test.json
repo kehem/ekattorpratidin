@@ -1,305 +1,39 @@
 {
-  "pagination": { "limit": 25, "offset": 0, "count": 25, "total": 10000 },
-  "data": [
-    {
-      "author": "Orion Scott",
-      "title": "Taylor Swift proves thigh-high leather boots are the footwear choice for winter 2025",
-      "description": "The singer wore a leather pair for a NYC date night with her beau Travis Kelce on Friday night. See photos",
-      "url": "https://www.hellomagazine.com/hfm/fashion-trends/762972/taylor-swift-thigh-high-leather-boots/",
-      "source": "hellomagazine",
-      "image": "https://images.hellomagazine.com/horizon/landscape/202807b32ade-gettyimages-2194468745.jpg",
-      "category": "general",
-      "language": "en",
-      "country": "us",
-      "published_at": "2025-01-18T10:15:53+00:00"
+    "lead": {
+        "title": "শৈত্যপ্রবাহ ২ জেলায়, শীত বেড়ে যাওয়ার পূর্বাভাস",
+        "news_brief": "রাজধানীসহ দেশের বিভিন্ন স্থানে আজ শুক্রবার সকালেও ঘন কুয়াশা ছিল। তারপর ধীরে ধীরে সেই কুয়াশা কমে এসেছে।",
+        "image": "https://dummyimage.com/800x600&text=Ratio+4:3",
+        "img_caption": null,
+        "news_id": "gBwv30y"
     },
-    {
-      "author": "Attraverso",
-      "title": "Relaties • Singles unite, eerste editie 2023 deel 1",
-      "description": "Ik ben 50+ en veel mannen van mijn leeftijd komen uit een lange, uitgedoofde relatie en gaan nu los. Of zijn in de steek gelaten door hun ex, raken er niet over en zoeken afleiding waardoor ze geen commitment aan een andere vrouw kunnen geven. Of zijn zoals je zegt verslaafd aan swipen en hebben fomo. Vrezen dat ze door zich op jou te focussen, iemand beter gaan mislopen,... Huidige date en ik hebben na date 1 onze dating apps verwijderd. Een verademing Statistieken: Geplaatst door Attraverso — 18-01-2025 11:15",
-      "url": "https://forum.viva.nl/viewtopic.php?p=35713793#p35713793",
-      "source": "vrouwonline",
-      "image": null,
-      "category": "general",
-      "language": "nl",
-      "country": "nl",
-      "published_at": "2025-01-18T10:15:46+00:00"
-    },
-    {
-      "author": null,
-      "title": "News24 | Named and shamed: These state institutions owe the SIU millions",
-      "description": "While the Special Investigation Unit claws back billions of loot for the national fiscus, state departments and entities owe it more than R1.1 billion in debt.",
-      "url": "https://www.news24.com/news24/politics/parliament/named-and-shamed-these-state-institutions-owe-the-siu-millions-20250118",
-      "source": "News24",
-      "image": "https://cdn.24.co.za/files/Cms/General/d/11914/da36c8163bb94d29bc69d51027d75f35.jpg",
-      "category": "general",
-      "language": "en",
-      "country": "za",
-      "published_at": "2025-01-18T10:15:42+00:00"
-    },
-    {
-      "author": "lasextacom | agencias",
-      "title": "Miles de personas se manifiestan a favor de la central nuclear de Almaraz",
-      "description": "Políticos en contra: María Guardiola, presidenta de la Junta de Extremadura, ha encabezado la manifestación contra el cierre de la central nuclear y lo ha calificado de \"despropósito\". \"Haremos todo lo posible por evitarlo. Estamos cansados de que el futuro de nuestra tierra se decida desde los despachos de Madrid\", ha indicado.",
-      "url": "https://www.lasexta.com/noticias/sociedad/miles-personas-manifiestan-favor-central-nuclear-almaraz_20250118678b7f410c57370001bcf973.html",
-      "source": "lasextanoticias",
-      "image": "https://fotografias.lasexta.com/clipping/cmsimages02/2025/01/18/2F01E771-9CCB-4E97-AFDC-0D3EC597EDE4/manifestantes-protestan-cierre-central-nuclear-almaraz_96.jpg?crop=1616,909,x0,y86&width=1200&height=675&optimize=low&format=webply",
-      "category": "general",
-      "language": "es",
-      "country": "es",
-      "published_at": "2025-01-18T10:15:29+00:00"
-    },
-    {
-      "author": "EL SOL NETWORK",
-      "title": "El alto el fuego en Gaza comenzará a las 07.30 de la mañana del domingo",
-      "description": "El acuerdo estipula la liberación de tres rehenes por presos palestinos durante el primer día del cese de hostilidades El alto el fuego entre Israel y Hamás en la Franja de Gaza comenzará a las 07.30 de la mañana del domingo (hora en España peninsular y Baleares), según ha informado el portavoz del Ministerio de [&#8230;]The post El alto el fuego en Gaza comenzará a las 07.30 de la mañana del domingo appeared first on El Sol de la Florida.",
-      "url": "https://elsoldelaflorida.com/el-alto-el-fuego-en-gaza-comenzara-a-las-07-30-de-la-manana-del-domingo/",
-      "source": "elsoldelaflorida",
-      "image": null,
-      "category": "general",
-      "language": "es",
-      "country": "es",
-      "published_at": "2025-01-18T10:15:28+00:00"
-    },
-    {
-      "author": "Bhwya Sriya",
-      "title": "Maxx Crosby’s Strong Warning to Ravens After Ditching Lamar Jackson for Josh Allen Before Divisional Round",
-      "description": "The NFL’s fiercest rivalry is about to kick off on Sunday, January 19. The two top MVP contenders, Lamar Jackson and Josh Allen are going to face off in the AFC divisional round battle. Who&#8217;s gonna win this one? That’s indeed a tough question to answer. So it was for Raiders defensive end, Maxx Crosby, [&#8230;]The post Maxx Crosby’s Strong Warning to Ravens After Ditching Lamar Jackson for Josh Allen Before Divisional Round appeared first on EssentiallySports.",
-      "url": "https://www.essentiallysports.com/nfl-active-news-maxx-crosbys-strong-warning-to-ravens-after-ditching-lamar-jackson-for-josh-allen-before-divisional-round/",
-      "source": "Essentially Sports",
-      "image": "https://image-cdn.essentiallysports.com/wp-content/uploads/imago1032559098h-473x315.jpg",
-      "category": "sports",
-      "language": "en",
-      "country": "us",
-      "published_at": "2025-01-18T10:15:22+00:00"
-    },
-    {
-      "author": null,
-      "title": "Needham & Company LLC Reiterates \"Buy\" Rating for Symbotic (NASDAQ:SYM)",
-      "description": "Needham & Company LLC reiterated a \"buy\" rating and set a $35.00 price target on shares of Symbotic in a research note on Friday.",
-      "url": "https://www.marketbeat.com/instant-alerts/symbotics-sym-buy-rating-reaffirmed-at-needham-company-llc-2025-01-18/",
-      "source": "lulegacy",
-      "image": null,
-      "category": "general",
-      "language": "en",
-      "country": "us",
-      "published_at": "2025-01-18T10:15:18+00:00"
-    },
-    {
-      "author": "Javier Martin Mesa",
-      "title": "Localizado el hombre desaparecido en San Rafael",
-      "description": "Nicolás del Pozo García, de 57 años, ha sido encontrado cerca del embalse de Los Ángeles de San Rafael",
-      "url": "https://eladelantado.com/segovia-provincia/localizado-el-hombre-desaparecido-en-san-rafael/",
-      "source": "eladelantado",
-      "image": null,
-      "category": "general",
-      "language": "es",
-      "country": "es",
-      "published_at": "2025-01-18T10:15:15+00:00"
-    },
-    {
-      "author": "Nijlpaard",
-      "title": "Thuis • Knaagdieren en/of konijnentopic",
-      "description": "Wij hebben sinds mei 1 goudhamster. Jaren ervoor ook 2x een Russische dwerghamster gehad, maar die mag je nu niet meer in huis houden volgens de wetgeving. Hoop overigens ook dat deze dame wat ouder wordt als 2,5 en 1,5. Vond het zo zielig toen ze dood waren en ze liggen beide begraven in de tuin.Deze is echt een daredevil, lekker klimmen en klauteren en alles ontdekken. Wekelijks veranderen we haar grote kooi met andere speeltjes voor uitdaging en verandering.Ze vind het alleen niet leuk om tijdelijk overgezet te worden in een andere bak als de kooi grondig schoongemaakt wordt. Dan moeten we...",
-      "url": "https://forum.viva.nl/viewtopic.php?p=35713792#p35713792",
-      "source": "vrouwonline",
-      "image": null,
-      "category": "general",
-      "language": "nl",
-      "country": "nl",
-      "published_at": "2025-01-18T10:15:13+00:00"
-    },
-    {
-      "author": "MarindaH",
-      "title": "Entertainment • Winter vol liefde live, zonder spoilers!!",
-      "description": "Ja, ik snapte dat ook niet van Maarten. Of zou ie het vergeten zijn? Hij is natuurlijk ook de jongste niet meer Statistieken: Geplaatst door MarindaH — 18-01-2025 11:15",
-      "url": "https://forum.viva.nl/viewtopic.php?p=35713791#p35713791",
-      "source": "vrouwonline",
-      "image": null,
-      "category": "general",
-      "language": "nl",
-      "country": "nl",
-      "published_at": "2025-01-18T10:15:02+00:00"
-    },
-    {
-      "author": "Akash Das",
-      "title": "Dan Hurley’s Premature Blunders Puts UConn’s March Madness Leverage at Risk",
-      "description": "In what opened to be a &#8216;hunger-driven&#8217; UConn Huskies&#8217; championship defending season, hiccups on the way have dragged down the show. After a good &#8216;top-3 team&#8217; start to the campaign, the Maui Invitational run cost the Dan Hurley-led team heavily. Not only did it threaten to drop them off the top 25, but their 8-game [&#8230;]The post Dan Hurley’s Premature Blunders Puts UConn’s March Madness Leverage at Risk appeared first on EssentiallySports.",
-      "url": "https://www.essentiallysports.com/ncaa-college-basketball-news-dan-hurleys-premature-blunders-puts-uconns-march-madness-leverage-at-risk/",
-      "source": "Essentially Sports",
-      "image": "https://video.essentiallysports.com/videos/NBA/c6fb0cd6-98a2-4ac5-b1e8-ef9a212df0e8.mp4",
-      "category": "sports",
-      "language": "en",
-      "country": "us",
-      "published_at": "2025-01-18T10:15:00+00:00"
-    },
-    {
-      "author": "Wendy Ucán Chan",
-      "title": "Ganaderos sin un subsidio: queja por altos cobros en la CFE",
-      "description": "Queja: la CFE les notifica adeudos por altas sumas",
-      "url": "https://www.yucatan.com.mx/yucatan/2025/01/18/ganaderos-sin-un-subsidio-queja-por-altos-cobros-en-la-cfe.html",
-      "source": "yucatan",
-      "image": null,
-      "category": "general",
-      "language": "es",
-      "country": "mx",
-      "published_at": "2025-01-18T10:15:00+00:00"
-    },
-    {
-      "author": "TT",
-      "title": "Max-restaurang övertänd – lokalen utrymd",
-      "description": "Max-restaurang övertänd – lokalen utrymd",
-      "url": "https://www.smp.se/artikel/max-restaurang-overtand-lokalen-utrymd/",
-      "source": "smp",
-      "image": "https://static.bonniernews.se/bildix/api/images/d6fb3a39-6787-4f00-b9e4-dce7f515d3c6.jpeg",
-      "category": "general",
-      "language": "sv",
-      "country": "se",
-      "published_at": "2025-01-18T10:14:52+00:00"
-    },
-    {
-      "author": "Bre-news",
-      "title": "Influenza aviaria: rischio per cani e gatti, l’allarme dell’ISS",
-      "description": "L&#8217;Istituto superiore di sanità invita alla prudenza: il rischio di contagio da influenza aviaria per cani e gatti, sebbene basso, non può essere escluso. Ecco come proteggere gli animali domestici L’allerta è scattata dopo la conferma di un caso di influenza aviaria in un gatto in provincia di Bologna. L’Istituto superiore di sanità (ISS) sottolinea [&#8230;]",
-      "url": "https://www.liberoreporter.it/2025/01/bonvivre/salute/influenza-aviaria-rischio-per-cani-e-gatti-lallarme-delliss.html",
-      "source": "liberoreporter",
-      "image": null,
-      "category": "general",
-      "language": "it",
-      "country": "it",
-      "published_at": "2025-01-18T10:14:12+00:00"
-    },
-    {
-      "author": "Peter Lucas",
-      "title": "Lucas: AG blind to illegal immigrant crime",
-      "description": "The first-term attorney general, who succeeded Gov. Maura Healey at the office — and who once campaigned to defund the Boston police -- is vowing to “Trump proof” her office to protect people from Trump and “anyone who would harm the interests of my residents.”",
-      "url": "https://www.bostonherald.com/2025/01/18/lucas-ag-blind-to-illegal-immigrant-crime/",
-      "source": "bostonherald",
-      "image": "https://www.bostonherald.com/wp-content/uploads/2025/01/IMG_4800.jpg?w=1400px&strip=all",
-      "category": "general",
-      "language": "en",
-      "country": "us",
-      "published_at": "2025-01-18T10:14:08+00:00"
-    },
-    {
-      "author": null,
-      "title": "Anschlagspläne gab es nicht: Omar A. wurde vermutlich Opfer von Nachrichtenhändlern",
-      "description": "Im Herbst 2024 meldete die Bundesanwaltschaft die Festnahme eines mutmaßlichen IS-Terroristen. Omar A. soll einen Anschlag auf die israelische Botschaft in Berlin geplant haben. Nun stellt sich heraus: Der Chat-Verlauf, der die Ermittler auf seine Spur brachte, war offenbar fingiert.",
-      "url": "https://www.n-tv.de/politik/Hinweise-auf-Anschlagsplaene-von-Omar-A-waren-fingiert-article25498016.html",
-      "source": "n-tv",
-      "image": "https://bilder2.n-tv.de/img/incoming/crop25498021/3548672544-cImg_4_3-w250/488799608.jpg",
-      "category": "general",
-      "language": "de",
-      "country": "de",
-      "published_at": "2025-01-18T10:14:03+00:00"
-    },
-    {
-      "author": "Shervin Media",
-      "title": "European Chamber of Commerce elects new board of Directors",
-      "description": "Kaieteur News-  The European Chamber of Commerce in Guyana on Friday announced the election of its new Board of Directors for 2025 with Dr. Alista Bishop being elected as Chair. Other members of the newly elected board include Joerg Niebelschultz, Vice Chair; Vasudeo Singh, Secretary/Treasurer and additional Board Members: Gregory Dean, Martin Cheong, Matthew Kendall, [&#8230;]The post European Chamber of Commerce elects new board of Directors appeared first on Kaieteur News.",
-      "url": "https://www.kaieteurnewsonline.com/2025/01/18/european-chamber-of-commerce-elects-new-board-of-directors/",
-      "source": "Kaieteur News",
-      "image": null,
-      "category": "general",
-      "language": "en",
-      "country": "gy",
-      "published_at": "2025-01-18T10:13:58+00:00"
-    },
-    {
-      "author": "Santi Delgado",
-      "title": "Aparece carbonizado dentro de su coche en un monte de Redondela",
-      "description": "La víctima es un vecino de Vigo",
-      "url": "https://www.elprogreso.es/articulo/galicia/aparece-carbonizado-dentro-coche-monte-redondela/202501181113471822244.html",
-      "source": "elprogreso",
-      "image": "https://www.elprogreso.es/media/elprogreso/images/2024/03/13/2024031313504555417.jpg",
-      "category": "general",
-      "language": "es",
-      "country": "es",
-      "published_at": "2025-01-18T10:13:47+00:00"
-    },
-    {
-      "author": "SALZBURG24 Redaktion",
-      "title": "Schuss auf Mann in OÖ: Alarmfahndung im Bezirk Rohrbach",
-      "description": "In Oberkappel im Bezirk Rohrbach in Oberösterreich ist am Samstag gegen 8.40 Uhr ein 51-jähriger Einheimischer angeschossen und so schwer verletzt worden, dass er kurz später verstarb.",
-      "url": "https://www.salzburg24.at/news/oesterreich/toedlicher-schuss-auf-mann-in-ooe-alarmfahndung-nach-beziehungstat-in-oberkappel-171916972",
-      "source": "salzburg24",
-      "image": "https://www.salzburg24.at/Meldungsliste%25281%2529%252825%2529.jpg/980x735/171.918.337",
-      "category": "general",
-      "language": "de",
-      "country": "at",
-      "published_at": "2025-01-18T10:13:42+00:00"
-    },
-    {
-      "author": "Rodolfo Mancuello",
-      "title": "Desde este lunes comienza “Aprender en Verano”, el proyecto de fortalecimiento pedagógico",
-      "description": "Este lunes 20 de enero se pone en marcha “Aprender en Verano”, la propuesta pedagógica del Ministerio de Educación de la provincia para fortalecer los aprendizajes, recuperar contenidos y optimizar el rendimiento académico de los estudiantes de cara al próximo ciclo lectivo 2025. En este marco, hasta el 28 de febrero se desarrollarán propuestas de intensificación en torno a las áreas fundamentales: Lengua, Matemática, Arte y Ciencias, dirigidas fundamentalmente a aquellos estudiantes de los niveles primario y secundario que presentan mayores dificultades en el aprendizaje. Aprender...",
-      "url": "https://chacodiapordia.com/desde-este-lunes-comienza-aprender-en-verano-el-proyecto-de-fortalecimiento-pedagogico/",
-      "source": "chacodiapordia",
-      "image": "https://chacodiapordia.com/wp-content/uploads/2025/01/Educacion-TallerLab-2024.jpeg",
-      "category": "general",
-      "language": "es",
-      "country": "es",
-      "published_at": "2025-01-18T10:13:31+00:00"
-    },
-    {
-      "author": "KamilleT",
-      "title": "Lijf &amp; Lijn • Calorieën en kilo’s",
-      "description": "Het verraderlijke is dat mijn kledingmaten nagenoeg hetzelfde zijn gebleven. De kilo’s zitten vooral in mijn armen en borsten (maar dan neem je een grotere maat M). De grootste aanleiding voor actie was dat mijn bovenbenen naar elkaar toe groeiden en een vakantiefoto. Die foto was van een afstandje genomen en mijn postuur ziet eruit als een mollige dame van middelbare leeftijd. Vroeger (als twintiger) was het andersom. Dan was ik in mijn hoofd dik en op foto’s juist slanker.Statistieken: Geplaatst door KamilleT — 18-01-2025 11:13",
-      "url": "https://forum.viva.nl/viewtopic.php?p=35713790#p35713790",
-      "source": "vrouwonline",
-      "image": null,
-      "category": "general",
-      "language": "nl",
-      "country": "nl",
-      "published_at": "2025-01-18T10:13:28+00:00"
-    },
-    {
-      "author": "Redacción",
-      "title": "Mafalda en vidrio reciclado",
-      "description": "El Museo de la Energía trae a Ponferrada una muestra sobre sostenibilidad con el inmortal personaje de Quino de reclamo",
-      "url": "https://www.diariodeleon.es/bierzo/250118/1787302/mafalda-vidrio-reciclado.html",
-      "source": "diariodeleon",
-      "image": "https://imagenes.diariodeleon.es/files/og_thumbnail/files/fp/uploads/2025/01/18/678b7eb75d7d9.r_d.1411-751-0.jpeg",
-      "category": "general",
-      "language": "es",
-      "country": "es",
-      "published_at": "2025-01-18T10:13:14+00:00"
-    },
-    {
-      "author": "Mbagnick Dione",
-      "title": "RFC Seraing : Terrible coup dur et fin de saison pour Pape Moussa Fall",
-      "description": "(wiwsport) -Brillant en Challenger Pro League depuis plus d&#8217;un an, Pape Moussa Fall ne rejouera plus de la saison avec le RFC Seraing. L&#8217;attaquant sénégalais s&#8217;est grièvement blessé lors d&#8217;une séance d&#8217;entraînement. Le Sénégalais Pape Moussa Fall a été victime d&#8217;une déchirure du ligament croisé du genou et sera indisponible jusqu&#8217;à la fin de la saison, [&#8230;]Cet article a été initialement publié sur wiwsport : site n°1 de l'actualité sportive du Sénégal (wiwsport.com).Article source : RFC Seraing : Terrible coup dur et fin de...",
-      "url": "https://wiwsport.com/2025/01/18/rfc-seraing-terrible-coup-dur-et-fin-de-saison-pour-pape-moussa-fall/",
-      "source": "WIW Sport",
-      "image": null,
-      "category": "sports",
-      "language": "fr",
-      "country": "sn",
-      "published_at": "2025-01-18T10:12:39+00:00"
-    },
-    {
-      "author": null,
-      "title": "Janina Reimann erinnert an ergreifenden Tränen-Moment vor acht Jahren",
-      "description": "Schon acht Jahre ist es her, dass Konny Reimann und seine Familie die Hochzeit von Tochter Janina feierten. Jetzt erinnern sich die TV-Stars zurück an diesen besonderen Tag in ihrer aller Leben.",
-      "url": "https://www.hna.de/leute/janina-reimann-erinnert-an-ergreifenden-traenen-moment-vor-acht-jahren-agentur-93522312.html",
-      "source": "hna",
-      "image": "https://www.hna.de/assets/images/36/774/36774692-janina-reimann-und-ihr-ehemann-2o01.jpg",
-      "category": "general",
-      "language": "de",
-      "country": "de",
-      "published_at": "2025-01-18T10:12:27+00:00"
-    },
-    {
-      "author": "Swarnakshi Sharma",
-      "title": "Teen Israeli Pursuits the American Dream Despite Competing in the Highest Level Domestically",
-      "description": "In basketball, dreams are often born on small courts, supported through hard work, and shot under bright lights. For one such young athlete, those bright lights are pulling her across continents. After playing professionally in Europe, she’s set her sights on a new rim: American college basketball. But for her, basketball isn’t just a sport; [&#8230;]The post Teen Israeli Pursuits the American Dream Despite Competing in the Highest Level Domestically appeared first on EssentiallySports.",
-      "url": "https://www.essentiallysports.com/ncaa-college-basketball-news-teen-israeli-maya-zilbershlag-pursuits-the-american-dream-despite-competing-in-the-highest-level-domestically/",
-      "source": "Essentially Sports",
-      "image": "https://image-cdn.essentiallysports.com/wp-content/uploads/Copy-of-ES-WEB-FIs-1200-x-800-px-69-3-473x315.jpg",
-      "category": "sports",
-      "language": "en",
-      "country": "us",
-      "published_at": "2025-01-18T10:12:24+00:00"
-    }
-  ]
+    "top": [
+        {
+            "title": "ছাত্ররা রাজনৈতিক দল গঠন করলে ‘সরকার থেকে বেরিয়ে আসা উচিত’",
+            "news_brief": "বাংলাদেশে ছাত্র আন্দোলনের নেতারা কোনো রাজনৈতিক দল গঠন করলে, সরকার থেকে বেরিয়ে এসে তা করা উচিত হবে বলে মনে করেন বিএনপির মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর। বিবিসি বাংলাকে দেওয়া একান্ত সাক্ষাৎকারে এ কথা বলেছেন তিনি।",
+            "image": "https://dummyimage.com/800x600&text=Ratio+4:3",
+            "img_caption": "আবার ‘মাইনাস টু’ দেখতে চাই না : মির্জা ফখরুল",
+            "news_id": "Jn0XqMP"
+        },
+        {
+            "title": "দল গঠন করলে ‘সরকার থেকে বেরিয়ে আসা উচিত’",
+            "news_brief": "বাংলাদেশে ছাত্র আন্দোলনের নেতারা কোনো রাজনৈতিক দল গঠন করলে, সরকার থেকে বেরিয়ে এসে তা করা উচিত হবে বলে মনে করেন বিএনপির মহাসচিব মির্জা ফখরুল ইসলাম আলমগীর। বিবিসি বাংলাকে দেওয়া একান্ত সাক্ষাৎকারে এ কথা বলেছেন তিনি।",
+            "image": "https://dummyimage.com/800x600&text=Ratio+4:3",
+            "img_caption": "আবার ‘মাইনাস টু’ দেখতে চাই না : মির্জা ফখরুল",
+            "news_id": "Jn0XqMP"
+        },
+        {
+            "title": "‘বিগত সরকারের দোসর’ ও ‘সুবিধাভোগী’ ট্যাগ কারা দেয়",
+            "news_brief": "অমর একুশে বইমেলা ২০২৫–এ প্যাভিলিয়ন ও স্টল বরাদ্দ প্রসঙ্গে বাংলা একাডেমির কাছে ১০টি দাবি জানিয়েছেন সুবিচারপ্রত্যাশী প্রকাশকেরা। রোববার বাংলা একাডেমির মহাপরিচালক মোহাম্মদ আজম ও মেলা পরিচালনা কমিটির সদস্যসচিব সরকার আমিনের কাছে এসব দাবি উপস্থাপন করেন তাঁরা।",
+            "image": "https://dummyimage.com/800x600&text=Ratio+4:3",
+            "img_caption": "আবার ‘মাইনাস টু’ দেখতে চাই না : মির্জা ফখরুল",
+            "news_id": "Jn0XqMP"
+        },
+        {
+            "title": "বিয়ের আগেই কেন মেয়েদের জরায়ুমুখের ক্যানসারের টিকা নিতে হবে",
+            "news_brief": "জরায়ুমুখ ক্যানসারের বহু রোগীই দেশে রয়েছে। এই ক্যানসারের জন্য দায়ী হিউম্যান প্যাপিলোমা নামের ভাইরাস। এই ভাইরাসের বেশ কয়েকটি ধরন রয়েছে। সবচেয়ে খারাপ ধরন দুটির বিরুদ্ধে কার্যকর, এমন টিকার ব্যবস্থাও দেশে রয়েছে।",
+            "image": "https://dummyimage.com/800x600&text=Ratio+4:3",
+            "img_caption": "আবার ‘মাইনাস টু’ দেখতে চাই না : মির্জা ফখরুল",
+            "news_id": "Jn0XqMP"
+        }
+    ]
 }

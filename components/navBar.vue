@@ -1,200 +1,199 @@
 <template>
-    <div>
-        <div class="topContainer">
-            <!-- NAVMENU BAR START -->
-            <nav class="parentNav">
-                <section class="childNav">
+    <div class="topContainer">
+        <!-- NAVMENU BAR START -->
+        <nav class="parentNav">
+            <section class="childNav">
 
 
-                    <!-- HAMBURGER 550px RESPONSIVE-->
-                    <section class="hamburger" id="hamburger">
-                        <div class="hambLine line-1"></div>
-                        <div class="hambLine line-2"></div>
-                        <div class="hambLine line-3"></div>
-                    </section>
-                    <section class="logoAltHamb">
-                        <!-- LOGO -->
-                        <a href="/">
-                            <img class="h-i w-i" src="/ekattorpratidin-logo.svg" alt="">
-                        </a>
-                    </section>
-
-                    <!-- NAV MENUS -->
-                    <ul class="topNavMenu">
-                        <li>
-                            <NuxtLink to="cat/sara-desh">সারাদেশ</NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink to="cat/rajniti">রাজনীতি</NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink to="cat/bidesh">বিদেশ</NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink to="cat/khela-dhula">খেলাধুলা</NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink to="cat/dhormiyo">ধর্মীয়</NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink to="cat/binodon">বিনোদন</NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink to="cat/orthoniti">অর্থনীতি</NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink to="cat/motamot">মতামত</NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink to="cat/oporadh">অপরাধ</NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink to="cat/sahitya">সাহিত্য</NuxtLink>
-                        </li>
-                        <li>
-                            <NuxtLink to="cat/sompadokiyo">সম্পাদকীয়</NuxtLink>
-                        </li>
-                    </ul>
-
-                    <!-- DARK BACKGROUND -->
-                    <div class="darkBackground" ref="darkBackground" @click="darkBackgroundClick"></div>
-                    <!-- SEARCH BUTTON -->
-                    <section class="searchBar" @click="searchBar">
-                        <i class="m-search2" ref="search"></i>
-                        <i class="m-m-cross hide" ref="cross"></i>
-                        <div class="searchBox" ref="searchBoxContainer" @click.stop>
-                            <input type="text" name="" id="searchBox" v-model.trim="searchQuery"
-                                placeholder="এখানে লিখুন...">
-                            <input type="button" value="খুঁজুন" @click="triggerSearch">
-                        </div>
-                    </section>
-
+                <!-- HAMBURGER 550px RESPONSIVE-->
+                <section class="hamburger" id="hamburger">
+                    <div class="hambLine line-1"></div>
+                    <div class="hambLine line-2"></div>
+                    <div class="hambLine line-3"></div>
+                </section>
+                <section class="logoAltHamb">
+                    <!-- LOGO -->
+                    <a href="/">
+                        <img class="h-i w-i" src="/ekattorpratidin-logo.svg" alt="">
+                    </a>
                 </section>
 
+                <!-- NAV MENUS -->
+                <ul class="topNavMenu">
+                    <li>
+                        <NuxtLink to="cat/sara-desh">সারাদেশ</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="cat/rajniti">রাজনীতি</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="cat/bidesh">বিদেশ</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="cat/khela-dhula">খেলাধুলা</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="cat/dhormiyo">ধর্মীয়</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="cat/binodon">বিনোদন</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="cat/orthoniti">অর্থনীতি</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="cat/motamot">মতামত</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="cat/oporadh">অপরাধ</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="cat/sahitya">সাহিত্য</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="cat/sompadokiyo">সম্পাদকীয়</NuxtLink>
+                    </li>
+                </ul>
 
-            </nav>
-            <!-- NAVMENU BAR END -->
-        </div>
-        <!-- RESPONSIVE FOR 550PX -->
-        <div class="parentResNav">
-            <div class="parentResNavBG"></div>
-            
-            <div class="childResNav">
-                <div class="resNav2">
-                    <!-- NAV MENU 1 -->
-                    <NuxtLink to="cat/sara-desh" class="resNav2Menu">
-                        <!-- MENU DETAILS-->
-                        <ul class="resNav2MenuName navHover">
-                            <i class="m-circle navIndicatorCircle"></i>
-                            <p>সারাদেশ</p>
-                        </ul>
-                        <!-- HORIZONTAL LINE -->
-                        <div class="bottomBorder"></div>
-                    </NuxtLink>
-                    <!-- NAV MENU 2 -->
-                    <NuxtLink to="cat/rajniti" class="resNav2Menu">
-                        <!-- MENU DETAILS-->
-                        <ul class="resNav2MenuName navHover">
-                            <i class="m-circle navIndicatorCircle"></i>
-                            <p>রাজনীতি</p>
-                        </ul>
-                        <!-- HORIZONTAL LINE -->
-                        <div class="bottomBorder"></div>
-                    </NuxtLink>
-                    <!-- NAV MENU 3 -->
-                    <NuxtLink to="cat/bidesh" class="resNav2Menu">
-                        <!-- MENU DETAILS-->
-                        <ul class="resNav2MenuName navHover">
-                            <i class="m-circle navIndicatorCircle"></i>
-                            <p>বিদেশ</p>
-                        </ul>
-                        <!-- HORIZONTAL LINE -->
-                        <div class="bottomBorder"></div>
-                    </NuxtLink>
-                    <!-- NAV MENU 4 -->
-                    <NuxtLink to="cat/khela-dhula" class="resNav2Menu">
-                        <!-- MENU DETAILS-->
-                        <ul class="resNav2MenuName navHover">
-                            <i class="m-circle navIndicatorCircle"></i>
-                            <p>খেলাধুলা</p>
-                        </ul>
-                        <!-- HORIZONTAL LINE -->
-                        <div class="bottomBorder"></div>
-                    </NuxtLink>
-                    <!-- NAV MENU 5 -->
-                    <NuxtLink to="cat/dhormiyo" class="resNav2Menu">
-                        <!-- MENU DETAILS-->
-                        <ul class="resNav2MenuName navHover">
-                            <i class="m-circle navIndicatorCircle"></i>
-                            <p>ধর্মীয়</p>
-                        </ul>
-                        <!-- HORIZONTAL LINE -->
-                        <div class="bottomBorder"></div>
-                    </NuxtLink>
-                    <!-- NAV MENU 6 -->
-                    <NuxtLink to="cat/binodon" class="resNav2Menu">
-                        <!-- MENU DETAILS-->
-                        <ul class="resNav2MenuName navHover">
-                            <i class="m-circle navIndicatorCircle"></i>
-                            <p>বিনোদন</p>
-                        </ul>
-                        <!-- HORIZONTAL LINE -->
-                        <div class="bottomBorder"></div>
-                    </NuxtLink>
-                    <!-- NAV MENU 7 -->
-                    <NuxtLink to="cat/orthoniti" class="resNav2Menu">
-                        <!-- MENU DETAILS-->
-                        <ul class="resNav2MenuName navHover">
-                            <i class="m-circle navIndicatorCircle"></i>
-                            <p>অর্থনীতি</p>
-                        </ul>
-                        <!-- HORIZONTAL LINE -->
-                        <div class="bottomBorder"></div>
-                    </NuxtLink>
-                    <!-- NAV MENU 8 -->
-                    <NuxtLink to="cat/motamot" class="resNav2Menu">
-                        <!-- MENU DETAILS-->
-                        <ul class="resNav2MenuName navHover">
-                            <i class="m-circle navIndicatorCircle"></i>
-                            <p>মতামত</p>
-                        </ul>
-                        <!-- HORIZONTAL LINE -->
-                        <div class="bottomBorder"></div>
-                    </NuxtLink>
-                    <!-- NAV MENU 9 -->
-                    <NuxtLink to="cat/oporadh" class="resNav2Menu">
-                        <!-- MENU DETAILS-->
-                        <ul class="resNav2MenuName navHover">
-                            <i class="m-circle navIndicatorCircle"></i>
-                            <p>অপরাধ</p>
-                        </ul>
-                        <!-- HORIZONTAL LINE -->
-                        <div class="bottomBorder"></div>
-                    </NuxtLink>
-                    <!-- NAV MENU 10 -->
-                    <NuxtLink to="cat/sahitya" class="resNav2Menu">
-                        <!-- MENU DETAILS-->
-                        <ul class="resNav2MenuName navHover">
-                            <i class="m-circle navIndicatorCircle"></i>
-                            <p>সাহিত্য</p>
-                        </ul>
-                        <!-- HORIZONTAL LINE -->
-                        <div class="bottomBorder"></div>
-                    </NuxtLink>
-                    <!-- NAV MENU 11 -->
-                    <NuxtLink to="cat/sompadokiyo" class="resNav2Menu">
-                        <!-- MENU DETAILS-->
-                        <ul class="resNav2MenuName navHover">
-                            <i class="m-circle navIndicatorCircle"></i>
-                            <p>সম্পাদকীয়</p>
-                        </ul>
-                        <!-- HORIZONTAL LINE -->
-                        <div class="bottomBorder"></div>
-                    </NuxtLink>
-                    <div class="pad-b--100"></div>
+                <!-- DARK BACKGROUND -->
+                <div class="darkBackground" ref="darkBackground" @click="darkBackgroundClick"></div>
+                <!-- SEARCH BUTTON -->
+                <section class="searchBar" @click="searchBar">
+                    <i class="m-search2" ref="search"></i>
+                    <i class="m-m-cross hide" ref="cross"></i>
+                    <div class="searchBox" ref="searchBoxContainer" @click.stop>
+                        <input type="text" name="" id="searchBox" v-model.trim="searchQuery"
+                            placeholder="এখানে লিখুন...">
+                        <input type="button" value="খুঁজুন" @click="triggerSearch">
+                    </div>
+                </section>
 
-                    <!-- SUBMENUS -->
-                    <!-- <div class="resNav2Menu">
+            </section>
+
+
+        </nav>
+        <!-- NAVMENU BAR END -->
+    </div>
+    <!-- RESPONSIVE FOR 550PX -->
+    <div class="parentResNav">
+        <div class="parentResNavBG"></div>
+
+        <div class="childResNav">
+            <div class="resNav2">
+                <!-- NAV MENU 1 -->
+                <NuxtLink to="cat/sara-desh" class="resNav2Menu">
+                    <!-- MENU DETAILS-->
+                    <ul class="resNav2MenuName navHover">
+                        <i class="m-circle navIndicatorCircle"></i>
+                        <p>সারাদেশ</p>
+                    </ul>
+                    <!-- HORIZONTAL LINE -->
+                    <div class="bottomBorder"></div>
+                </NuxtLink>
+                <!-- NAV MENU 2 -->
+                <NuxtLink to="cat/rajniti" class="resNav2Menu">
+                    <!-- MENU DETAILS-->
+                    <ul class="resNav2MenuName navHover">
+                        <i class="m-circle navIndicatorCircle"></i>
+                        <p>রাজনীতি</p>
+                    </ul>
+                    <!-- HORIZONTAL LINE -->
+                    <div class="bottomBorder"></div>
+                </NuxtLink>
+                <!-- NAV MENU 3 -->
+                <NuxtLink to="cat/bidesh" class="resNav2Menu">
+                    <!-- MENU DETAILS-->
+                    <ul class="resNav2MenuName navHover">
+                        <i class="m-circle navIndicatorCircle"></i>
+                        <p>বিদেশ</p>
+                    </ul>
+                    <!-- HORIZONTAL LINE -->
+                    <div class="bottomBorder"></div>
+                </NuxtLink>
+                <!-- NAV MENU 4 -->
+                <NuxtLink to="cat/khela-dhula" class="resNav2Menu">
+                    <!-- MENU DETAILS-->
+                    <ul class="resNav2MenuName navHover">
+                        <i class="m-circle navIndicatorCircle"></i>
+                        <p>খেলাধুলা</p>
+                    </ul>
+                    <!-- HORIZONTAL LINE -->
+                    <div class="bottomBorder"></div>
+                </NuxtLink>
+                <!-- NAV MENU 5 -->
+                <NuxtLink to="cat/dhormiyo" class="resNav2Menu">
+                    <!-- MENU DETAILS-->
+                    <ul class="resNav2MenuName navHover">
+                        <i class="m-circle navIndicatorCircle"></i>
+                        <p>ধর্মীয়</p>
+                    </ul>
+                    <!-- HORIZONTAL LINE -->
+                    <div class="bottomBorder"></div>
+                </NuxtLink>
+                <!-- NAV MENU 6 -->
+                <NuxtLink to="cat/binodon" class="resNav2Menu">
+                    <!-- MENU DETAILS-->
+                    <ul class="resNav2MenuName navHover">
+                        <i class="m-circle navIndicatorCircle"></i>
+                        <p>বিনোদন</p>
+                    </ul>
+                    <!-- HORIZONTAL LINE -->
+                    <div class="bottomBorder"></div>
+                </NuxtLink>
+                <!-- NAV MENU 7 -->
+                <NuxtLink to="cat/orthoniti" class="resNav2Menu">
+                    <!-- MENU DETAILS-->
+                    <ul class="resNav2MenuName navHover">
+                        <i class="m-circle navIndicatorCircle"></i>
+                        <p>অর্থনীতি</p>
+                    </ul>
+                    <!-- HORIZONTAL LINE -->
+                    <div class="bottomBorder"></div>
+                </NuxtLink>
+                <!-- NAV MENU 8 -->
+                <NuxtLink to="cat/motamot" class="resNav2Menu">
+                    <!-- MENU DETAILS-->
+                    <ul class="resNav2MenuName navHover">
+                        <i class="m-circle navIndicatorCircle"></i>
+                        <p>মতামত</p>
+                    </ul>
+                    <!-- HORIZONTAL LINE -->
+                    <div class="bottomBorder"></div>
+                </NuxtLink>
+                <!-- NAV MENU 9 -->
+                <NuxtLink to="cat/oporadh" class="resNav2Menu">
+                    <!-- MENU DETAILS-->
+                    <ul class="resNav2MenuName navHover">
+                        <i class="m-circle navIndicatorCircle"></i>
+                        <p>অপরাধ</p>
+                    </ul>
+                    <!-- HORIZONTAL LINE -->
+                    <div class="bottomBorder"></div>
+                </NuxtLink>
+                <!-- NAV MENU 10 -->
+                <NuxtLink to="cat/sahitya" class="resNav2Menu">
+                    <!-- MENU DETAILS-->
+                    <ul class="resNav2MenuName navHover">
+                        <i class="m-circle navIndicatorCircle"></i>
+                        <p>সাহিত্য</p>
+                    </ul>
+                    <!-- HORIZONTAL LINE -->
+                    <div class="bottomBorder"></div>
+                </NuxtLink>
+                <!-- NAV MENU 11 -->
+                <NuxtLink to="cat/sompadokiyo" class="resNav2Menu">
+                    <!-- MENU DETAILS-->
+                    <ul class="resNav2MenuName navHover">
+                        <i class="m-circle navIndicatorCircle"></i>
+                        <p>সম্পাদকীয়</p>
+                    </ul>
+                    <!-- HORIZONTAL LINE -->
+                    <div class="bottomBorder"></div>
+                </NuxtLink>
+                <div class="pad-b--100"></div>
+
+                <!-- SUBMENUS -->
+                <!-- <div class="resNav2Menu">
                         MENU
                         <ul class="resNav2MenuName navHover">
                             <i class="m-circle"></i>
@@ -238,7 +237,6 @@
                         <div class="bottomBorder"></div>
                     </div> -->
 
-                </div>
             </div>
         </div>
     </div>
