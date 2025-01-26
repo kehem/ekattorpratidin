@@ -19,7 +19,6 @@
 // GET REQUEST
 const { data, error } = await useFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/marquee.json');
 const items = data.value.marquee;
-console.log(items);
 
 
 

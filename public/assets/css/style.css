@@ -1,14 +1,16 @@
-@import url("https://fonts.maateen.me/kalpurush/font.css");
-body {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  font-family: "Kalpurush", sans-serif;
-  transition: all 0.3s ease;
-}
-
+@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/ekushey-lohit/stylesheet.css");
+@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/sornaly/stylesheet.css");
+@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/solaimanlipi/stylesheet.css");
+@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/lal-sabuj-normal/stylesheet.css");
+@import url("https://cdn.staticaly.com/gh/sh4hids/bangla-web-fonts/9baee0fc23e77fe957c0b70fe49d81d2cbbe87d6/boshonto/stylesheet.css");
+@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/ab-shapla/stylesheet.css"); /* ABShaplaBeta */
+@import url("https://fonts.googleapis.com/css?family=Atma");
+@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/bensen-handwriting/stylesheet.css"); /* BenSenHandwriting */
+@import url("https://fonts.googleapis.com/css?family=Baloo+Da");
 :root {
+  /* FONT */
+  --font-family: "SolaimanLipi", serif;
+
   --newsCat: #c70d0d;
   --newsBG: #f3f3f3;
   --links: #2b2a2a;
@@ -47,7 +49,7 @@ body {
   --marginLeftForNewsThumb: 0.1rem;
   --marginTopForNewsThumb: 0.4rem;
   --paddingLeft02: 0.2rem;
-  --navFontSize: 1.5rem;
+  --navFontSize: 1.3rem;
   --navHeight: 4rem;
   --searchBarWidth: 3rem;
   --searchBarHeight: 3rem;
@@ -61,13 +63,24 @@ body {
   /* GRADIENT BACKGROUND */
   --linear-gradient-background: linear-gradient(90deg, #87c0f4, #5381ab);
 }
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: 100;
+  transition: all 0.3s ease;
+}
 
 /* DEFAULT SETTINGS */
 a {
+  font-family: var(--font-family);
   color: var(--links);
   text-decoration: none;
   transition: all 0.3s ease;
-  font-family: "Kalpurush", sans-serif;
 }
 .fullWidth {
   width: 90%;
@@ -78,7 +91,7 @@ a:hover {
   color: var(--linksHover);
 }
 p {
-  font-family: "Kalpurush", sans-serif;
+  font-family: var(--font-family);
 }
 
 img {
@@ -635,6 +648,14 @@ nav.parentNav {
   align-items: center;
   margin: auto;
   gap: 0.5rem;
+}
+.newsCaption::after {
+  content: "●";
+  padding-left: 0.5rem;
+}
+
+a:hover .newsCaption {
+  text-decoration: none !important;
 }
 
 /* NAVMENU BAR START */
@@ -1448,11 +1469,39 @@ footer.footer {
   }
 }
 
+@media screen and (max-width: 1280px) {
+  /* NAVBAR */
+  .childNav .topNavMenu li:nth-last-child(-n + 1) {
+    display: none;
+    transition: all 0.3s ease;
+  }
+}
+
 @media screen and (max-width: 1080px) {
   .logoAltHamb {
     display: none;
   }
+  /* NAVBAR */
+  .childNav .topNavMenu li:nth-last-child(-n + 1) {
+    display: none;
+    transition: all 0.3s ease;
+  }
 }
+@media screen and (max-width: 880px) {
+  /* NAVBAR */
+  .childNav .topNavMenu li:nth-last-child(-n + 3) {
+    display: none !important;
+    transition: all 0.3s ease;
+  }
+}
+@media screen and (max-width: 690px) {
+  /* NAVBAR */
+  .childNav .topNavMenu li:nth-last-child(-n + 5) {
+    display: none !important;
+    transition: all 0.3s ease;
+  }
+}
+
 /* ----------------------------------------
     SCREEN SIZE BETWEEN 1080PX TO 768PX
     ---------------------------------------*/
@@ -1460,12 +1509,6 @@ footer.footer {
   .parentResNav .childResNav {
     width: 50%;
   }
-
-  /* NAVBAR */
-  /* .childNav .topNavMenu li:nth-last-child(-n + 1) {
-    display: none;
-    transition: all 0.3s ease;
-  } */
 
   /* TOP CONTENT */
   .topContainerX {
@@ -1555,7 +1598,7 @@ footer.footer {
   .featuredNews .featureImg .publishedTime {
     top: 10%;
     left: 0;
-    width: 6rem;
+    width: 8rem;
     transform: translate(0%, -50%);
   }
 
@@ -1585,12 +1628,6 @@ footer.footer {
     SCREEN SIZE < = 992PX (FOR NAVBAR)
     ---------------------------------------*/
 @media screen and (max-width: 992px) {
-  /* NAVBAR */
-  .childNav .topNavMenu li:nth-last-child(-n + 1) {
-    display: none;
-    transition: all 0.3s ease;
-  }
-
   .topNavMenu .seeMore {
     display: block;
   }
@@ -1617,12 +1654,6 @@ footer.footer {
 
   .parentResNav .childResNav {
     width: 80%;
-  }
-
-  /* NAVBAR */
-  .childNav .topNavMenu li:nth-last-child(-n + 4) {
-    display: none;
-    transition: all 0.3s ease;
   }
 
   /* TOP CONTENT */
@@ -1743,6 +1774,9 @@ footer.footer {
     display: none;
   }
 
+  .featuredNews .mediaQueryDescription {
+    display: block !important;
+  }
   .topNavMenu .seeMore {
     display: none;
     transition: all 0.3s ease;

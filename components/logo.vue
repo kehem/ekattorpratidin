@@ -10,9 +10,12 @@
 </script>
 
 <style scoped>
+.khorboreJaintaLogo {
+    width: 25rem;
+}
+
 .khorboreJaintaLogo img {
-    width: 15rem;
-    border: 1px solid #ccc;
+    width: 25rem;
     border-radius: 5px;
     transition: filter 0.3s ease;
 }

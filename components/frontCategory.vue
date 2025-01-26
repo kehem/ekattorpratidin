@@ -7,24 +7,24 @@
                 <!-- HEADING -->
                 <div class="col1Heading">
                     <i class="m-checkbox-unchecked"></i>
-                    <p>সারাদেশ</p>
+                    <NuxtLink class="text--13" to="/cat/সারাদেশ">সারাদেশ</NuxtLink>
                 </div>
                 <!-- ALL NEWS -->
-                <div class="gridColBG" v-for="news in data.রাজনীতি">
+                <div class="gridColBG">
                     <!-- NEWS -->
-                    <NuxtLink :to="`news/${news.news_id}`" class="shortNews" :key="news.news_id">
+                    <NuxtLink v-for="news in data.সারাদেশ" :to="`news/${news.news_id}`" class="shortNews"
+                        :key="news.news_id">
                         <!-- NEWS IMAGE -->
                         <div class="newsImg">
-                            <img :src="`${news.image}`" alt="">
-                            <div class="publishedTime">১ ঘন্টা আগে</div>
+                            <img :src="`${news.image}`" alt="`${news.img_caption}`">
+                            <div class="publishedTime">{{ news.published_time_ago }}</div>
                         </div>
                         <!-- NEWS TITLE -->
                         <div class="newsTexts">
-                            <p class="newsCaption"><i class="m-controller-stop text--09"></i> {{ news.caption }}</p>
+                            <p class="newsCaption">{{ news.caption }}</p>
                             <p class="newsTitle text-dotted-3">{{ news.title }}</p>
                         </div>
                     </NuxtLink>
-
                 </div>
             </div>
 
@@ -34,227 +34,81 @@
                 <!-- HEADING -->
                 <div class="col1Heading">
                     <i class="m-checkbox-unchecked"></i>
-                    <p>সর্বশেষ সংবাদ</p>
+                    <NuxtLink class="text--13" to="cat/রাজনীতি">রাজনীতি</NuxtLink>
                 </div>
                 <!-- MAIN CONTENTS START -->
                 <div class="gridColBG">
 
                     <div class="colWishNewsModule">
-                        <!-- ADS -->
+                        <!-- AD-2 -->
                         <div class="NewsAds">
                             <img src="https://dummyimage.com/800x150/" alt="">
                         </div>
                         <!-- TOP THUMB NEWS -->
-                        <a href="#" class="shortNews flexNews">
+                        <NuxtLink :to="`news/${data.রাজনীতি[0].news_id}`" :key="`${data.রাজনীতি[0].news_id}`"
+                            class="shortNews flexNews">
                             <!-- NEWS IMAGE -->
                             <div class="newsImg2">
-                                <img src="https://dummyimage.com/800x600/" alt="">
-                                <div class="publishedTime">১ ঘন্টা আগে</div>
+                                <img :src="`${data.রাজনীতি[0].image}`" :alt="`${data.রাজনীতি[0].img_caption}`">
+                                <div class="publishedTime">{{ data.রাজনীতি[0].published_time_ago }}</div>
                             </div>
                             <!-- NEWS DESCRIPTION -->
                             <div class="newsTexts">
-                                <p class="newsTitle text__Ellipsis_3">চট্টগ্রাম বন্দর চ্যানেলের একাংশে পণ্যবাহী একটি
-                                    জাহাজ আটকে খুলনা–বাগেরহাট আসা–যাওয়ার পথে সুযোগ পেলে ভ্যাট্টেপাড়ায় </p>
-                                <p class="newsContent text__Ellipsis_2">
-                                    খুলনা–বাগেরহাট আসা–যাওয়ার পথে সুযোগ পেলে ভ্যাট্টেপাড়ায় (ভাটিয়াপাড়া) বিরতি নেওয়ার
-                                    চেষ্টা করি।
+                                <p class="newsTitle text-dotted-3">{{ data.রাজনীতি[0].title }} </p>
+                                <p class="newsContent text-dotted-2">{{ data.রাজনীতি[0].news_brief }}
                                 </p>
                             </div>
-                        </a>
+                        </NuxtLink>
 
                         <!-- LIST NEWS -->
-                        <!-- NEWS 1 -->
-                        <div class="bulletNews">
-                            <a href="#" class="titleNewsContainer">
-                                <p class="blueNumberList">১</p>
-                                <p class="titleNews text__Ellipsis_3">চট্টগ্রাম বন্দর চ্যানেলের একাংশে পণ্যবাহী একটি
-                                    জাহাজ আটকে
-                                    খুলনা–বাগেরহাট আসা–যাওয়ার</p>
-                            </a>
+                        <div class="bulletNews" v-for="(news, index) in data.রাজনীতি.slice(1)"
+                            :key="`news/${news.news_id}`">
+                            <NuxtLink :to="`news/${news.news_id}`" class="titleNewsContainer">
+                                <p class="blueNumberList">{{ convertToBanglaDigits(index + 1) }}</p>
+                                <p class="titleNews text-dotted-3">{{ news.title }}</p>
+                            </NuxtLink>
                             <div class="publishedTimer">
-                                <div class="publishedTime">১ ঘন্টা আগে</div>
-                                <div class="border1px"></div>
-                            </div>
-
-                        </div>
-
-                        <!-- NEWS 2 -->
-                        <div class="bulletNews">
-                            <a href="#" class="titleNewsContainer">
-                                <p class="blueNumberList">২</p>
-                                <p class="titleNews text__Ellipsis_3">চট্টগ্রাম বন্দর চ্যানেলের একাংশে পণ্যবাহী একটি
-                                    জাহাজ আটকে
-                                    খুলনা–বাগেরহাট আসা–যাওয়ার</p>
-                            </a>
-                            <div class="publishedTimer">
-                                <div class="publishedTime">১ ঘন্টা আগে</div>
-                                <div class="border1px"></div>
-                            </div>
-
-                        </div>
-
-                        <!-- NEWS 3 -->
-                        <div class="bulletNews">
-                            <a href="#" class="titleNewsContainer">
-                                <p class="blueNumberList">৩</p>
-                                <p class="titleNews text__Ellipsis_3">চট্টগ্রাম বন্দর চ্যানেলের একাংশে পণ্যবাহী একটি
-                                    জাহাজ আটকে
-                                    খুলনা–বাগেরহাট আসা–যাওয়ার</p>
-                            </a>
-                            <div class="publishedTimer">
-                                <div class="publishedTime">১ ঘন্টা আগে</div>
-                                <div class="border1px"></div>
-                            </div>
-
-                        </div>
-
-                        <!-- NEWS 4 -->
-                        <div class="bulletNews">
-                            <a href="#" class="titleNewsContainer">
-                                <p class="blueNumberList">৪</p>
-                                <p class="titleNews text__Ellipsis_3">চট্টগ্রাম বন্দর চ্যানেলের একাংশে পণ্যবাহী একটি
-                                    জাহাজ আটকে
-                                    খুলনা–বাগেরহাট আসা–যাওয়ার</p>
-                            </a>
-                            <div class="publishedTimer">
-                                <div class="publishedTime">১ ঘন্টা আগে</div>
+                                <div class="publishedTime">{{ news.published_time_ago }}</div>
                                 <div class="border1px"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- COLUMN 3 -->
             <div class="col col3">
+
 
                 <!-- HEADING -->
                 <div class="col1Heading">
                     <i class="m-checkbox-unchecked"></i>
-                    <p>সর্বশেষ সংবাদ</p>
+                    <NuxtLink class="text--13" to="cat/বিদেশ">বিদেশ</NuxtLink>
                 </div>
                 <!-- MAIN CONTENTS START -->
                 <div class="gridColBG gridColFullWidth">
                     <div class="colWishNewsModule">
-                        <!-- NEWS 1 -->
-                        <a href="#" class="featuredNews">
+                        <!-- NEWS LIST -->
+                        <NuxtLink v-for="news in data.বিদেশ" :to="`${news.news_id}`" class="featuredNews">
                             <!-- FEATURE IMAGE -->
                             <div class="featureImg">
-                                <img src="https://dummyimage.com/800x600/" alt="">
-                                <div class="publishedTime">১ ঘন্টা আগে</div>
+                                <img :src="`${news.image}`" alt="">
+                                <div class="publishedTime">{{ news.published_time_ago }}</div>
                             </div>
                             <div class="vrCol">
                                 <!-- FEATURE HEADING-->
                                 <div class="titleNews text__Ellipsis_3">
                                     <div class="leftBorder"></div>
-                                    <p>প্রধানমন্ত্রী শেখ হাসিনা আজ সন্ধ্যায় প্রধানমন্ত্রী হিসেবে টানা তৃতীয় মেয়াদে
-                                        নরেন্দ্র মোদির শপথ গ্রহণ অনুষ্ঠানে গ্রহণ অনুষ্ঠানে যোগ দেবেন</p>
+                                    <p>{{ news.title }}</p>
                                 </div>
                                 <!-- NEWS DESCRIPTION FOR MEDIA SCREEN -->
                                 <div class="mediaQueryDescription">
-                                    <p class="newsContent text__Ellipsis_3">
-                                        প্রধানমন্ত্রী শেখ হাসিনা আজ সন্ধ্যায় প্রধানমন্ত্রী হিসেবে টানা তৃতীয় মেয়াদে
-                                        নরেন্দ্র মোদির শপথ গ্রহণ অনুষ্ঠানে গ্রহণ অনুষ্ঠানে যোগ দেবেন তৃতীয় মেয়াদে
-                                        নরেন্দ্র হিসেবে টানা তৃতীয় মেয়াদে নরেন্দ্র মোদির শপথ গ্রহণ মোদির শপথ
+                                    <p class="newsContent text-dotted-3">
+                                        {{ news.news_brief }}
                                     </p>
                                 </div>
                             </div>
-                        </a>
-                        <!-- NEWS 2 -->
-                        <a href="#" class="featuredNews">
-                            <!-- FEATURE IMAGE -->
-                            <div class="featureImg">
-                                <img src="https://dummyimage.com/800x600/" alt="">
-                                <div class="publishedTime">১ ঘন্টা আগে</div>
-                            </div>
-                            <div class="vrCol">
-                                <!-- FEATURE HEADING-->
-                                <div class="titleNews text__Ellipsis_3">
-                                    <div class="leftBorder"></div>
-                                    <p>প্রধানমন্ত্রী শেখ হাসিনা আজ সন্ধ্যায় প্রধানমন্ত্রী হিসেবে টানা তৃতীয় মেয়াদে
-                                        নরেন্দ্র মোদির শপথ গ্রহণ অনুষ্ঠানে গ্রহণ অনুষ্ঠানে যোগ দেবেন</p>
-                                </div>
-                                <!-- NEWS DESCRIPTION FOR MEDIA SCREEN -->
-                                <div class="mediaQueryDescription">
-                                    <p class="newsContent text__Ellipsis_3">
-                                        প্রধানমন্ত্রী শেখ হাসিনা আজ সন্ধ্যায় প্রধানমন্ত্রী হিসেবে টানা তৃতীয় মেয়াদে
-                                        নরেন্দ্র মোদির শপথ গ্রহণ অনুষ্ঠানে গ্রহণ অনুষ্ঠানে যোগ দেবেন তৃতীয় মেয়াদে
-                                        নরেন্দ্র হিসেবে টানা তৃতীয় মেয়াদে নরেন্দ্র মোদির শপথ গ্রহণ মোদির শপথ
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- NEWS 3 -->
-                        <a href="#" class="featuredNews">
-                            <!-- FEATURE IMAGE -->
-                            <div class="featureImg">
-                                <img src="https://dummyimage.com/800x600/" alt="">
-                                <div class="publishedTime">১ ঘন্টা আগে</div>
-                            </div>
-                            <div class="vrCol">
-                                <!-- FEATURE HEADING-->
-                                <div class="titleNews text__Ellipsis_3">
-                                    <div class="leftBorder"></div>
-                                    <p>প্রধানমন্ত্রী শেখ হাসিনা আজ সন্ধ্যায় প্রধানমন্ত্রী হিসেবে টানা তৃতীয় মেয়াদে
-                                        নরেন্দ্র মোদির শপথ গ্রহণ অনুষ্ঠানে গ্রহণ অনুষ্ঠানে যোগ দেবেন</p>
-                                </div>
-                                <!-- NEWS DESCRIPTION FOR MEDIA SCREEN -->
-                                <div class="mediaQueryDescription">
-                                    <p class="newsContent text__Ellipsis_3">
-                                        প্রধানমন্ত্রী শেখ হাসিনা আজ সন্ধ্যায় প্রধানমন্ত্রী হিসেবে টানা তৃতীয় মেয়াদে
-                                        নরেন্দ্র মোদির শপথ গ্রহণ অনুষ্ঠানে গ্রহণ অনুষ্ঠানে যোগ দেবেন তৃতীয় মেয়াদে
-                                        নরেন্দ্র হিসেবে টানা তৃতীয় মেয়াদে নরেন্দ্র মোদির শপথ গ্রহণ মোদির শপথ
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- NEWS 4 -->
-                        <a href="#" class="featuredNews">
-                            <!-- FEATURE IMAGE -->
-                            <div class="featureImg">
-                                <img src="https://dummyimage.com/800x600/" alt="">
-                                <div class="publishedTime">১ ঘন্টা আগে</div>
-                            </div>
-                            <div class="vrCol">
-                                <!-- FEATURE HEADING-->
-                                <div class="titleNews text__Ellipsis_3">
-                                    <div class="leftBorder"></div>
-                                    <p>প্রধানমন্ত্রী শেখ হাসিনা আজ সন্ধ্যায় প্রধানমন্ত্রী হিসেবে টানা তৃতীয় মেয়াদে
-                                        নরেন্দ্র মোদির শপথ গ্রহণ অনুষ্ঠানে গ্রহণ অনুষ্ঠানে যোগ দেবেন</p>
-                                </div>
-                                <!-- NEWS DESCRIPTION FOR MEDIA SCREEN -->
-                                <div class="mediaQueryDescription">
-                                    <p class="newsContent text__Ellipsis_3">
-                                        প্রধানমন্ত্রী শেখ হাসিনা আজ সন্ধ্যায় প্রধানমন্ত্রী হিসেবে টানা তৃতীয় মেয়াদে
-                                        নরেন্দ্র মোদির শপথ গ্রহণ অনুষ্ঠানে গ্রহণ অনুষ্ঠানে যোগ দেবেন তৃতীয় মেয়াদে
-                                        নরেন্দ্র হিসেবে টানা তৃতীয় মেয়াদে নরেন্দ্র মোদির শপথ গ্রহণ মোদির শপথ
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- NEWS 5 -->
-                        <a href="#" class="featuredNews">
-                            <!-- FEATURE IMAGE -->
-                            <div class="featureImg">
-                                <img src="https://dummyimage.com/800x600/" alt="">
-                                <div class="publishedTime">১ ঘন্টা আগে</div>
-                            </div>
-                            <div class="vrCol">
-                                <!-- FEATURE HEADING-->
-                                <div class="titleNews text__Ellipsis_3">
-                                    <div class="leftBorder"></div>
-                                    <p>প্রধানমন্ত্রী শেখ হাসিনা আজ সন্ধ্যায় প্রধানমন্ত্রী হিসেবে টানা তৃতীয় মেয়াদে
-                                        নরেন্দ্র মোদির শপথ গ্রহণ অনুষ্ঠানে গ্রহণ অনুষ্ঠানে যোগ দেবেন</p>
-                                </div>
-                                <!-- NEWS DESCRIPTION FOR MEDIA SCREEN -->
-                                <div class="mediaQueryDescription">
-                                    <p class="newsContent text__Ellipsis_3">
-                                        প্রধানমন্ত্রী শেখ হাসিনা আজ সন্ধ্যায় প্রধানমন্ত্রী হিসেবে টানা তৃতীয় মেয়াদে
-                                        নরেন্দ্র মোদির শপথ গ্রহণ অনুষ্ঠানে গ্রহণ অনুষ্ঠানে যোগ দেবেন তৃতীয় মেয়াদে
-                                        নরেন্দ্র হিসেবে টানা তৃতীয় মেয়াদে নরেন্দ্র মোদির শপথ গ্রহণ মোদির শপথ
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
@@ -264,9 +118,18 @@
 
 <script setup>
 const { data } = await useFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/front-cat-news.json');
-const saradesh = data.রাজনীতি;
-console.log(saradesh);
+const counter = ref(1);
 
+// Mapping of English digits to Bengali digits
+const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+
+// Function to convert a number to Bengali digits
+function convertToBanglaDigits(number) {
+    return String(number)
+        .split('')
+        .map((digit) => banglaDigits[digit])
+        .join('');
+}
 </script>
 
 <!-- https://newstest.kehem.com/api/frontCatNews?category=সিলেট -->

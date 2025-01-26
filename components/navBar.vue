@@ -243,7 +243,7 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeMount } from 'vue';
+import { onMounted } from 'vue';
 const route = useRouter();
 const searchQuery = ref('');
 

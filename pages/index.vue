@@ -8,7 +8,7 @@ import LeadTop from '~/components/LeadTop.vue';
 
 <template>
     <div>
-        <DateBlock />
+        <!-- <DateBlock /> -->
         <Logo />
         <NavBar />
         <MarqueeBlock />
@@ -17,8 +17,7 @@ import LeadTop from '~/components/LeadTop.vue';
         <div class="big-ad fullWidth pad-tb--30">
             <img class="w-100" src="http://dummyimage.com/1920x200" alt="">
         </div>
-
         <FrontCategory />
-        
+        <!-- <BanglaDate /> -->
     </div>
 </template>
