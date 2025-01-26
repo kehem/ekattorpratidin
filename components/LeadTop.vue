@@ -14,13 +14,14 @@
 
             <div class="topContainerX">
                 <!-- TOP NEWS -->
-                <NuxtLink v-for="item in data.top" :to="`/news/${item.news_id}`"  class="topContentX">
+                <NuxtLink v-for="item in data.top" :to="`/news/${item.news_id}`" :key="item.news_id"
+                    class="topContentX">
                     <div class="topContentXImg">
-                        <img class="autoSetImg" :src="`${item.image}`" alt="">
+                        <img class="autoSetImg" :src="`${item.image}`" :alt="`${item.caption}`">
                     </div>
                     <div class="topContentXTitle">
-                        <p class="topContentXTitleText text-dotted-3">{{ item.title }}</p>
-                        <p class="topContentXSubTitle text-dotted-3">{{ item.news_brief }}</p>
+                        <p class="topContentXTitleText text-dotted-3 newsTitle underlined"><span v-if="item.caption" class="newsCaption">{{ item.caption }}</span> {{ item.title }}</p>
+                        <p class="topContentXSubTitle text-dotted-3 Black">{{ item.news_brief }}</p>
                     </div>
                 </NuxtLink>
             </div>

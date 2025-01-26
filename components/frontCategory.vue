@@ -1,13 +1,12 @@
 <template>
     <div class="col3Display">
-
         <div class="grid__3col">
             <!-- COLUMN 1 -->
             <div class="col col1">
                 <!-- HEADING -->
                 <div class="col1Heading">
-                    <i class="m-checkbox-unchecked"></i>
-                    <NuxtLink class="text--13" to="/cat/সারাদেশ">সারাদেশ</NuxtLink>
+                    <i class="m-stop1"></i>
+                    <NuxtLink class="text--13 b Red" to="/cat/সারাদেশ">সারাদেশ</NuxtLink>
                 </div>
                 <!-- ALL NEWS -->
                 <div class="gridColBG">
@@ -21,8 +20,10 @@
                         </div>
                         <!-- NEWS TITLE -->
                         <div class="newsTexts">
-                            <p class="newsCaption">{{ news.caption }}</p>
-                            <p class="newsTitle text-dotted-3">{{ news.title }}</p>
+                            <p class="newsTitle text-dotted-3">
+                                <span v-if="news.caption" class="newsCaption">{{ news.caption }}</span>
+                                <span class="underlined">{{ news.title }}</span>
+                            </p>
                         </div>
                     </NuxtLink>
                 </div>
@@ -30,11 +31,10 @@
 
             <!-- COLUMN 2 -->
             <div class="col col2">
-
                 <!-- HEADING -->
                 <div class="col1Heading">
-                    <i class="m-checkbox-unchecked"></i>
-                    <NuxtLink class="text--13" to="cat/রাজনীতি">রাজনীতি</NuxtLink>
+                    <i class="m-stop1"></i>
+                    <NuxtLink class="text--13 b Red" to="cat/রাজনীতি">রাজনীতি</NuxtLink>
                 </div>
                 <!-- MAIN CONTENTS START -->
                 <div class="gridColBG">
@@ -44,6 +44,7 @@
                         <div class="NewsAds">
                             <img src="https://dummyimage.com/800x150/" alt="">
                         </div>
+
                         <!-- TOP THUMB NEWS -->
                         <NuxtLink :to="`news/${data.রাজনীতি[0].news_id}`" :key="`${data.রাজনীতি[0].news_id}`"
                             class="shortNews flexNews">
@@ -54,7 +55,12 @@
                             </div>
                             <!-- NEWS DESCRIPTION -->
                             <div class="newsTexts">
-                                <p class="newsTitle text-dotted-3">{{ data.রাজনীতি[0].title }} </p>
+                                <p class="newsTitle text-dotted-3">
+                                    <span v-if="data.রাজনীতি[0].caption" class="newsCaption">{{ data.রাজনীতি[0].caption
+                                        }}</span>
+                                    <span class="underlined">{{ data.রাজনীতি[0].title }}</span>
+
+                                </p>
                                 <p class="newsContent text-dotted-2">{{ data.রাজনীতি[0].news_brief }}
                                 </p>
                             </div>
@@ -65,7 +71,10 @@
                             :key="`news/${news.news_id}`">
                             <NuxtLink :to="`news/${news.news_id}`" class="titleNewsContainer">
                                 <p class="blueNumberList">{{ convertToBanglaDigits(index + 1) }}</p>
-                                <p class="titleNews text-dotted-3">{{ news.title }}</p>
+                                <p class="newsTitle text-dotted-3">
+                                    <span v-if="news.caption" class="newsCaption">{{ news.caption }}</span>
+                                    <span class="news-title underlined newsTitle">{{ news.title }}</span>
+                                </p>
                             </NuxtLink>
                             <div class="publishedTimer">
                                 <div class="publishedTime">{{ news.published_time_ago }}</div>
@@ -82,8 +91,8 @@
 
                 <!-- HEADING -->
                 <div class="col1Heading">
-                    <i class="m-checkbox-unchecked"></i>
-                    <NuxtLink class="text--13" to="cat/বিদেশ">বিদেশ</NuxtLink>
+                    <i class="m-stop1"></i>
+                    <NuxtLink class="text--13 b Red" to="cat/বিদেশ">বিদেশ</NuxtLink>
                 </div>
                 <!-- MAIN CONTENTS START -->
                 <div class="gridColBG gridColFullWidth">
@@ -99,7 +108,10 @@
                                 <!-- FEATURE HEADING-->
                                 <div class="titleNews text__Ellipsis_3">
                                     <div class="leftBorder"></div>
-                                    <p>{{ news.title }}</p>
+                                    <p class="newsTitle text-dotted-3">
+                                        <span v-if="news.caption" class="newsCaption">{{ news.caption }}</span>
+                                        <span class="news-title underlined newsTitle">{{ news.title }}</span>
+                                    </p>
                                 </div>
                                 <!-- NEWS DESCRIPTION FOR MEDIA SCREEN -->
                                 <div class="mediaQueryDescription">
@@ -118,7 +130,6 @@
 
 <script setup>
 const { data } = await useFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/front-cat-news.json');
-const counter = ref(1);
 
 // Mapping of English digits to Bengali digits
 const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];

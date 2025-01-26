@@ -19,5 +19,10 @@ import LeadTop from '~/components/LeadTop.vue';
         </div>
         <FrontCategory />
         <!-- <BanglaDate /> -->
+        <FrontCategory2 />
+        <FrontCategory3 />
+        <FrontCategory4 />
+        <FrontCategory5 />
+        <Footer />
     </div>
 </template>

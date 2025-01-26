@@ -1,0 +1,33 @@
+<template>
+    <div class="category m-tb--50">
+        <div class="f f-between-center m-b--20">
+            <span class="f gap-10 Red f-align-items-center">
+                <i class="m-stop1"></i>
+                <h2>সিলেট</h2>
+            </span>
+            <a class="seeMore b-1 pad--05 b-Red b-rad--03 text-hov-none" href="#">আরও পড়ুন</a>
+        </div>
+
+        <div class="category1">
+            <NuxtLink class="newsBox" v-for="news in data.রাজনীতি" :to="`news/${news.news_id}`" :key="news.news_id">
+                <img :src="`${news.image}`" alt="">
+                <div class="f f-just-start gap-05 f-col m-t--05">
+                    <p class="newsTitle text-dotted-3">
+                        <span v-if="news.caption" class="newsCaption">{{ news.caption }}</span>
+                        <span class="underlined newsTitle">{{ news.title }}</span>
+                    </p>
+                    <p class="dateTimeZone"><i class="m-time"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+                </div>
+            </NuxtLink>
+        </div>
+
+    </div>
+</template>
+
+<script setup>
+import { onMounted } from 'vue';
+const { data } = await useFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/front-cat-news.json');
+onMounted(() => {
+
+})
+</script>
