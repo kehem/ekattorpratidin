@@ -36,6 +36,6 @@ import LeadTop from '~/components/LeadTop.vue';
         </div>
         <FrontCategory9 />
         <!-- <FrontCategory10 /> -->
-        <Footer />
+        <FooterDes />
     </div>
 </template>

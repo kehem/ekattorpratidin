@@ -1,16 +1,15 @@
 <template>
-    <footer class="footer">
+    <footer class="footer m-t--50">
         <div class="inner-footer">
             <!-- SOCIAL ICONS -->
             <div class="follow-us borderBottom1px">
                 <p>ফলো করুন</p>
-                <div class="social">
-                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" title="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
-                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" title="Linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                <div class="share-icon-design">
+                    <a href="#" target="_blank" title="Facebook"><i class="m-facebook"></i></a>
+                    <a href="#" target="_blank" title="Instagram"><i class="m-instagram"></i></a>
+                    <a href="#" target="_blank" title="WhatsApp"><i class="m-whatsapp"></i></a>
+                    <a href="#" target="_blank" title="Twitter"><i class="m-twitter"></i></a>
+                    <a href="#" target="_blank" title="Linkedin"><i class="m-linkedin"></i></a>
                 </div>
             </div>
 
@@ -156,4 +155,46 @@
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.share-icon-design {
+    display: flex;
+    gap: 1.5rem;
+
+    & a {
+        position: relative;
+        transition: all 0.3s ease;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            width: 2rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: #d4c6c7;
+            z-index: -1;
+        }
+
+        & i {
+            font-size: 1.2rem;
+            color: #4e0d68;
+        }
+
+        &:hover {
+            &::before {
+                background-color: #4e0d68;
+                transition: all 0.3s ease;
+            }
+
+            & i {
+                color: #d4c6c7;
+                transition: all 0.3s ease;
+            }
+
+        }
+    }
+
+}
+</style>
