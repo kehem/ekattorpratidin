@@ -8,7 +8,7 @@
             <!-- HEADING NAME -->
             <span class="f gap-10 Red f-align-items-center pad-b--10">
                 <i class="m-stop1"></i>
-                <h2>খেলাধুলা</h2>
+                <h2>অর্থনীতি</h2>
             </span>
 
             <!-- SHORT NEWS PREVIEW -->
@@ -30,11 +30,10 @@
                     </div>
                 </NuxtLink>
 
-
             </div>
 
             <!-- SEE MORE -->
-            <NuxtLink to="cat/খেলাধুলা" class="submit">আরও দেখুন</NuxtLink>
+            <NuxtLink to="cat/অর্থনীতি" class="btn btn-outline-sleep w--80 m-auto" title="এই ক্যাটাগরিতে আরও নিউজ দেখুন">আরও দেখুন</NuxtLink>
         </div>
 
         <!-- RIGHT LABEL -->
@@ -67,7 +66,7 @@
             </div>
 
             <!-- SEE MORE -->
-            <NuxtLink to="cat/অপরাধ" class="submit" title="এই ক্যাটাগরিতে আরও নিউজ দেখুন">আরও দেখুন</NuxtLink>
+            <NuxtLink to="cat/অপরাধ" class="btn btn-outline-sleep w--80 m-auto" title="এই ক্যাটাগরিতে আরও নিউজ দেখুন">আরও দেখুন</NuxtLink>
         </div>
 
     </div>

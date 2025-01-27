@@ -241,7 +241,7 @@ li {
 .clm3 .clm3Right .shortNewsFlex {
   display: flex;
   gap: 0rem;
-  flex: 1 1;
+  flex: 1;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
 }
@@ -254,11 +254,14 @@ li {
   aspect-ratio: 4/3;
   margin-top: 0.4rem;
   height: auto;
-  max-width: 15rem;
+  object-fit: cover;
+  object-position: center;
+  max-width: 12rem;
 }
 .clm3 .clm3Left .shortNewsFlex .shortNewsTexts,
 .clm3 .clm3Right .shortNewsFlex .shortNewsTexts {
   width: 100%;
+  flex: 1;
 }
 .clm3 .clm3Left .shortNewsFlex .shortNewsTexts h2,
 .clm3 .clm3Right .shortNewsFlex .shortNewsTexts h2 {
@@ -462,6 +465,8 @@ a:hover .underlined {
   height: inherit;
   overflow-y: scroll;
   gap: 1rem;
+  padding: 1rem;
+  background-color: #f5f5f5;
 }
 
 .topContainerX::-webkit-scrollbar {
@@ -1408,6 +1413,141 @@ section.hamburger {
      NEWS GALLERY END
 ------------------------------*/
 
+/* ----------------------------
+     Kheladhula START
+------------------------------*/
+.cat-contents {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+  height: 30rem; /* CHANGE */
+}
+.bgImg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.bgImg .darkShadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  background: rgba(0, 0, 0, 0.6);
+}
+.bgImg img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  object-position: center;
+}
+/* LEAD */
+.sports-lead {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  height: auto;
+}
+.sports-lead .img-cont {
+  position: relative;
+  width: 50%;
+  height: 10rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+}
+.sports-lead .img-cont img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--borderColor);
+  object-fit: cover;
+  object-position: center;
+}
+.sports-lead .img-cont:hover img {
+  transform: scale(1.05);
+}
+
+.sports-lead .sport-title {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.sport-title .newsCaption {
+  display: none;
+}
+.sports-lead .sport-title p {
+  color: #fff;
+}
+a:hover .sport-title p {
+  color: #3995ff;
+}
+a:hover .White {
+  color: #c2c2c2;
+}
+.three-col-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 1rem;
+  z-index: 1;
+}
+
+.three-col-container a:nth-child(n) {
+  flex: 1;
+}
+.timer-overlay {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+
+.two-col-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  height: 30rem;
+  padding: 1rem;
+  overflow-y: scroll;
+  background-color: #00000011;
+}
+.two-col-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.two-col-container::-webkit-scrollbar-track {
+  background: #dadada;
+  border-radius: 10px;
+}
+
+.two-col-container::-webkit-scrollbar-thumb {
+  background: #a5a5a5;
+  border-radius: 10px;
+}
+
+.two-col-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ----------------------------
+     Kheladhula END
+------------------------------*/
+
 /*----------------------------------
             FOOTER START
 ----------------------------------*/
@@ -1615,6 +1755,10 @@ footer.footer {
   color: var(--linksHover);
 }
 
+.border-bottom {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
 /*----------------------------------
             FOOTER END
 ----------------------------------*/
@@ -1651,12 +1795,45 @@ footer.footer {
     display: none !important;
     transition: all 0.3s ease;
   }
+  .clm3 .clm3Left .shortNewsFlex img,
+  .clm3 .clm3Right .shortNewsFlex img {
+    max-width: 10rem;
+    height: max-content;
+  }
+  .clm3 .clm3Left .shortNewsFlex,
+  .clm3 .clm3Right .shortNewsFlex {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .clm3 .clm3Left .shortNewsFlex h2 {
+    margin-left: 0 !important;
+    padding-left: 0.2rem !important;
+  }
+  .clm3 .clm3Left .shortNewsFlex .shortNewsTexts h2,
+  .clm3 .clm3Right .shortNewsFlex .shortNewsTexts h2 {
+    padding-left: 0.1rem;
+  }
+  .clm3 .clm3Left .shortNewsFlex .shortNewsTexts p,
+  .clm3 .clm3Right .shortNewsFlex .shortNewsTexts p {
+    padding-left: 0;
+  }
 }
 @media screen and (max-width: 690px) {
   /* NAVBAR */
   .childNav .topNavMenu li:nth-last-child(-n + 5) {
     display: none !important;
     transition: all 0.3s ease;
+  }
+  .clm3 {
+    flex-direction: column;
+  }
+  .clm3 .clm3Left .shortNewsFlex img,
+  .clm3 .clm3Right .shortNewsFlex img {
+    max-width: 100%;
+  }
+  .three-col-container {
+    width: 100%;
+    gap: 0;
   }
 }
 
@@ -1938,6 +2115,39 @@ footer.footer {
   .topNavMenu .seeMore {
     display: none;
     transition: all 0.3s ease;
+  }
+
+  .three-col-container {
+    width: 100%;
+    flex-direction: column;
+    flex: 0;
+    gap: 3rem;
+    margin: 0 auto;
+  }
+  .darkShadow {
+    background-color: #000000cb !important;
+  }
+  .three-col-container a img:nth-child(n) {
+    border-radius: 0.2rem;
+  }
+  .g-res-3-col-container {
+    column-gap: 0;
+  }
+  .video-cat {
+    margin-top: 5rem;
+  }
+  .two-col-container {
+    height: 40rem;
+  }
+
+  .cat-contents {
+    height: 100%;
+  }
+  .sports-lead {
+    padding: 0;
+  }
+  .sports-lead .sport-title .White {
+    display: none;
   }
 }
 

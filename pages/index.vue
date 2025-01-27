@@ -23,6 +23,19 @@ import LeadTop from '~/components/LeadTop.vue';
         <FrontCategory3 />
         <FrontCategory4 />
         <FrontCategory5 />
+        <!-- AD-3 -->
+        <div class="big-ad fullWidth pad-tb--10">
+            <img class="w-100" src="http://dummyimage.com/1920x250" alt="">
+        </div>
+        <FrontCategory6 />
+        <FrontCategory7 />
+        <FrontCategory8 />
+        <!-- AD-3 -->
+        <div class="big-ad fullWidth pad-tb--10">
+            <img class="w-100" src="http://dummyimage.com/1920x250" alt="">
+        </div>
+        <FrontCategory9 />
+        <!-- <FrontCategory10 /> -->
         <Footer />
     </div>
 </template>
