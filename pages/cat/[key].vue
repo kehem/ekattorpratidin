@@ -1,9 +1,9 @@
 <template>
-    <div>
+    <NuxtLayout>
         <h1>{{ key }}</h1>
 
         <p>{{ data }}</p>
-    </div>
+    </NuxtLayout>
 </template>
 
 <script setup>

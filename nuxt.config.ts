@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-01-18',
   devtools: { enabled: true },
+
   app: {
     head: {
       title: 'Ekattor Pratidin', // Global title
@@ -45,27 +46,27 @@ export default defineNuxtConfig({
         { rel: 'canonical', href: 'https://ekattorpratidin.com/' }, // Canonical URL
         { rel: 'stylesheet', href: 'https://fonts.cdnfonts.com/css/solaimanlipi' }, // Solaiman Lipi font
         { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/surajit-singha-sisir/mastorsCDN@v1.1.01/mastors.css' }, // Mastors CSS
-        {
-          rel: 'stylesheet',
-          href: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css',
-        },
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css',
+        // },
         {
           rel: 'stylesheet',
           href: 'https://cdn.jsdelivr.net/gh/surajit-singha-sisir/mastorsCDN@v1.1/mastorsIcons/mastorsIcons.css',
         },
-        {
-          rel: 'stylesheet',
-          href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
-          integrity: 'sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==',
-          crossorigin: 'anonymous',
-          referrerpolicy: 'no-referrer',
-        },
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
+        //   integrity: 'sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==',
+        //   crossorigin: 'anonymous',
+        //   referrerpolicy: 'no-referrer',
+        // },
       ],
       script: [
-        {
-          src: 'https://cdn.jsdelivr.net/gh/surajit-singha-sisir/mastorsCDN@v1.1.01/mastors.js',
-          type: 'module',
-        },
+        // {
+        //   src: 'https://cdn.jsdelivr.net/gh/surajit-singha-sisir/mastorsCDN@v1.1.01/mastors.js',
+        //   type: 'module',
+        // },
         {
           src: '/script.js',
           type: 'module'
@@ -79,12 +80,15 @@ export default defineNuxtConfig({
     host: '0.0.0.0',
     port: 3000
   },
-  css: [
-    '~/public/assets/css/style.css',
-  ],
+
   // nitro: {
   //   output: {
   //     dir: 'dist',
   //   },
   // },
+  css: [
+    '~/public/assets/css/style.css',
+  ],
+
+  modules: ['@nuxt/image'],
 });

@@ -6,9 +6,8 @@
                 <i class="m-stop1"></i>
                 <h2>খেলাধুলা</h2>
             </div>
-            <section class="cat-contents">
+            <section class="cat-contents parallax-bg">
                 <div class="bgImg">
-                    <img src="public/assets/resource/img-1.jpg" alt="">
                     <span class="darkShadow"></span>
                 </div>
                 <!-- lead news -->
@@ -68,9 +67,11 @@
 
 <script setup>
 import { NuxtLink } from '#components';
+import { ref, onMounted, onUnmounted } from "vue";
 
-const { data: catNews } = useFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/front-cat-news.json');
-const { data: datap } = useFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/frontvideos.json');
+
+const { data: catNews } = await useLazyFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/front-cat-news.json');
+const { data: datap } = await useLazyFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/frontvideos.json');
 
 // video ID & `si` parameter
 function youtubeShare(url) {
@@ -91,6 +92,7 @@ function generateYoutubeEmbed(url) {
     }
     return "";
 }
+
 </script>
 
 

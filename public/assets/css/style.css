@@ -1,12 +1,12 @@
-@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/ekushey-lohit/stylesheet.css");
-@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/sornaly/stylesheet.css");
+/* @import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/ekushey-lohit/stylesheet.css");
+@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/sornaly/stylesheet.css"); */
 @import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/solaimanlipi/stylesheet.css");
-@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/lal-sabuj-normal/stylesheet.css");
+/* @import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/lal-sabuj-normal/stylesheet.css");
 @import url("https://cdn.staticaly.com/gh/sh4hids/bangla-web-fonts/9baee0fc23e77fe957c0b70fe49d81d2cbbe87d6/boshonto/stylesheet.css");
-@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/ab-shapla/stylesheet.css"); /* ABShaplaBeta */
+@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/ab-shapla/stylesheet.css"); ABShaplaBeta
 @import url("https://fonts.googleapis.com/css?family=Atma");
-@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/bensen-handwriting/stylesheet.css"); /* BenSenHandwriting */
-@import url("https://fonts.googleapis.com/css?family=Baloo+Da");
+@import url("https://cdn.rawgit.com/sh4hids/bangla-web-fonts/bensen-handwriting/stylesheet.css"); BenSenHandwriting
+@import url("https://fonts.googleapis.com/css?family=Baloo+Da"); */
 :root {
   /* FONT */
   --font-family: "SolaimanLipi", serif;
@@ -90,6 +90,24 @@ a {
 a:hover {
   color: var(--linksHover);
 }
+.col-gap-10 {
+  column-gap: 1rem;
+}
+.row-gap-10 {
+  row-gap: 1rem;
+}
+.col-gap-15 {
+  column-gap: 1rem;
+}
+.row-gap-15 {
+  row-gap: 1rem;
+}
+.col-gap-20 {
+  column-gap: 1rem;
+}
+.row-gap-20 {
+  row-gap: 1rem;
+}
 
 img {
   width: 100%;
@@ -121,6 +139,19 @@ li {
   width: 100%;
   top: 0;
   z-index: 5;
+}
+
+.big-ad-ver {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.big-ad-ver img {
+  width: inherit;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
 }
 /* CATEGORY */
 .category {
@@ -1419,11 +1450,22 @@ section.hamburger {
 .cat-contents {
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
   gap: 1rem;
   padding: 1rem;
-  height: 30rem; /* CHANGE */
+  height: 32rem; /* CHANGE */
+}
+/* Parallax container */
+.parallax-bg {
+  background-image: url("public/assets/resource/img-1.jpg");
+  background-attachment: fixed; /* Key for parallax */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 .bgImg {
   position: absolute;
@@ -1440,7 +1482,7 @@ section.hamburger {
   left: 0;
   width: inherit;
   height: inherit;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
 }
 .bgImg img {
   width: inherit;
@@ -1521,7 +1563,7 @@ a:hover .White {
   flex-direction: column;
   gap: 1rem;
   width: 100%;
-  height: 30rem;
+  height: 32rem;
   padding: 1rem;
   overflow-y: scroll;
   background-color: #00000011;
@@ -1569,6 +1611,7 @@ footer.footer {
   gap: 1rem;
   justify-content: center;
   align-self: center;
+  margin-bottom: 2rem;
   width: 100%;
 }
 
@@ -1598,7 +1641,7 @@ footer.footer {
   height: inherit;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
   gap: 1.2rem;
 }
 
@@ -1639,7 +1682,8 @@ footer.footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: inherit;
+  width: auto; /* inherit */
+  height: 100%;
   gap: 0.5rem;
 }
 
@@ -1833,7 +1877,7 @@ footer.footer {
   }
   .three-col-container {
     width: 100%;
-    gap: 0;
+    gap: 0.5rem;
   }
 }
 
@@ -1987,10 +2031,33 @@ footer.footer {
     width: 40%;
   }
 
+  .big-ad-ver {
+    height: 10rem;
+  }
+  .big-ad-ver img {
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid var(--borderColor);
+  }
   .parentResNav .childResNav {
     width: 80%;
   }
-
+  .col-gap-10 {
+    row-gap: 1rem;
+    column-gap: 0;
+  }
+  .col-gap-20 {
+    row-gap: 2rem;
+    column-gap: 0;
+  }
+  .row-gap-10 {
+    column-gap: 1rem;
+    row-gap: 0;
+  }
+  .row-gap-20 {
+    column-gap: 2rem;
+    row-gap: 0;
+  }
   /* TOP CONTENT */
   .topContainerX {
     overflow: hidden !important;
@@ -2112,6 +2179,10 @@ footer.footer {
   .featuredNews .mediaQueryDescription {
     display: block !important;
   }
+
+  .colWishNewsModule {
+    gap: 5rem;
+  }
   .topNavMenu .seeMore {
     display: none;
     transition: all 0.3s ease;
@@ -2155,6 +2226,19 @@ footer.footer {
     SCREEN SIZE < = 420PX
     ---------------------------------------*/
 @media screen and (max-width: 420px) {
+  .logoAltHamb a {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .leadContainerX .leadTitleX {
+    padding: 0.5rem;
+  }
+  .leadContainerX .leadTitleX p {
+    font-size: 1.2rem;
+  }
+  .colWishNewsModule {
+    gap: 1rem;
+  }
   .grid__3col .col {
     height: 100%;
   }
@@ -2171,6 +2255,9 @@ footer.footer {
   .grid__3col .newsTexts {
     width: 100%;
   }
+  .grid__3col .gridColBG {
+    overflow: hidden;
+  }
 
   .featuredNews .titleNews .leftBorder {
     min-height: 6rem;
@@ -2182,7 +2269,15 @@ footer.footer {
   }
 
   .featuredNews .featureImg .publishedTime {
-    padding: 0;
+    top: 0;
+    right: 0;
+    left: auto;
+    transform: none;
+    width: 100%;
+    padding: 0.5rem 1.2rem;
+  }
+  .category .category1 {
+    gap: 2rem;
   }
 
   .colWishNewsModule .featuredNews {
@@ -2211,10 +2306,6 @@ footer.footer {
   }
 
   /* FOOTER */
-  footer.footer {
-    position: absolute;
-    bottom: 0;
-  }
 
   .footer .inner-footer .follow-us {
     flex-wrap: wrap;
@@ -2233,9 +2324,11 @@ footer.footer {
   }
 
   .userList .userInfo .userImg {
-    display: none;
+    /* display: none; */
   }
-
+  .footer-main .column .userInfo {
+    flex-direction: row;
+  }
   .footer .inner-footer .footer-main {
     flex-wrap: wrap;
   }

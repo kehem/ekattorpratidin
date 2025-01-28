@@ -1,6 +1,6 @@
 <template>
     <div class="marqueeBlock">
-        <div class="f pad-r--10 f-center">
+        <div class="f pad-r--10 f-start-center">
             <h2 class="pad-l-05 pad-tb--10 pad-r--10 bg-sironam">শিরোনাম</h2>
             <marquee class="marquee w-100 h-100" behavior="" direction="" onmouseover="this.stop();"
                 onmouseout="this.start();">
@@ -19,11 +19,6 @@
 // GET REQUEST
 const { data, error } = await useFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/marquee.json');
 const items = data.value.marquee;
-
-
-
-
-
 </script>
 
 

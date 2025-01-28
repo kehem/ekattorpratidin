@@ -5,11 +5,13 @@
                 <i class="m-stop1"></i>
                 <h2>সাহিত্য</h2>
             </span>
-            <NuxtLink to="cat/সাহিত্য" :key="cat/সাহিত্য" class="seeMore b-1 pad--05 b-Red b-rad--03 text-hov-none">আরও পড়ুন</NuxtLink>
+            <NuxtLink to="cat/সাহিত্য" :key="cat / সাহিত্য" class="seeMore b-1 pad--05 b-Red b-rad--03 text-hov-none">আরও
+                পড়ুন</NuxtLink>
         </div>
 
         <div class="category1">
-            <NuxtLink class="newsBox" v-for="news in data.রাজনীতি" :to="`news/${news.news_id}`" :key="news.news_id">
+            <NuxtLink class="newsBox" v-for="news in data.রাজনীতি.slice(0, 4)" :to="`news/${news.news_id}`"
+                :key="news.news_id">
                 <img :src="`${news.image}`" alt="">
                 <div class="f f-just-start gap-05 f-col m-t--05">
                     <p class="newsTitle text-dotted-3">

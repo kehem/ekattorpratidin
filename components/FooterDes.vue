@@ -18,8 +18,7 @@
                 <!-- COLUMN - 1 -->
                 <div class="column colMax">
                     <div class="topHeading">
-                        <span class="borderBottom"></span>
-                        <p>সম্পাদক মণ্ডলী</p>
+                        <p>সম্পাদক ও প্রকাশক</p>
                         <span class="borderBottom"></span>
                     </div>
                     <div class="userList">
@@ -31,13 +30,13 @@
                             <div class="userDetails">
                                 <div class="vrLine"></div>
                                 <div class="userTexts">
-                                    <p>সুরজিত সিংহ শিশির</p>
-                                    <p>যুগ্ম সাধারণ সম্পাদক</p>
+                                    <p>এম এ এইচ শাহীন</p>
+                                    <p></p>
                                 </div>
                             </div>
                         </div>
                         <!-- USER 2 -->
-                        <div class="userInfo">
+                        <!-- <div class="userInfo">
                             <div class="userImg">
                                 <img src="https://www.dummyimage.com/600x900" alt="">
                             </div>
@@ -48,9 +47,9 @@
                                     <p>যুগ্ম সাধারণ সম্পাদক</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- USER 3 -->
-                        <div class="userInfo">
+                        <!-- <div class="userInfo">
                             <div class="userImg">
                                 <img src="https://www.dummyimage.com/600x900" alt="">
                             </div>
@@ -61,37 +60,36 @@
                                     <p>যুগ্ম সাধারণ সম্পাদক</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <!-- COLUMN - 2 -->
                 <div class="column">
                     <div class="topHeading">
-                        <span class="borderBottom"></span>
-                        <p>অফিস ঠিকানা</p>
+                        <p>অফিস</p>
                         <span class="borderBottom"></span>
                     </div>
                     <div class="footer-address">
                         <label>
-                            <i class="bi bi-geo-alt"></i>
+                            <i class="m-location1"></i>
                             <p>২য় তলা, নেহার মার্কেট, জিন্দাবাজার, সদর, সিলেট - ৩১১০</p>
                         </label>
                         <label>
-                            <i class="bi bi-envelope"></i>
-                            <p>jaintanews@gmail.com</p>
+                            <i class="m-envelope"></i>
+                            <p>ekattorprotidin71@gmail.com</p>
                         </label>
                         <label>
-                            <i class="bi bi-phone"></i>
-                            <p>মোবাইল: +৮৮০১৭০০-৯০৫২৬৮</p>
+                            <i class="m-phone2"></i>
+                            <p>মোবাইল: +৮৮০১৭১১-২২৭৯২৪</p>
                         </label>
                         <label>
-                            <i class="bi bi-telephone"></i>
-                            <p>বার্তা কক্ষ: +৮৮০১৭০০-৯০৫২৬৮</p>
+                            <i class="m-phone2"></i>
+                            <p>বার্তা কক্ষ: +৮৮০১৬১১-৮৫৯০২৪</p>
                         </label>
                     </div>
                 </div>
                 <!-- COLUMN - 3 -->
-                <div class="column">
+                <!-- <div class="column">
                     <div class="topHeading">
                         <span class="borderBottom"></span>
                         <p>লিংকস্‌</p>
@@ -123,13 +121,13 @@
                             <p>এক রবীন্দ্রনাথে সারা বাংলা</p>
                         </label>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <!-- NEWSPAPER REGISTRATION -->
-            <div class="govtRegi borderBottom1px">
+            <!-- <div class="govtRegi borderBottom1px">
                 <p>সরকারি নিবন্ধন নং : ১৩৪৬-৬৪৪১</p>
-            </div>
+            </div> -->
 
         </div>
 
@@ -137,15 +135,16 @@
         <div class="newspaperCopyright">
             <!-- CONTENT COPYRIGHTS -->
             <div>
-                <p>স্বত্ব &copy; ২০২৪</p>
-                <a href="#">খবরেজৈন্তা.কম</a>
+                <p>স্বত্ব &copy; ২০২৫</p>
+                <a href="#">সোনার বাংলা কর্পোরেশন</a>
             </div>
             <!-- BRACK -->
             <p class="lineParagraph">|</p>
             <!-- DEVELOPER COPYRIGHTS -->
             <div>
                 <p>তথ্যপ্রযুক্তি সহযোগিতায়</p>
-                <a href="https://kehem.com/">কেহেম আইটি</a>
+                <a class="f-center gap-05" href="https://kehem.com/"><img class="w--15"
+                        src="https://kehem.com/static/kehem.54168f2599d9.webp" alt="">কেহেম আইটি</a>
             </div>
         </div>
     </footer>

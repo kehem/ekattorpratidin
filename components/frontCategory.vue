@@ -129,7 +129,7 @@
 </template>
 
 <script setup>
-const { data } = await useFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/front-cat-news.json');
+const { data, status } = useLazyFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/front-cat-news.json');
 
 // Mapping of English digits to Bengali digits
 const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];

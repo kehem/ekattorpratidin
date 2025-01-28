@@ -9,7 +9,7 @@
         </div>
 
         <div class="category1">
-            <NuxtLink class="newsBox" v-for="news in data.রাজনীতি" :to="`news/${news.news_id}`" :key="news.news_id">
+            <NuxtLink class="newsBox" v-for="news in data.রাজনীতি.slice(0,4)" :to="`news/${news.news_id}`" :key="news.news_id">
                 <img :src="`${news.image}`" alt="">
                 <div class="f f-just-start gap-05 f-col m-t--05">
                     <p class="newsTitle text-dotted-3">
@@ -31,3 +31,10 @@ onMounted(() => {
 
 })
 </script>
+
+<style scoped>
+.category {
+    margin: auto;
+    width: 100%;
+}
+</style>
