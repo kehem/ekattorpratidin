@@ -19,6 +19,9 @@
                     class="shortNewsFlex">
                     <!-- FEATURED IMAGE -->
                     <img class="bordered" :src="news.image" :alt="news.caption">
+
+                    <NuxtImg class="bordered" :src="news.image" :alt="news.caption" loading="lazy" placeholder="./placeholder.svg"
+                        placeholder-class="autoSetImg" />
                     <!-- TEXT BLOCK -->
                     <div class="shortNewsTexts">
                         <!-- NEWS HEADING -->
@@ -33,7 +36,8 @@
             </div>
 
             <!-- SEE MORE -->
-            <NuxtLink to="cat/অর্থনীতি" class="btn btn-outline-sleep w--80 m-auto" title="এই ক্যাটাগরিতে আরও নিউজ দেখুন">আরও দেখুন</NuxtLink>
+            <NuxtLink to="cat/অর্থনীতি" class="btn btn-outline-sleep w--80 m-auto"
+                title="এই ক্যাটাগরিতে আরও নিউজ দেখুন">আরও দেখুন</NuxtLink>
         </div>
 
         <!-- RIGHT LABEL -->
@@ -49,7 +53,8 @@
             <div class="shortNews">
 
                 <!-- SHORT NEWS 1 -->
-                <NuxtLink v-for="news in data.রাজনীতি.slice(0, 3)" :to="`news/${news.news_id}`" :key="news.news_id" class="shortNewsFlex">
+                <NuxtLink v-for="news in data.রাজনীতি.slice(0, 3)" :to="`news/${news.news_id}`" :key="news.news_id"
+                    class="shortNewsFlex">
                     <!-- FEATURED IMAGE -->
                     <img class="bordered" :src="news.image" :alt="news.caption">
                     <!-- TEXT BLOCK -->
@@ -66,7 +71,8 @@
             </div>
 
             <!-- SEE MORE -->
-            <NuxtLink to="cat/অপরাধ" class="btn btn-outline-sleep w--80 m-auto" title="এই ক্যাটাগরিতে আরও নিউজ দেখুন">আরও দেখুন</NuxtLink>
+            <NuxtLink to="cat/অপরাধ" class="btn btn-outline-sleep w--80 m-auto" title="এই ক্যাটাগরিতে আরও নিউজ দেখুন">
+                আরও দেখুন</NuxtLink>
         </div>
 
     </div>

@@ -15,7 +15,18 @@
                         :key="news.news_id">
                         <!-- NEWS IMAGE -->
                         <div class="newsImg">
-                            <img :src="`${news.image}`" alt="`${news.img_caption}`">
+                            <!-- <img :src="`${news.image}`" alt="`${news.img_caption}`"> -->
+                            <!-- <NuxtImg :src="news.image" :alt="news.img_caption" :custom="true" loading="lazy"
+                                v-slot="{ src, isLoaded, imgAttrs }">
+                                <img v-if="isLoaded" v-bind="imgAttrs" :src="src" @load="onImageLoad" />
+                                <img v-else src="public/placeholder.svg" class="autoSetImg" />
+                            </NuxtImg> -->
+                            <NuxtImg class="autoSetImg" :src="news.image" :alt="news.img_caption" loading="lazy"
+                                placeholder="./placeholder.svg" placeholder-class="autoSetImg" />
+
+
+
+
                             <div class="publishedTime">{{ news.published_time_ago }}</div>
                         </div>
                         <!-- NEWS TITLE -->
@@ -50,7 +61,10 @@
                             class="shortNews flexNews">
                             <!-- NEWS IMAGE -->
                             <div class="newsImg2">
-                                <img :src="`${data.রাজনীতি[0].image}`" :alt="`${data.রাজনীতি[0].img_caption}`">
+                                <NuxtImg :src="data.রাজনীতি[0].image" :alt="data.রাজনীতি[0].img_caption" loading="lazy"
+                                    placeholder="./placeholder.svg" placeholder-class="autoSetImg" />
+
+
                                 <div class="publishedTime">{{ data.রাজনীতি[0].published_time_ago }}</div>
                             </div>
                             <!-- NEWS DESCRIPTION -->
@@ -101,7 +115,9 @@
                         <NuxtLink v-for="news in data.বিদেশ" :to="`${news.news_id}`" class="featuredNews">
                             <!-- FEATURE IMAGE -->
                             <div class="featureImg">
-                                <img :src="`${news.image}`" alt="">
+                                <!-- <img :src="`${news.image}`" alt=""> -->
+                                <NuxtImg :src="news.image" :alt="news.img_caption" loading="lazy"
+                                    placeholder="./placeholder.svg" placeholder-class="autoSetImg" />
                                 <div class="publishedTime">{{ news.published_time_ago }}</div>
                             </div>
                             <div class="vrCol">

@@ -1,16 +1,12 @@
 <template>
     <section>
-        <!-- <DateBlock /> -->
         <Logo />
         <NavBar />
-        <MarqueeBlock />
+        <!-- <MarqueeBlock /> -->
         <slot />
         <FooterDes />
     </section>
 </template>
 
 <script setup>
-
 </script>
-
-<style lang="scss" scoped></style>

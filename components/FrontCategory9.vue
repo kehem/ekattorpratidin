@@ -10,7 +10,9 @@
 
         <div class="category1">
             <NuxtLink class="newsBox" v-for="news in data.রাজনীতি.slice(0,5)" :to="`news/${news.news_id}`" :key="news.news_id">
-                <img :src="`${news.image}`" alt="">
+                
+                <NuxtImg class="bordered" :src="news.image" :alt="news.caption" loading="lazy"
+                            placeholder="./placeholder.svg" placeholder-class="autoSetImg" />
                 <div class="f f-just-start gap-05 f-col m-t--05">
                     <p class="newsTitle text-dotted-3">
                         <span v-if="news.caption" class="newsCaption">{{ news.caption }}</span>

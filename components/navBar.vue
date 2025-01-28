@@ -14,7 +14,8 @@
                 <section class="logoAltHamb">
                     <!-- LOGO -->
                     <a href="/">
-                        <img class="h-i w-i" src="/ekattorpratidin-logo.svg" alt="">
+                        <NuxtImg class="h-i w-i" src="/ekattorpratidin-logo.svg" alt="Logo" loading="lazy"
+                            placeholder="./placeholder.svg" placeholder-class="autoSetImg" />
                     </a>
                 </section>
 

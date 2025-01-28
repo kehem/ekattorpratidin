@@ -14,7 +14,9 @@
                 <NuxtLink :to="`news/${catNews.রাজনীতি[0].news_id}`" :key="catNews.রাজনীতি[0].news_id"
                     class="sports-lead">
                     <div class="img-cont">
-                        <img :src="catNews.রাজনীতি[0].image" alt="">
+
+                        <NuxtImg class="bordered" :src="catNews.রাজনীতি[0].image" :alt="catNews.রাজনীতি[0].caption"
+                            loading="lazy" placeholder="./placeholder.svg" placeholder-class="autoSetImg" />
                     </div>
                     <div class="sport-title">
                         <p class="newsTitle text-dotted-3">
@@ -30,13 +32,15 @@
                 <div class="three-col-container">
                     <NuxtLink v-for="news in catNews.রাজনীতি.slice(1, 4)" :to="`news/${news.news_id}`"
                         :key="news.news_id" class="relative">
-                        <img :src="`${news.image}`" alt="">
+                        <!-- <img :src="`${news.image}`" alt=""> -->
+                        <NuxtImg class="bordered" :src="news.image" :alt="news.caption" loading="lazy"
+                            placeholder="./placeholder.svg" placeholder-class="autoSetImg" />
                         <span class="timer-overlay">{{ news.published_time_ago }}</span>
                         <div class="f f-just-start gap-05 f-col m-t--05">
-                            <p class="newsTitle sport-title text-dotted-3">
+                            <span class="newsTitle sport-title text-dotted-3">
                                 <span v-if="news.caption" class="newsCaption White">{{ news.caption }}</span>
-                            <p class="underlined newsTitle White pad-t--02">{{ news.title }}</p>
-                            </p>
+                                <p class="underlined newsTitle White pad-t--02">{{ news.title }}</p>
+                            </span>
                         </div>
                     </NuxtLink>
                 </div>
@@ -116,5 +120,14 @@ function generateYoutubeEmbed(url) {
 .ytp-watermark-small {
     position: absolute;
     top: 0;
+}
+/* Parallax container */
+.parallax-bg {
+  background-image: url("./img-1.jpg");
+  background-attachment: fixed; /* Key for parallax */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 </style>

@@ -28,3 +28,5 @@
 
 
 স্বত্ব © ২০২৫ সোনার বাংলা কর্পোরেশন
+
+With lazy loading, only the images that are visible on the screen (or close to it) are loaded when the user scrolls down, and the rest are not loaded until the user gets near them.

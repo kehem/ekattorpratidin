@@ -1458,15 +1458,7 @@ section.hamburger {
   padding: 1rem;
   height: 32rem; /* CHANGE */
 }
-/* Parallax container */
-.parallax-bg {
-  background-image: url("public/assets/resource/img-1.jpg");
-  background-attachment: fixed; /* Key for parallax */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-}
+
 .bgImg {
   position: absolute;
   width: 100%;
