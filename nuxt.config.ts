@@ -44,7 +44,6 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'canonical', href: 'https://ekattorpratidin.com/' }, // Canonical URL
-        { rel: 'stylesheet', href: 'https://fonts.cdnfonts.com/css/solaimanlipi' }, // Solaiman Lipi font
         { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/surajit-singha-sisir/mastorsCDN@v1.1.01/mastors.css' }, // Mastors CSS
         // {
         //   rel: 'stylesheet',

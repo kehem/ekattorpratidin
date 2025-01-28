@@ -1,32 +1,79 @@
 <script setup>
-import Logo from '~/components/logo.vue';
-import NavBar from '../components/NavBar.vue';
-import LeadTop from '~/components/LeadTop.vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
+const isCategory1Visible = ref(false)
+const isCategory2Visible = ref(false)
+const isCategory3Visible = ref(false)
+const isCategory4Visible = ref(false)
+const isCategory5Visible = ref(false)
+const isCategory6Visible = ref(false)
+const isCategory7Visible = ref(false)
+const isCategory8Visible = ref(false)
+const isCategory9Visible = ref(false)
+let scrollAmount = 300;
+const checkScrollPosition = () => {
+    const scrollPosition = window.scrollY
+    if (scrollPosition > scrollAmount && !isCategory1Visible.value) {
+        isCategory1Visible.value = true
+    }
+    if (scrollPosition > (scrollAmount * 3) && !isCategory2Visible.value) {
+        isCategory2Visible.value = true
+    }
+    if (scrollPosition > (scrollAmount * 5) && !isCategory3Visible.value) {
+        isCategory3Visible.value = true
+    }
+    if (scrollPosition > (scrollAmount * 7) && !isCategory4Visible.value) {
+        isCategory4Visible.value = true
+    }
+    if (scrollPosition > (scrollAmount * 9) && !isCategory5Visible.value) {
+        isCategory5Visible.value = true
+    }
+    if (scrollPosition > (scrollAmount * 11) && !isCategory6Visible.value) {
+        isCategory6Visible.value = true
+    }
+    if (scrollPosition > (scrollAmount * 13) && !isCategory7Visible.value) {
+        isCategory7Visible.value = true
+    }
+    if (scrollPosition > (scrollAmount * 15) && !isCategory8Visible.value) {
+        isCategory8Visible.value = true
+    }
+    if (scrollPosition > (scrollAmount * 17) && !isCategory9Visible.value) {
+        isCategory9Visible.value = true
+    }
+}
+
+onMounted(() => {
+    window.addEventListener('scroll', checkScrollPosition)
+})
+
+onBeforeUnmount(() => {
+    window.removeEventListener('scroll', checkScrollPosition)
+})
 </script>
-
 
 <template>
     <NuxtLayout>
         <LeadTop />
+
         <!-- AD-1 -->
         <div class="big-ad fullWidth pad-tb--30">
             <img class="w-100" src="http://dummyimage.com/1920x200" alt="">
         </div>
+
         <!-- সারাদেশ, রাজনীতি, বিদেশ -->
-        <FrontCategory />
+        <FrontCategory v-if="isCategory1Visible" />
 
         <!-- সিলেট -->
-        <FrontCategory2 />
+        <FrontCategory2 v-if="isCategory2Visible" />
 
         <!-- অর্থনীতি, অপরাধ -->
-        <FrontCategory3 />
+        <FrontCategory3 v-if="isCategory3Visible" />
 
         <!-- খেলাধুলা, ভিডিও -->
-        <FrontCategory4 />
+        <FrontCategory4 v-if="isCategory4Visible" />
 
         <!-- বিনোদন -->
-        <FrontCategory5 />
+        <FrontCategory5 v-if="isCategory5Visible" />
 
         <!-- AD-3 -->
         <div class="big-ad fullWidth pad-tb--10">
@@ -37,10 +84,10 @@ import LeadTop from '~/components/LeadTop.vue';
         <section class="g-res-4-col-container fullWidth max-h-100 col-gap-10">
             <aside class="span-3 h-100">
                 <!-- মতামত -->
-                <FrontCategory6 />
+                <FrontCategory6 v-if="isCategory6Visible" />
 
                 <!-- ধর্মীয় -->
-                <FrontCategory7 />
+                <FrontCategory7 v-if="isCategory7Visible" />
             </aside>
             <aside class="h--100">
                 <!-- AD-3 -->
@@ -51,9 +98,11 @@ import LeadTop from '~/components/LeadTop.vue';
         </section>
 
         <!-- সাহিত্য -->
-        <FrontCategory8 />
+        <FrontCategory8 v-if="isCategory8Visible" />
+
         <!-- সম্পাদকীয় -->
-        <FrontCategory9 />
+        <FrontCategory9 v-if="isCategory9Visible" />
+
         <!-- Footer -->
         <!-- <FooterDes /> -->
     </NuxtLayout>
