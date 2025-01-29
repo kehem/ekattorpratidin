@@ -387,13 +387,17 @@ a:hover .underlined {
 
 .khorboreJaintaLogo {
   display: flex;
-  width: 100%;
-  height: auto;
   justify-content: center;
-  width: 10%;
-  height: auto;
-  margin: auto;
   padding: 0.5rem 0 1rem 0;
+}
+.khorboreJaintaLogo img {
+  width: 25rem;
+  border-radius: 5px;
+  transition: filter 0.3s ease;
+}
+
+.border-set img:hover {
+  filter: grayscale(1);
 }
 
 /* CDN CSS RECORRECTION */
@@ -1370,6 +1374,8 @@ section.hamburger {
   border-radius: 0.5rem;
 }
 
+/* POST VIEW */
+
 /* SUBTITLE */
 .displayGalleryImage .gallerySubtitle {
   position: absolute;
@@ -2020,7 +2026,7 @@ footer.footer {
 @media screen and (max-width: 768px) {
   /* LOGO */
   .khorboreJaintaLogo {
-    width: 40%;
+    width: 25rem;
   }
 
   .big-ad-ver {

@@ -10,17 +10,7 @@
 </script>
 
 <style scoped>
-.khorboreJaintaLogo {
-    width: 25rem;
-}
-
-.khorboreJaintaLogo img {
-    width: 25rem;
-    border-radius: 5px;
-    transition: filter 0.3s ease;
-}
-
 .border-set img:hover {
-    filter: grayscale(1);
+    filter: hue-rotate(-140deg);
 }
 </style>

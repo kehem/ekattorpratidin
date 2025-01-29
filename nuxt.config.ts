@@ -1,4 +1,3 @@
-// nuxt.config.js
 export default defineNuxtConfig({
   compatibilityDate: '2025-01-18',
   devtools: { enabled: true },
@@ -44,6 +43,7 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'canonical', href: 'https://ekattorpratidin.com/' }, // Canonical URL
+        { rel: 'manifest', href: '/manifest.json' },
         { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/surajit-singha-sisir/mastorsCDN@v1.1.01/mastors.css' }, // Mastors CSS
         {
           rel: 'stylesheet',
@@ -54,34 +54,20 @@ export default defineNuxtConfig({
           href: '/assets/css/style.css',
         }
       ],
-      // script: [
-      //   {
-      //     src: '/script.js',
-      //     type: 'module'
-      //   }
-      // ],
     },
 
   },
-  // target: 'static',
-
   devServer: {
     host: '0.0.0.0',
     port: 3000
   },
-  plugins: [
-    
-  ],
-
-
-  // nitro: {
-  //   output: {
-  //     dir: 'dist',
-  //   },
-  // },
-  // css: [
-  //   '~/public/assets/css/style.css',
-  // ],
-
   modules: ['@nuxt/image'],
+  // plugins: ['~/plugins/service-worker.ts'],
+  
+  // nitro: {
+  //   prerender: {
+  //     routes: ['/sw.js']
+  //   }
+  // }
+
 });

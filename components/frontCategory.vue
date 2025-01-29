@@ -11,7 +11,7 @@
                 <!-- ALL NEWS -->
                 <div class="gridColBG">
                     <!-- NEWS -->
-                    <NuxtLink v-for="news in data.সারাদেশ" :to="`news/${news.news_id}`" class="shortNews"
+                    <NuxtLink v-for="news in data.সারাদেশ" :to="`/news/${news.news_id}`" class="shortNews"
                         :key="news.news_id">
                         <!-- NEWS IMAGE -->
                         <div class="newsImg">
@@ -57,7 +57,7 @@
                         </div>
 
                         <!-- TOP THUMB NEWS -->
-                        <NuxtLink :to="`news/${data.রাজনীতি[0].news_id}`" :key="`${data.রাজনীতি[0].news_id}`"
+                        <NuxtLink :to="`/news/${data.রাজনীতি[0].news_id}`" :key="`${data.রাজনীতি[0].news_id}`"
                             class="shortNews flexNews">
                             <!-- NEWS IMAGE -->
                             <div class="newsImg2">
@@ -82,8 +82,8 @@
 
                         <!-- LIST NEWS -->
                         <div class="bulletNews" v-for="(news, index) in data.রাজনীতি.slice(1)"
-                            :key="`news/${news.news_id}`">
-                            <NuxtLink :to="`news/${news.news_id}`" class="titleNewsContainer">
+                            :key="`/news/${news.news_id}`">
+                            <NuxtLink :to="`/news/${news.news_id}`" class="titleNewsContainer">
                                 <p class="blueNumberList">{{ convertToBanglaDigits(index + 1) }}</p>
                                 <p class="newsTitle text-dotted-3">
                                     <span v-if="news.caption" class="newsCaption">{{ news.caption }}</span>

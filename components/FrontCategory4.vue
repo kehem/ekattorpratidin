@@ -11,7 +11,7 @@
                     <span class="darkShadow"></span>
                 </div>
                 <!-- lead news -->
-                <NuxtLink :to="`news/${catNews.রাজনীতি[0].news_id}`" :key="catNews.রাজনীতি[0].news_id"
+                <NuxtLink :to="`/news/${catNews.রাজনীতি[0].news_id}`" :key="catNews.রাজনীতি[0].news_id"
                     class="sports-lead">
                     <div class="img-cont">
 
@@ -30,7 +30,7 @@
                 </NuxtLink>
 
                 <div class="three-col-container">
-                    <NuxtLink v-for="news in catNews.রাজনীতি.slice(1, 4)" :to="`news/${news.news_id}`"
+                    <NuxtLink v-for="news in catNews.রাজনীতি.slice(1, 4)" :to="`/news/${news.news_id}`"
                         :key="news.news_id" class="relative">
                         <!-- <img :src="`${news.image}`" alt=""> -->
                         <NuxtImg class="bordered" :src="news.image" :alt="news.caption" loading="lazy"

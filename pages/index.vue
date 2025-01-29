@@ -8,7 +8,7 @@
         </div>
 
         <!-- সারাদেশ, রাজনীতি, বিদেশ -->
-        <FrontCategory v-if="isCategory1Visible" />
+        <FrontCategory />
 
         <!-- সিলেট -->
         <FrontCategory2 v-if="isCategory2Visible" />
@@ -52,13 +52,14 @@
 
         <!-- Footer -->
         <!-- <FooterDes /> -->
+
     </NuxtLayout>
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-const isCategory1Visible = ref(false)
+// const isCategory1Visible = ref(false)
 const isCategory2Visible = ref(false)
 const isCategory3Visible = ref(false)
 const isCategory4Visible = ref(false)
@@ -70,33 +71,34 @@ const isCategory9Visible = ref(false)
 let scrollAmount = 300;
 const checkScrollPosition = () => {
     const scrollPosition = window.scrollY
-    if (scrollPosition > scrollAmount && !isCategory1Visible.value) {
-        isCategory1Visible.value = true
+    if (scrollPosition > scrollAmount && !isCategory2Visible.value) {
+        isCategory2Visible.value = true;
     }
-    if (scrollPosition > (scrollAmount * 3) && !isCategory2Visible.value) {
-        isCategory2Visible.value = true
+    if (scrollPosition > (scrollAmount * 3) && !isCategory3Visible.value) {
+        isCategory3Visible.value = true;
     }
-    if (scrollPosition > (scrollAmount * 5) && !isCategory3Visible.value) {
-        isCategory3Visible.value = true
+    if (scrollPosition > (scrollAmount * 5) && !isCategory4Visible.value) {
+        isCategory4Visible.value = true;
     }
-    if (scrollPosition > (scrollAmount * 7) && !isCategory4Visible.value) {
-        isCategory4Visible.value = true
+    if (scrollPosition > (scrollAmount * 7) && !isCategory5Visible.value) {
+        isCategory5Visible.value = true;
     }
-    if (scrollPosition > (scrollAmount * 9) && !isCategory5Visible.value) {
-        isCategory5Visible.value = true
+    if (scrollPosition > (scrollAmount * 9) && !isCategory6Visible.value) {
+        isCategory6Visible.value = true;
     }
-    if (scrollPosition > (scrollAmount * 11) && !isCategory6Visible.value) {
-        isCategory6Visible.value = true
+    if (scrollPosition > (scrollAmount * 11) && !isCategory7Visible.value) {
+        isCategory7Visible.value = true;
     }
-    if (scrollPosition > (scrollAmount * 13) && !isCategory7Visible.value) {
-        isCategory7Visible.value = true
+    if (scrollPosition > (scrollAmount * 13) && !isCategory8Visible.value) {
+        isCategory8Visible.value = true;
     }
-    if (scrollPosition > (scrollAmount * 15) && !isCategory8Visible.value) {
-        isCategory8Visible.value = true
+    if (scrollPosition > (scrollAmount * 15) && !isCategory9Visible.value) {
+        isCategory9Visible.value = true;
     }
-    if (scrollPosition > (scrollAmount * 17) && !isCategory9Visible.value) {
-        isCategory9Visible.value = true
-    }
+    // if (scrollPosition > (scrollAmount * 17) && !isCategory10Visible.value) {
+    //     isCategory10Visible.value = true;
+    // }
+
 }
 
 onMounted(() => {
@@ -106,4 +108,5 @@ onMounted(() => {
 onBeforeUnmount(() => {
     window.removeEventListener('scroll', checkScrollPosition)
 })
+
 </script>

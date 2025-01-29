@@ -9,7 +9,7 @@
         </div>
 
         <div class="category1">
-            <NuxtLink class="newsBox" v-for="news in data.সারাদেশ.slice(0,5)" :to="`news/${news.news_id}`" :key="news.news_id">
+            <NuxtLink class="newsBox" v-for="news in data.সারাদেশ.slice(0,5)" :to="`/news/${news.news_id}`" :key="news.news_id">
                 <NuxtImg class="bordered" :src="news.image" :alt="news.caption" loading="lazy"
                             placeholder="./placeholder.svg" placeholder-class="autoSetImg" />
                 <div class="f f-just-start gap-05 f-col m-t--05">

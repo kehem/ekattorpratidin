@@ -22,37 +22,37 @@
                 <!-- NAV MENUS -->
                 <ul class="topNavMenu">
                     <li>
-                        <NuxtLink to="cat/সারাদেশ">সারাদেশ</NuxtLink>
+                        <NuxtLink to="/cat/সারাদেশ">সারাদেশ</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="cat/রাজনীতি">রাজনীতি</NuxtLink>
+                        <NuxtLink to="/cat/রাজনীতি">রাজনীতি</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="cat/বিদেশ">বিদেশ</NuxtLink>
+                        <NuxtLink to="/cat/বিদেশ">বিদেশ</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="cat/খেলাধুলা">খেলাধুলা</NuxtLink>
+                        <NuxtLink to="/cat/খেলাধুলা">খেলাধুলা</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="cat/ধর্মীয়">ধর্মীয়</NuxtLink>
+                        <NuxtLink to="/cat/ধর্মীয়">ধর্মীয়</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="cat/বিনোদন">বিনোদন</NuxtLink>
+                        <NuxtLink to="/cat/বিনোদন">বিনোদন</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="cat/অর্থনীতি">অর্থনীতি</NuxtLink>
+                        <NuxtLink to="/cat/অর্থনীতি">অর্থনীতি</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="cat/মতামত">মতামত</NuxtLink>
+                        <NuxtLink to="/cat/মতামত">মতামত</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="cat/অপরাধ">অপরাধ</NuxtLink>
+                        <NuxtLink to="/cat/অপরাধ">অপরাধ</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="cat/সাহিত্য">সাহিত্য</NuxtLink>
+                        <NuxtLink to="/cat/সাহিত্য">সাহিত্য</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="cat/সম্পাদকীয়">সম্পাদকীয়</NuxtLink>
+                        <NuxtLink to="/cat/সম্পাদকীয়">সম্পাদকীয়</NuxtLink>
                     </li>
                 </ul>
 
@@ -82,7 +82,7 @@
         <div class="childResNav">
             <div class="resNav2">
                 <!-- NAV MENU 1 -->
-                <NuxtLink to="cat/সারাদেশ" class="resNav2Menu">
+                <NuxtLink to="/cat/সারাদেশ" class="resNav2Menu">
                     <!-- MENU DETAILS-->
                     <ul class="resNav2MenuName navHover">
                         <i class="m-circle navIndicatorCircle"></i>
@@ -92,7 +92,7 @@
                     <div class="bottomBorder"></div>
                 </NuxtLink>
                 <!-- NAV MENU 2 -->
-                <NuxtLink to="cat/রাজনীতি" class="resNav2Menu">
+                <NuxtLink to="/cat/রাজনীতি" class="resNav2Menu">
                     <!-- MENU DETAILS-->
                     <ul class="resNav2MenuName navHover">
                         <i class="m-circle navIndicatorCircle"></i>
@@ -102,7 +102,7 @@
                     <div class="bottomBorder"></div>
                 </NuxtLink>
                 <!-- NAV MENU 3 -->
-                <NuxtLink to="cat/বিদেশ" class="resNav2Menu">
+                <NuxtLink to="/cat/বিদেশ" class="resNav2Menu">
                     <!-- MENU DETAILS-->
                     <ul class="resNav2MenuName navHover">
                         <i class="m-circle navIndicatorCircle"></i>
@@ -112,7 +112,7 @@
                     <div class="bottomBorder"></div>
                 </NuxtLink>
                 <!-- NAV MENU 4 -->
-                <NuxtLink to="cat/খেলাধুলা" class="resNav2Menu">
+                <NuxtLink to="/cat/খেলাধুলা" class="resNav2Menu">
                     <!-- MENU DETAILS-->
                     <ul class="resNav2MenuName navHover">
                         <i class="m-circle navIndicatorCircle"></i>
@@ -122,7 +122,7 @@
                     <div class="bottomBorder"></div>
                 </NuxtLink>
                 <!-- NAV MENU 5 -->
-                <NuxtLink to="cat/ধর্মীয়" class="resNav2Menu">
+                <NuxtLink to="/cat/ধর্মীয়" class="resNav2Menu">
                     <!-- MENU DETAILS-->
                     <ul class="resNav2MenuName navHover">
                         <i class="m-circle navIndicatorCircle"></i>
@@ -132,7 +132,7 @@
                     <div class="bottomBorder"></div>
                 </NuxtLink>
                 <!-- NAV MENU 6 -->
-                <NuxtLink to="cat/বিনোদন" class="resNav2Menu">
+                <NuxtLink to="/cat/বিনোদন" class="resNav2Menu">
                     <!-- MENU DETAILS-->
                     <ul class="resNav2MenuName navHover">
                         <i class="m-circle navIndicatorCircle"></i>
@@ -142,7 +142,7 @@
                     <div class="bottomBorder"></div>
                 </NuxtLink>
                 <!-- NAV MENU 7 -->
-                <NuxtLink to="cat/অর্থনীতি" class="resNav2Menu">
+                <NuxtLink to="/cat/অর্থনীতি" class="resNav2Menu">
                     <!-- MENU DETAILS-->
                     <ul class="resNav2MenuName navHover">
                         <i class="m-circle navIndicatorCircle"></i>
@@ -152,7 +152,7 @@
                     <div class="bottomBorder"></div>
                 </NuxtLink>
                 <!-- NAV MENU 8 -->
-                <NuxtLink to="cat/মতামত" class="resNav2Menu">
+                <NuxtLink to="/cat/মতামত" class="resNav2Menu">
                     <!-- MENU DETAILS-->
                     <ul class="resNav2MenuName navHover">
                         <i class="m-circle navIndicatorCircle"></i>
@@ -162,7 +162,7 @@
                     <div class="bottomBorder"></div>
                 </NuxtLink>
                 <!-- NAV MENU 9 -->
-                <NuxtLink to="cat/অপরাধ" class="resNav2Menu">
+                <NuxtLink to="/cat/অপরাধ" class="resNav2Menu">
                     <!-- MENU DETAILS-->
                     <ul class="resNav2MenuName navHover">
                         <i class="m-circle navIndicatorCircle"></i>
@@ -172,7 +172,7 @@
                     <div class="bottomBorder"></div>
                 </NuxtLink>
                 <!-- NAV MENU 10 -->
-                <NuxtLink to="cat/সাহিত্য" class="resNav2Menu">
+                <NuxtLink to="/cat/সাহিত্য" class="resNav2Menu">
                     <!-- MENU DETAILS-->
                     <ul class="resNav2MenuName navHover">
                         <i class="m-circle navIndicatorCircle"></i>
@@ -182,7 +182,7 @@
                     <div class="bottomBorder"></div>
                 </NuxtLink>
                 <!-- NAV MENU 11 -->
-                <NuxtLink to="cat/চাকরি" class="resNav2Menu">
+                <NuxtLink to="/cat/চাকরি" class="resNav2Menu">
                     <!-- MENU DETAILS-->
                     <ul class="resNav2MenuName navHover">
                         <i class="m-circle navIndicatorCircle"></i>
@@ -192,7 +192,7 @@
                     <div class="bottomBorder"></div>
                 </NuxtLink>
                 <!-- NAV MENU 12 -->
-                <NuxtLink to="cat/সম্পাদকীয়" class="resNav2Menu">
+                <NuxtLink to="/cat/সম্পাদকীয়" class="resNav2Menu">
                     <!-- MENU DETAILS-->
                     <ul class="resNav2MenuName navHover">
                         <i class="m-circle navIndicatorCircle"></i>
@@ -438,5 +438,3 @@ onMounted(() => {
 });
 
 </script>
-
-<style lang="scss" scoped></style>

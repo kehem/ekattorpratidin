@@ -1,21 +1,867 @@
 <template>
     <NuxtLayout>
-        <h1>{{ data }}</h1>
+        <!-- MAIN SECTION -->
+        <main class="z-1 relative w-100 h-auto">
+            <div class="local-padding"></div>
+
+            <section class="relative g-res-3-col-container gap-20 fullWidth m-auto">
+
+                <aside class="span-2">
+                    <!-- ADS -->
+                    <span class="w-100">
+                        <NuxtImg class="img-w-res" v-if="data.ads" :src="data.ads" alt="বিজ্ঞাপন" />
+                    </span>
+
+                    <section class="pad-tb--10" id="printThisSection">
+                        <!-- CATEGORY -->
+                        <div
+                            class="cat-section f f-just-start f-align-items-center gap-05 w-100 b-bottom-sun pad-b--10">
+                            <NuxtLink :to="`/cat/${data.Catagory}`" :key="data.news_id" class="text-cat cat-hov-u">
+                                <h3 class="text--l">{{ data.Catagory }}</h3>
+                            </NuxtLink>
+                            <i class="m-chevrons-right text--l"></i>
+                            <!-- TITLE -->
+                            <p class="text-nowrap text--m text-dotted-1 pad-r--10"> {{ data.title }}</p>
+                        </div>
+
+                        <!-- TITLE -->
+                        <div class="sun-title-text">
+                            <span class="f gap-05 f-align-items-center" title="টাইটেল">
+                                <h3 class="text--l"> {{ data.caption }}</h3>
+                                <span class="headingTitleCircle"></span>
+                            </span>
+                            <h1 class="text--20 pad-t--05"> {{ data.title }}</h1>
+                        </div>
+
+                        <hgroup class="z-5 t--35 f gap-10 pad-b--15 f-wrap f-just-between f-align-items-center"
+                            id="onstickychange" data-top-height="">
+                            <!-- PROTIBEDOK -->
+                            <div class="f f-col" id="onstickyhide">
+                                <!-- SUBTITLE -->
+                                <span class="f gap-05">
+                                    <div class="relative w--30 h--30">
+                                        <NuxtImg v-if="data.writer_img" class="b-rad-50 w-i h-i asp-r-1 obj-fit-h"
+                                            src="data.writer_img" :alt="data.caption" />
+                                        <NuxtImg v-else src="./placeholder.svg"
+                                            class="b-rad-50 w-i h-i asp-r-1 obj-fit-h"></NuxtImg>
+                                    </div>
+                                    <div>
+                                        <p class="protibedok-author"> {{ data.reporter }}</p>
+                                        <!-- AUTHOR AND TIME -->
+                                        <span class="time-color f gap-05">
+                                            <p>প্রকাশ :</p>
+                                            <time :datetime="data.published_date"> {{ data.published_date }}</time>
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+
+                            <!-- SOCIAL SHARE -->
+                            <div class="f f-wrap gap-05 f-just-center f-align-items-center sun-social-shares"
+                                id="sun-social-shares">
+
+                                <span class="relative t-0 cur-pointer" onclick="shareLink(this)">
+                                    <span class="share-wave">
+                                        <i class="m-facebook"></i>
+                                    </span>
+                                </span>
+                                <span class="relative t-0 cur-pointer" onclick="shareLink(this)">
+                                    <span class="share-wave">
+                                        <i class="m-messenger"></i>
+                                    </span>
+                                </span>
+                                <span class="relative t-0 cur-pointer" onclick="shareLink(this)">
+                                    <span class="share-wave">
+                                        <i class="m-whatsapp"></i>
+                                    </span>
+                                </span>
+                                <span class="relative t-0 cur-pointer" onclick="shareLink(this)">
+                                    <span class="share-wave">
+                                        <i class="m-twitter"></i>
+                                    </span>
+                                </span>
+                                <span class="relative t-0 cur-pointer" onclick="shareLink(this)">
+                                    <span class="share-wave">
+                                        <i class="m-linkedin"></i>
+                                    </span>
+                                </span>
+
+                                <!-- ACTION FUNCTIONALITIES -->
+                                <span id="printButton" class="relative t-0 cur-pointer" onclick="print()">
+                                    <span class="share-wave">
+                                        <i class="m-print"></i>
+                                    </span>
+                                </span>
+                                <span class="relative t-0 plus-btn cur-pointer" onclick="plusButton()">
+                                    <span class="share-wave">
+                                        <i class="m-plus"></i>
+                                    </span>
+                                </span>
+                                <span class="relative t-0 minus-btn cur-pointer" onclick="minusButton()">
+                                    <span class="share-wave">
+                                        <i class="m-minus"></i>
+                                    </span>
+                                </span>
+                            </div>
+                        </hgroup>
+                        <aside class="m-auto">
+                            <!-- THUMBNAIL -->
+                            <div class="news-thumbnail">
+                                <div class="news-thumbs">
+                                    <NuxtImg :src="`/${data.image}`" alt="" />
+                                </div>
+                                <span class="news-sub-heading">চিত্রঃ {{ data.img_caption }}</span>
+                            </div>
+
+                            <!-- ARTICLE -->
+                            <article id="article" class="text-color text-justify">
+                                {{ data.news_details }}
+                            </article>
+                        </aside>
+
+                        <div class="local-padding"></div>
+
+                    </section>
+                </aside>
+
+                <aside class="span-1">
+                    <p class="text--15 m-t---05 pad-b--05">আপনার পছন্দের নিউজ -</p>
+                    <span class="f b-bottom-sun pad-t--03"></span>
+                    <ul class="pad--05 b-all-sun">
+                        <!-- NEWS -->
+                        <li class="b-bottom-sun pad-tb--05">
+                            <a href="#" class="f gap-05 text-color">
+                                <div class="f-flex-1">
+                                    <!-- HEADING -->
+                                    <h3 class="link-hov-u">হামলার পরিধি বাড়াচ্ছে ইসরায়েল, লেবানন সীমান্তে বিশেষ অভিযান
+                                    </h3>
+                                    <!-- TIMER -->
+                                    <div class="f gap--05 f-just-start f-align-items-center">
+                                        <span class="w--08 f f-align-items-center">
+                                            <i class="m-time"></i>
+                                        </span>
+                                        <p class="text--08 text-color">১ ঘন্টা আগে</p>
+                                    </div>
+                                </div>
+                                <span class="d-block f-flex-1 sun-res-img-width">
+                                    <img class="img-w-res"
+                                        src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-01%2Fnggbsvju%2FRizvi.jpeg"
+                                        alt="">
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+
+            <div class="local-padding"></div>
+            <!-- TAGS -->
+            <section class="fullWidth m-auto tags-define-sun">
+                <div class="pad-b--10 text--14">
+                    এই ক্যাটাগরি থেকে আরও পড়ুন -
+                </div>
+                <div class="f gap-05 f-wrap">
+                    <NuxtLink v-for="tag in data.tag.split(',').map(item => item.trim())" :to="`/tag/${tag}`" :key="tag"
+                        class="b-all-sun pad-lr--05 pad-tb--02 text-hov-Red text-White bg-cat">
+                        {{ tag }}
+                    </NuxtLink>
+                </div>
+            </section>
+            <div class="local-padding"></div>
+
+            <section class="fullWidth m-auto">
+                <span class="f gap--05">
+                    <a href="#">
+                        <h2 class="sun-cat-name-u">সিলেট</h2>
+                    </a>
+                    <p class="text--15">থেকে আরও পড়ুন -</p>
+                </span>
+
+                <div class="pad-tb--10">
+                    <ul class="f gap-10 f-wrap">
+                        <li class="f-flex-1">
+                            <a href="#" class="text-color">
+                                <span class="d-block max-w--150 min-w--100 h-auto">
+                                    <img class="w-100 h-auto"
+                                        src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-01%2Fqhne0uw8%2FYounus-Wakar.jpg"
+                                        alt="">
+                                </span>
+                                <div class="pad-t--05">
+                                    <!-- HEADING -->
+                                    <h3 class="text-dotted-4 pad-l--01 link-hov-u">প্রধান উপদেষ্টার সঙ্গে সেনাপ্রধানের
+                                        সাক্ষাৎ</h3>
+                                    <!-- TIMER -->
+                                    <div class="f gap--05 f-just-start f-align-items-center">
+                                        <span class="w--08 f f-align-items-center">
+                                            <i class="m-double-chevron"></i>
+                                        </span>
+                                        <p class="text--08 text-color">১ ঘন্টা আগে</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="f-flex-1">
+                            <a href="#" class="text-color">
+                                <span class="d-block max-w--150 min-w--100 h-auto">
+                                    <img class="w-100 h-auto"
+                                        src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-01%2Fqhne0uw8%2FYounus-Wakar.jpg"
+                                        alt="">
+                                </span>
+                                <div class="pad-t--05">
+                                    <!-- HEADING -->
+                                    <h3 class="text-dotted-4 pad-l--01 link-hov-u">প্রধান উপদেষ্টার সঙ্গে সেনাপ্রধানের
+                                        সাক্ষাৎ</h3>
+                                    <!-- TIMER -->
+                                    <div class="f gap--05 f-just-start f-align-items-center">
+                                        <span class="w--08 f f-align-items-center">
+                                            <i class="m-double-chevron"></i>
+                                        </span>
+                                        <p class="text--08 text-color">১ ঘন্টা আগে</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="f-flex-1">
+                            <a href="#" class="text-color">
+                                <span class="d-block max-w--150 min-w--100 h-auto">
+                                    <img class="w-100 h-auto"
+                                        src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-01%2Fqhne0uw8%2FYounus-Wakar.jpg"
+                                        alt="">
+                                </span>
+                                <div class="pad-t--05">
+                                    <!-- HEADING -->
+                                    <h3 class="text-dotted-4 pad-l--01 link-hov-u">প্রধান উপদেষ্টার সঙ্গে সেনাপ্রধানের
+                                        সাক্ষাৎ</h3>
+                                    <!-- TIMER -->
+                                    <div class="f gap--05 f-just-start f-align-items-center">
+                                        <span class="w--08 f f-align-items-center">
+                                            <i class="m-double-chevron"></i>
+                                        </span>
+                                        <p class="text--08 text-color">১ ঘন্টা আগে</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="f-flex-1">
+                            <a href="#" class="text-color">
+                                <span class="d-block max-w--150 min-w--100 h-auto">
+                                    <img class="w-100 h-auto"
+                                        src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-01%2Fqhne0uw8%2FYounus-Wakar.jpg"
+                                        alt="">
+                                </span>
+                                <div class="pad-t--05">
+                                    <!-- HEADING -->
+                                    <h3 class="text-dotted-4 pad-l--01 link-hov-u">প্রধান উপদেষ্টার সঙ্গে সেনাপ্রধানের
+                                        সাক্ষাৎ</h3>
+                                    <!-- TIMER -->
+                                    <div class="f gap--05 f-just-start f-align-items-center">
+                                        <span class="w--08 f f-align-items-center">
+                                            <i class="m-double-chevron"></i>
+                                        </span>
+                                        <p class="text--08 text-color">১ ঘন্টা আগে</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="f-flex-1">
+                            <a href="#" class="text-color">
+                                <span class="d-block max-w--150 min-w--100 h-auto">
+                                    <img class="w-100 h-auto"
+                                        src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-01%2Fqhne0uw8%2FYounus-Wakar.jpg"
+                                        alt="">
+                                </span>
+                                <div class="pad-t--05">
+                                    <!-- HEADING -->
+                                    <h3 class="text-dotted-4 pad-l--01 link-hov-u">প্রধান উপদেষ্টার সঙ্গে সেনাপ্রধানের
+                                        সাক্ষাৎ</h3>
+                                    <!-- TIMER -->
+                                    <div class="f gap--05 f-just-start f-align-items-center">
+                                        <span class="w--08 f f-align-items-center">
+                                            <i class="m-double-chevron"></i>
+                                        </span>
+                                        <p class="text--08 text-color">১ ঘন্টা আগে</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="local-padding"></div>
+
+        </main>
     </NuxtLayout>
 </template>
 
 <script setup>
+import { NuxtImg } from '#components';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const key = route.params.news_id;
 
-const { data } = useFetch('https://fakestoreapi.com/products');
+const { data } = useFetch('https://newstest.kehem.com/api/newsbody?news_id=gBwv30y');
+
+const tags = data.tag;
 
 </script>
 
 <style>
-.error {
+:root {
+    --dark-color: #D9D9D9;
+    --border: #A1A1A1;
+    --cat-color: #10164D;
+    --sub-text-color: #444444;
+    --sub-span-text-color: #000;
+    --transition: all 0.3s ease;
+}
+
+.protibedok-author {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: #ff0000;
+}
+
+.news-thumbnail {
+    position: relative;
+    width: 100%;
+}
+
+.news-thumbs {
+    display: flex;
+    width: inherit;
+    height: 100%;
+    padding: 1rem;
+    border: 1px solid var(--dark-color);
+}
+
+.news-thumbs img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid var(--dark-color);
+}
+
+.news-thumbnail .news-sub-heading {
+    display: block;
+    padding: 0.5rem 1rem;
+    width: inherit;
+    height: max-content;
+    color: #6b6b6b;
+    border-right: 1px solid var(--dark-color);
+    border-left: 1px solid var(--dark-color);
+    border-bottom: 1px solid var(--dark-color);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.bg-Dark {
+    background-color: var(--dark-color);
+}
+
+.bg-Border {
+    background-color: var(--border);
+}
+
+.bg-cat {
+    background-color: var(--cat-color);
+}
+
+.text-cat {
+    color: var(--cat-color);
+}
+
+.cat-hov-u:hover {
+    text-decoration: underline;
+}
+
+.sub-text-color {
+    color: var(--sub-text-color);
+}
+
+.b-all {
+    border: 1px solid var(--border);
+}
+
+.b-all-sun {
+    border: 1px solid var(--dark-color);
+}
+
+.b-dark {
+    border: 1px solid var(--dark-color);
+}
+
+.b-bottom-sun {
+    border-bottom: 1px solid var(--dark-color);
+}
+
+.b-cat-color {
+    border: 1px solid var(--span-color);
+}
+
+.b-cat-right {
+    display: block;
+    height: 100%;
+    border-right: 1px solid var(--dark-color);
+}
+
+.md-container {
+    position: relative;
+}
+
+@media only screen and (max-width: 320px) {
+    .md-container {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .md-container {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .sun-lead-top {
+        height: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .news-tops {
+        overflow: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .sun-chirkut-headings {
+        overflow: auto;
+    }
+}
+
+body {
+    width: 100%;
+    font-family: "SolaimanLipi", sans-serif;
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #6e2424;
+    text-decoration-line: none;
+    text-decoration-color: #9f9ea8;
+}
+
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.social-shares ul li {
+    border-radius: 50%;
+    width: 2rem;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--sub-div-color);
+    cursor: pointer;
+}
+
+.social-shares ul li:hover {
+    background-color: var(--span-color);
+}
+
+.social-shares a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 375px) {
+    .social-shares {
+        display: none;
+    }
+}
+
+.obj-fit-h-res {
+    position: relative;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: auto;
+    aspect-ratio: 4/3;
+}
+
+.obj-fit-w-res {
+    position: relative;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+}
+
+.obj-fit-w-h {
+    position: relative;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4/3;
+}
+
+.img-hover-scale {
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-hover-scale:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.overflow-y-scroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.overflow-x-scroll {
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.scroll-bar-sun::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.scroll-bar-sun::-webkit-scrollbar-track {
+    background: var(--div-color);
+}
+
+.scroll-bar-sun::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: var(--sub-div-color);
+}
+
+.scroll-bar-sun::-webkit-scrollbar-thumb:hover {
+    background: #806e6e;
+}
+
+.scroll-bar-sun-2::-webkit-scrollbar {
+    width: 0.2rem;
+}
+
+.scroll-bar-sun-2::-webkit-scrollbar-track {
+    background: var(--dark-color);
+}
+
+.scroll-bar-sun-2::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: var(--border);
+}
+
+.scroll-bar-sun-2::-webkit-scrollbar-thumb:hover {
+    background: #806e6e;
+}
+
+.local-padding {
+    padding: 1.5rem 0;
+}
+
+.ads-section {
+    position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+    .ads-section {
+        flex-wrap: wrap;
+    }
+
+    .ads-section a:nth-child(n) {
+        width: 100%;
+    }
+}
+
+.headingTitle {
+    position: relative;
+    color: red !important;
+    padding-right: 0.5rem;
+    margin-right: 0.2rem;
+}
+
+.headingTitle::after {
+    content: "/";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+@media only screen and (max-width: 375px) {
+    .sun-set-on-center {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.overflow-none {
+    overflow: auto;
+}
+
+.overflow-none::-webkit-scrollbar {
+    width: 0.3rem;
+}
+
+.overflow-none::-webkit-scrollbar-track {
+    visibility: hidden;
+    background: transparent;
+}
+
+.overflow-none::-webkit-scrollbar-thumb {
+    visibility: hidden;
+    border-radius: 1rem;
+    background: var(--dark-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.overflow-none:hover {
+    overflow: scroll;
+}
+
+.overflow-none:hover::-webkit-scrollbar {
+    visibility: visible;
+}
+
+.overflow-none:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+    .overflow-none {
+        scrollbar-width: none;
+    }
+
+    .overflow-none::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
+    .overflow-none::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+}
+
+
+.b-bottom {
+    padding: 0.5px 0;
+    border-bottom: 2px solid var(--sub-div-color);
+}
+
+
+.obj-fit-h {
+    border-radius: 0.5rem;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    aspect-ratio: 4/3;
+}
+
+@media screen and (max-width: 1080px) {
+    .top-shorts {
+        display: none !important;
+    }
+}
+
+.pos-t-center {
+    position: absolute;
+    top: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hr-border {
+    border-top: 1px solid var(--border);
+}
+
+.b-rad-50 {
+    border-radius: 50%;
+}
+
+.asp-r-1 {
+    aspect-ratio: 1;
+}
+
+.asp-r-4-3 {
+    aspect-ratio: 4/3;
+}
+
+/* SHARES */
+.share-wave {
+    background-color: #E8E8E8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    padding: 0.8rem;
+    border-radius: 0.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.share-wave::after {
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00273F;
+    transition: bottom 0.5s ease-in-out;
+}
+
+.share-wave:hover::after {
+    bottom: 0;
+    color: white;
+}
+
+.share-wave:active::after {
+    background-color: red;
+}
+
+.share-wave i {
+    color: var(--cat-color);
+    font-size: 0.9rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.share-wave:hover i {
+    color: #fff;
+    z-index: 1;
+}
+
+.headingTitleCircle {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: var(--sub-text-color);
+}
+
+.sun-title-text {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.sun-title-text h3 {
+    position: relative;
+    color: #00273F;
+}
+
+.sun-title-text h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.1rem;
+    background-color: #00273F;
+}
+
+.sun-title-text h3:hover::before {
+    background-color: red;
+}
+
+.time-color {
+    color: #6b6b6b;
+}
+
+article {
+    font-size: 1.2rem;
+}
+
+.sun-cat-name-u {
+    position: relative;
+    color: var(--cat-color);
+}
+
+.sun-cat-name-u::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.1rem;
+    background-color: var(--cat-color);
+}
+
+.sun-cat-name-u:hover {
     color: red;
+}
+
+.sun-cat-name-u:hover::before {
+    background-color: red;
+}
+
+@media only screen and (max-width: 2560px) {
+    .sun-res-img-width {
+        max-width: 10rem;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .sun-res-img-width {
+        max-width: 5rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .sun-res-img-width {
+        max-width: 10rem;
+    }
+}
+
+.social-shares-gradient {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to bottom, #fff 70%, rgba(255, 255, 255, 0));
+    transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 320px) {
+    .sun-social-shares {
+        gap: 0.2rem !important;
+    }
+
+    .sun-social-shares .share-wave i {
+        font-size: 0.7rem;
+    }
+}
+
+.tags-define-sun {
+    border: 1px solid var(--border);
+    padding: 1rem;
+}
+
+.tags-define-sun a {
+    font-size: 1.2rem;
+}
+
+.rateNews-sun {
+    text-align: center;
+    border-radius: 0.5rem;
+    border: 1px solid var(--dark-color);
 }
 </style>
