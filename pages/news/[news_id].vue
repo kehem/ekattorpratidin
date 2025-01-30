@@ -362,7 +362,7 @@ onMounted(() => {
         const roundedTime = timeSpent.value;
 
 
-        totalShare.value = { facebook: facebookCounter.value, messenger: messengerCounter.value, whatsapp: whatsappCounter.value }
+        totalShare.value = { facebook: facebookCounter.value, messenger: messengerCounter.value, whatsapp: whatsappCounter.value, twitter: twitterCounter.value, linkedin: linkedinCounter.value }
 
 
         sendTimeAPI(key, roundedTime, totalShare);
