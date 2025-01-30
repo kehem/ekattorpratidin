@@ -5,20 +5,19 @@
             <marquee class="marquee w-100 h-100" behavior="" direction="" onmouseover="this.stop();"
                 onmouseout="this.start();">
                 <ul class="f gap-20 h-i text-center">
-                    <li v-for="item in items" :key="item.key">
+                    <li v-for="item in data?.marquee" :key="item.news_id">
                         <NuxtLink :to="`/news/${item.news_id}`">{{ item.title }}</NuxtLink>
                     </li>
                 </ul>
             </marquee>
+
         </div>
     </div>
     {{ error }}
 </template>
 
 <script setup>
-// GET REQUEST
 const { data, error } = await useFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/marquee.json');
-const items = data.value.marquee;
 </script>
 
 
@@ -50,4 +49,3 @@ const items = data.value.marquee;
     }
 }
 </style>
-<!-- https://api.mediastack.com/v1/news?access_key=ad5ff9775fc34a3e55b815ae6b6f71fd -->

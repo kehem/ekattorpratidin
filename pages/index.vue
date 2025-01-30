@@ -98,15 +98,13 @@ const checkScrollPosition = () => {
     // if (scrollPosition > (scrollAmount * 17) && !isCategory10Visible.value) {
     //     isCategory10Visible.value = true;
     // }
-
 }
 
 onMounted(() => {
     window.addEventListener('scroll', checkScrollPosition)
-})
+});
 
 onBeforeUnmount(() => {
     window.removeEventListener('scroll', checkScrollPosition)
 })
-
 </script>

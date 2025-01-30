@@ -9,28 +9,33 @@
                 <aside class="span-2">
                     <!-- ADS -->
                     <span class="w-100">
-                        <NuxtImg class="img-w-res" v-if="data.ads" :src="data.ads" alt="বিজ্ঞাপন" />
+                        <!-- <NuxtImg class="img-w-res" v-if="newsnewsBody.ads" :src="newsnewsBody.ads.image" alt="বিজ্ঞাপন" /> -->
                     </span>
 
                     <section class="pad-tb--10" id="printThisSection">
                         <!-- CATEGORY -->
                         <div
                             class="cat-section f f-just-start f-align-items-center gap-05 w-100 b-bottom-sun pad-b--10">
-                            <NuxtLink :to="`/cat/${data.Catagory}`" :key="data.news_id" class="text-cat cat-hov-u">
-                                <h3 class="text--l">{{ data.Catagory }}</h3>
+                            <NuxtLink v-if="newsBody?.Catagory" :to="`/cat/${newsBody.Catagory}`"
+                                :key="newsBody.news_id" class="text-cat cat-hov-u">
+                                <h3 class="text--l">{{ newsBody.Catagory }}</h3>
                             </NuxtLink>
+
                             <i class="m-chevrons-right text--l"></i>
                             <!-- TITLE -->
-                            <p class="text-nowrap text--m text-dotted-1 pad-r--10"> {{ data.title }}</p>
+                            <p v-if="newsBody?.title" class="text-nowrap text--m text-dotted-1 pad-r--10">
+                                {{ newsBody.title }}
+                            </p>
+
                         </div>
 
                         <!-- TITLE -->
                         <div class="sun-title-text">
                             <span class="f gap-05 f-align-items-center" title="টাইটেল">
-                                <h3 class="text--l"> {{ data.caption }}</h3>
+                                <h3 class="text--l" v-if="newsBody?.caption"> {{ newsBody.caption }}</h3>
                                 <span class="headingTitleCircle"></span>
                             </span>
-                            <h1 class="text--20 pad-t--05"> {{ data.title }}</h1>
+                            <h1 class="text--20 pad-t--05" v-if="newsBody?.title"> {{ newsBody.title }}</h1>
                         </div>
 
                         <hgroup class="z-5 t--35 f gap-10 pad-b--15 f-wrap f-just-between f-align-items-center"
@@ -40,17 +45,23 @@
                                 <!-- SUBTITLE -->
                                 <span class="f gap-05">
                                     <div class="relative w--30 h--30">
-                                        <NuxtImg v-if="data.writer_img" class="b-rad-50 w-i h-i asp-r-1 obj-fit-h"
-                                            src="data.writer_img" :alt="data.caption" />
+                                        <NuxtImg v-if="newsBody?.reporter_profile"
+                                            class="b-rad-50 w-i h-i asp-r-1 obj-fit-h"
+                                            :src="`http://newstest.kehem.com/${newsBody.reporter_profile}`"
+                                            :alt="newsBody.caption" />
                                         <NuxtImg v-else src="./placeholder.svg"
                                             class="b-rad-50 w-i h-i asp-r-1 obj-fit-h"></NuxtImg>
                                     </div>
                                     <div>
-                                        <p class="protibedok-author"> {{ data.reporter }}</p>
+                                        <p class="protibedok-author" v-if="newsBody?.reporter_name"> {{
+                                            newsBody.reporter_name }}
+                                        </p>
                                         <!-- AUTHOR AND TIME -->
                                         <span class="time-color f gap-05">
                                             <p>প্রকাশ :</p>
-                                            <time :datetime="data.published_date"> {{ data.published_date }}</time>
+                                            <time :datetime="newsBody.published_date" v-if="newsBody?.published_date">
+                                                {{ newsBody.published_date
+                                                }}</time>
                                         </span>
                                     </div>
                                 </span>
@@ -60,27 +71,27 @@
                             <div class="f f-wrap gap-05 f-just-center f-align-items-center sun-social-shares"
                                 id="sun-social-shares">
 
-                                <span class="relative t-0 cur-pointer" onclick="shareLink(this)">
+                                <span class="relative t-0 cur-pointer" @click="facebook">
                                     <span class="share-wave">
                                         <i class="m-facebook"></i>
                                     </span>
                                 </span>
-                                <span class="relative t-0 cur-pointer" onclick="shareLink(this)">
+                                <span class="relative t-0 cur-pointer" @click="messenger">
                                     <span class="share-wave">
                                         <i class="m-messenger"></i>
                                     </span>
                                 </span>
-                                <span class="relative t-0 cur-pointer" onclick="shareLink(this)">
+                                <span class="relative t-0 cur-pointer" @click="whatsapp">
                                     <span class="share-wave">
                                         <i class="m-whatsapp"></i>
                                     </span>
                                 </span>
-                                <span class="relative t-0 cur-pointer" onclick="shareLink(this)">
+                                <span class="relative t-0 cur-pointer" @click="twitter">
                                     <span class="share-wave">
                                         <i class="m-twitter"></i>
                                     </span>
                                 </span>
-                                <span class="relative t-0 cur-pointer" onclick="shareLink(this)">
+                                <span class="relative t-0 cur-pointer" @click="linkedin">
                                     <span class="share-wave">
                                         <i class="m-linkedin"></i>
                                     </span>
@@ -108,14 +119,16 @@
                             <!-- THUMBNAIL -->
                             <div class="news-thumbnail">
                                 <div class="news-thumbs">
-                                    <NuxtImg :src="`/${data.image}`" alt="" />
+                                    <NuxtImg v-if="newsBody?.image" :src="`https://newstest.kehem.com${newsBody.image}`"
+                                        alt="" />
                                 </div>
-                                <span class="news-sub-heading">চিত্রঃ {{ data.img_caption }}</span>
+                                <span class="news-sub-heading" v-if="newsBody?.img_caption">চিত্রঃ {{
+                                    newsBody.img_caption }}</span>
                             </div>
 
                             <!-- ARTICLE -->
-                            <article id="article" class="text-color text-justify">
-                                {{ data.news_details }}
+                            <article id="article" class="text-color text-justify" v-if="newsBody?.news_details">
+                                {{ newsBody.news_details }}
                             </article>
                         </aside>
 
@@ -124,31 +137,59 @@
                     </section>
                 </aside>
 
+                <!-- সর্বশেষ পঠিত -->
                 <aside class="span-1">
-                    <p class="text--15 m-t---05 pad-b--05">আপনার পছন্দের নিউজ -</p>
+                    <p class="text--15 m-t---05 pad-b--05">সর্বশেষ খবর -</p>
                     <span class="f b-bottom-sun pad-t--03"></span>
                     <ul class="pad--05 b-all-sun">
                         <!-- NEWS -->
-                        <li class="b-bottom-sun pad-tb--05">
-                            <a href="#" class="f gap-05 text-color">
+                        <li v-if="newsData?.by_date" v-for="news in newsData.by_date"
+                            class="b-bottom-sun pad-lr--05 pad-tb--10">
+                            <NuxtLink :to="`/news/${news.news_id}`" :key="news.news_id" class="f gap-10 text-color">
                                 <div class="f-flex-1">
                                     <!-- HEADING -->
-                                    <h3 class="link-hov-u">হামলার পরিধি বাড়াচ্ছে ইসরায়েল, লেবানন সীমান্তে বিশেষ অভিযান
-                                    </h3>
+                                    <h3 class="link-hov-u">{{ news.title }}</h3>
                                     <!-- TIMER -->
                                     <div class="f gap--05 f-just-start f-align-items-center">
                                         <span class="w--08 f f-align-items-center">
                                             <i class="m-time"></i>
                                         </span>
-                                        <p class="text--08 text-color">১ ঘন্টা আগে</p>
+                                        <p class="text--08 text-color"> {{ news.published_time_ago }}</p>
                                     </div>
                                 </div>
                                 <span class="d-block f-flex-1 sun-res-img-width">
-                                    <img class="img-w-res"
-                                        src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-01%2Fnggbsvju%2FRizvi.jpeg"
-                                        alt="">
+                                    <NuxtImg class="img-w-res" :src="`https://newstest.kehem.com${news.image}`"
+                                        alt="" />
                                 </span>
-                            </a>
+                            </NuxtLink>
+                        </li>
+                    </ul>
+
+                    <!-- সর্বাধিক  -->
+                    <br><br>
+                    <p class="text--15 m-t---05 pad-b--05">সর্বাধিক পঠিত -</p>
+                    <span class="f b-bottom-sun pad-t--03"></span>
+                    <ul class="pad--05 b-all-sun">
+                        <!-- NEWS -->
+                        <li v-if="newsData?.by_views" v-for="news in newsData.by_views"
+                            class="b-bottom-sun pad-lr--05 pad-tb--10">
+                            <NuxtLink :to="`/news/${news.news_id}`" :key="news.news_id" class="f gap-10 text-color">
+                                <div class="f-flex-1">
+                                    <!-- HEADING -->
+                                    <h3 class="link-hov-u">{{ news.title }}</h3>
+                                    <!-- TIMER -->
+                                    <div class="f gap--05 f-just-start f-align-items-center">
+                                        <span class="w--08 f f-align-items-center">
+                                            <i class="m-time"></i>
+                                        </span>
+                                        <p class="text--08 text-color"> {{ news.published_time_ago }}</p>
+                                    </div>
+                                </div>
+                                <span class="d-block f-flex-1 sun-res-img-width">
+                                    <NuxtImg class="img-w-res" :src="`https://newstest.kehem.com${news.image}`"
+                                        alt="" />
+                                </span>
+                            </NuxtLink>
                         </li>
                     </ul>
                 </aside>
@@ -161,132 +202,42 @@
                     এই ক্যাটাগরি থেকে আরও পড়ুন -
                 </div>
                 <div class="f gap-05 f-wrap">
-                    <NuxtLink v-for="tag in data.tag.split(',').map(item => item.trim())" :to="`/tag/${tag}`" :key="tag"
+                    <NuxtLink v-for="tag in newsBody.tag.split(',').map(item => item.trim()).filter(tag => tag)"
+                        :to="`/tag/${tag}`" :key="tag" v-if="newsBody?.tag"
                         class="b-all-sun pad-lr--05 pad-tb--02 text-hov-Red text-White bg-cat">
                         {{ tag }}
                     </NuxtLink>
                 </div>
             </section>
             <div class="local-padding"></div>
-
+            <!-- CATEGORY NEWS -->
             <section class="fullWidth m-auto">
                 <span class="f gap--05">
-                    <a href="#">
-                        <h2 class="sun-cat-name-u">সিলেট</h2>
-                    </a>
+                    <NuxtLink :to="`/cat/${newsBody.Catagory}`">
+                        <h2 class="sun-cat-name-u"> {{ newsBody.Catagory }}</h2>
+                    </NuxtLink>
                     <p class="text--15">থেকে আরও পড়ুন -</p>
                 </span>
 
                 <div class="pad-tb--10">
                     <ul class="f gap-10 f-wrap">
-                        <li class="f-flex-1">
-                            <a href="#" class="text-color">
+                        <li class="f-flex-1 bordered pad--05" v-for="news in catNews.রাজনীতি.slice(0, 5)">
+                            <NuxtLink :to="`/news/${news.news_id}`" :key="news.news_id" class="text-color">
                                 <span class="d-block max-w--150 min-w--100 h-auto">
-                                    <img class="w-100 h-auto"
-                                        src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-01%2Fqhne0uw8%2FYounus-Wakar.jpg"
-                                        alt="">
+                                    <NuxtImg class="w-100 h-auto" :src="news.image" alt="news.caption" />
                                 </span>
                                 <div class="pad-t--05">
                                     <!-- HEADING -->
-                                    <h3 class="text-dotted-4 pad-l--01 link-hov-u">প্রধান উপদেষ্টার সঙ্গে সেনাপ্রধানের
-                                        সাক্ষাৎ</h3>
+                                    <h3 class="text-dotted-4 pad-l--01 link-hov-u"> {{ news.title }}</h3>
                                     <!-- TIMER -->
                                     <div class="f gap--05 f-just-start f-align-items-center">
                                         <span class="w--08 f f-align-items-center">
-                                            <i class="m-double-chevron"></i>
+                                            <i class="m-time"></i>
                                         </span>
-                                        <p class="text--08 text-color">১ ঘন্টা আগে</p>
+                                        <p class="text--08 text-color"> {{ news.published_time_ago }}</p>
                                     </div>
                                 </div>
-                            </a>
-                        </li>
-
-                        <li class="f-flex-1">
-                            <a href="#" class="text-color">
-                                <span class="d-block max-w--150 min-w--100 h-auto">
-                                    <img class="w-100 h-auto"
-                                        src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-01%2Fqhne0uw8%2FYounus-Wakar.jpg"
-                                        alt="">
-                                </span>
-                                <div class="pad-t--05">
-                                    <!-- HEADING -->
-                                    <h3 class="text-dotted-4 pad-l--01 link-hov-u">প্রধান উপদেষ্টার সঙ্গে সেনাপ্রধানের
-                                        সাক্ষাৎ</h3>
-                                    <!-- TIMER -->
-                                    <div class="f gap--05 f-just-start f-align-items-center">
-                                        <span class="w--08 f f-align-items-center">
-                                            <i class="m-double-chevron"></i>
-                                        </span>
-                                        <p class="text--08 text-color">১ ঘন্টা আগে</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="f-flex-1">
-                            <a href="#" class="text-color">
-                                <span class="d-block max-w--150 min-w--100 h-auto">
-                                    <img class="w-100 h-auto"
-                                        src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-01%2Fqhne0uw8%2FYounus-Wakar.jpg"
-                                        alt="">
-                                </span>
-                                <div class="pad-t--05">
-                                    <!-- HEADING -->
-                                    <h3 class="text-dotted-4 pad-l--01 link-hov-u">প্রধান উপদেষ্টার সঙ্গে সেনাপ্রধানের
-                                        সাক্ষাৎ</h3>
-                                    <!-- TIMER -->
-                                    <div class="f gap--05 f-just-start f-align-items-center">
-                                        <span class="w--08 f f-align-items-center">
-                                            <i class="m-double-chevron"></i>
-                                        </span>
-                                        <p class="text--08 text-color">১ ঘন্টা আগে</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="f-flex-1">
-                            <a href="#" class="text-color">
-                                <span class="d-block max-w--150 min-w--100 h-auto">
-                                    <img class="w-100 h-auto"
-                                        src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-01%2Fqhne0uw8%2FYounus-Wakar.jpg"
-                                        alt="">
-                                </span>
-                                <div class="pad-t--05">
-                                    <!-- HEADING -->
-                                    <h3 class="text-dotted-4 pad-l--01 link-hov-u">প্রধান উপদেষ্টার সঙ্গে সেনাপ্রধানের
-                                        সাক্ষাৎ</h3>
-                                    <!-- TIMER -->
-                                    <div class="f gap--05 f-just-start f-align-items-center">
-                                        <span class="w--08 f f-align-items-center">
-                                            <i class="m-double-chevron"></i>
-                                        </span>
-                                        <p class="text--08 text-color">১ ঘন্টা আগে</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="f-flex-1">
-                            <a href="#" class="text-color">
-                                <span class="d-block max-w--150 min-w--100 h-auto">
-                                    <img class="w-100 h-auto"
-                                        src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-01%2Fqhne0uw8%2FYounus-Wakar.jpg"
-                                        alt="">
-                                </span>
-                                <div class="pad-t--05">
-                                    <!-- HEADING -->
-                                    <h3 class="text-dotted-4 pad-l--01 link-hov-u">প্রধান উপদেষ্টার সঙ্গে সেনাপ্রধানের
-                                        সাক্ষাৎ</h3>
-                                    <!-- TIMER -->
-                                    <div class="f gap--05 f-just-start f-align-items-center">
-                                        <span class="w--08 f f-align-items-center">
-                                            <i class="m-double-chevron"></i>
-                                        </span>
-                                        <p class="text--08 text-color">১ ঘন্টা আগে</p>
-                                    </div>
-                                </div>
-                            </a>
+                            </NuxtLink>
                         </li>
                     </ul>
                 </div>
@@ -301,13 +252,125 @@
 <script setup>
 import { NuxtImg } from '#components';
 import { useRoute } from 'vue-router';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const route = useRoute();
 const key = route.params.news_id;
 
-const { data } = useFetch('https://newstest.kehem.com/api/newsbody?news_id=gBwv30y');
+// NEWS INFORMATION
+const { data: newsBody } = await useFetch(`https://newstest.kehem.com/api/newsbody?news_id=${key}`);
 
-const tags = data.tag;
+// ADS, LATEST, MAX READ INFORMATION
+const { data: newsData } = await useFetch(`https://newstest.kehem.com/api/news_data`);
+
+// CATEGORY NEWS SUGGESTED
+const { data: catNews } = await useFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/front-cat-news.json');
+
+
+let currentURL = ref(null);
+
+
+// STAY TIME API
+const startTime = ref(null);
+const timeSpent = ref(0);
+const sendTimeAPI = async (news_id, time, totalShare) => {
+    const { data, error } = await useFetch('https://newstest.kehem.com/api/UpdateNewsEngagement', {
+        method: 'POST',
+        body: { time, news_id, totalShare },
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+
+    if (error.value) {
+        console.error('Error sending time:', error.value);
+    } else {
+        console.log('Time sent successfully:', data.value);
+    }
+};
+let facebookCounter = ref(0);
+let messengerCounter = ref(0);
+let whatsappCounter = ref(0);
+let twitterCounter = ref(0);
+let linkedinCounter = ref(0);
+let totalShare = ref(null);
+
+// TOTAL SHARES
+
+
+const isMobile = () => /Mobi|Android|iPhone/i.test(navigator.userAgent);
+
+// FACEBOOK
+const facebook = () => {
+    facebookCounter.value++;
+    const share = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentURL.value)}`;
+    window.open(share, '_blank');
+};
+
+// MESSENGER
+const messenger = () => {
+    messengerCounter.value++;
+
+    const mobileShare = `fb-messenger://share/?link=${encodeURIComponent(currentURL.value)}`;
+    const desktopShare = `https://www.facebook.com/dialog/send?link=${encodeURIComponent(currentURL.value)}&app_id=1143410320904939&redirect_uri=${encodeURIComponent(currentURL.value)}`;
+
+    if (isMobile()) {
+        window.open(mobileShare, '_blank');
+    } else {
+        window.open(desktopShare, '_blank');
+    }
+};
+
+// WHATSAPP
+const whatsapp = () => {
+    whatsappCounter.value++;
+    const share = isMobile()
+        ? `whatsapp://send?text=${encodeURIComponent(currentURL.value)}` // Mobile deep link
+        : `https://api.whatsapp.com/send?text=${encodeURIComponent(currentURL.value)}`; // Web link
+    window.open(share, '_blank');
+};
+
+// TWITTER (X)
+const twitter = () => {
+    twitterCounter.value++;
+    const share = `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentURL.value)}`; // Web link for Twitter
+    window.open(share, '_blank');
+};
+
+// LINKEDIN
+const linkedin = () => {
+    linkedinCounter.value++;
+    const share = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentURL.value)}`; // Web link for LinkedIn
+    window.open(share, '_blank');
+};
+
+
+
+onMounted(() => {
+    currentURL.value = window.location.href;
+
+    startTime.value = Date.now();
+
+    const checkEvery1Minute = setInterval(() => {
+        timeSpent.value = Math.round((Date.now() - startTime.value) / 1000);
+    }, 1000);
+
+
+
+    onBeforeUnmount(() => {
+        clearInterval(checkEvery1Minute);
+        const roundedTime = timeSpent.value;
+
+
+        totalShare.value = { facebook: facebookCounter.value, messenger: messengerCounter.value, whatsapp: whatsappCounter.value }
+
+
+        sendTimeAPI(key, roundedTime, totalShare);
+    });
+});
+
+
+
 
 </script>
 

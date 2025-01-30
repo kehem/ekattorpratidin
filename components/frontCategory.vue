@@ -81,9 +81,8 @@
                         </NuxtLink>
 
                         <!-- LIST NEWS -->
-                        <div class="bulletNews" v-for="(news, index) in data.রাজনীতি.slice(1)"
-                            :key="`/news/${news.news_id}`">
-                            <NuxtLink :to="`/news/${news.news_id}`" class="titleNewsContainer">
+                        <div class="bulletNews" v-for="(news, index) in data.রাজনীতি.slice(1)">
+                            <NuxtLink :to="`/news/${news.news_id}`" :key="news.news_id" class="titleNewsContainer">
                                 <p class="blueNumberList">{{ convertToBanglaDigits(index + 1) }}</p>
                                 <p class="newsTitle text-dotted-3">
                                     <span v-if="news.caption" class="newsCaption">{{ news.caption }}</span>
@@ -112,7 +111,8 @@
                 <div class="gridColBG gridColFullWidth">
                     <div class="colWishNewsModule">
                         <!-- NEWS LIST -->
-                        <NuxtLink v-for="news in data.বিদেশ" :to="`${news.news_id}`" class="featuredNews">
+                        <NuxtLink v-for="news in data.বিদেশ" :to="`/news/${news.news_id}`" :key="news.news_id"
+                            class="featuredNews">
                             <!-- FEATURE IMAGE -->
                             <div class="featureImg">
                                 <!-- <img :src="`${news.image}`" alt=""> -->
@@ -145,7 +145,7 @@
 </template>
 
 <script setup>
-const { data, status } = useLazyFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/front-cat-news.json');
+const { data } = useLazyFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/front-cat-news.json');
 
 // Mapping of English digits to Bengali digits
 const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];

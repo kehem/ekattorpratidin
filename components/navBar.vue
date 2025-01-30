@@ -13,10 +13,9 @@
                 </section>
                 <section class="logoAltHamb">
                     <!-- LOGO -->
-                    <a href="/">
-                        <NuxtImg class="h-i w-i" src="/ekattorpratidin-logo.svg" alt="Logo" loading="lazy"
-                            placeholder="./placeholder.svg" placeholder-class="autoSetImg" />
-                    </a>
+                    <NuxtLink to="/">
+                        <NuxtImg class="h-i w-i" src="/ekattorpratidin-logo.svg" alt="Logo" loading="lazy"/>
+                    </NuxtLink>
                 </section>
 
                 <!-- NAV MENUS -->
