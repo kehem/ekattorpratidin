@@ -273,6 +273,7 @@ let currentURL = ref(null);
 // STAY TIME API
 const startTime = ref(null);
 const timeSpent = ref(0);
+
 const sendTimeAPI = async (news_id, time, totalShare) => {
     const { data, error } = await useFetch('https://newstest.kehem.com/api/UpdateNewsEngagement', {
         method: 'POST',
@@ -288,6 +289,7 @@ const sendTimeAPI = async (news_id, time, totalShare) => {
         console.log('Time sent successfully:', data.value);
     }
 };
+
 let facebookCounter = ref(0);
 let messengerCounter = ref(0);
 let whatsappCounter = ref(0);

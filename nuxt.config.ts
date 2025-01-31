@@ -63,7 +63,11 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxt/image'],
   // plugins: ['~/plugins/service-worker.ts'],
-  
+  plugins: [
+    '~/plugins/service-worker.ts',
+    '~/plugins/page-observation.ts',
+  ],
+
   // nitro: {
   //   prerender: {
   //     routes: ['/sw.js']
