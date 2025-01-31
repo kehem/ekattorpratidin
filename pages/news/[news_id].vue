@@ -52,7 +52,7 @@
                                     <div class="relative w--30 h--30">
                                         <NuxtImg v-if="newsBody?.reporter_profile"
                                             class="b-rad-50 w-i h-i asp-r-1 obj-fit-h"
-                                            :src="`http://newstest.kehem.com/${newsBody.reporter_profile}`"
+                                            :src="`http://newstest.kehem.com${newsBody.reporter_profile}`"
                                             :alt="newsBody.caption" />
                                         <NuxtImg v-else src="./placeholder.svg"
                                             class="b-rad-50 w-i h-i asp-r-1 obj-fit-h"></NuxtImg>
