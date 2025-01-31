@@ -123,7 +123,7 @@ function generateYoutubeEmbed(url) {
 }
 /* Parallax container */
 .parallax-bg {
-  background-image: url("./img-1.jpg");
+  background-image: url("/img-1.jpg");
   background-attachment: fixed; /* Key for parallax */
   background-position: center;
   background-repeat: no-repeat;
