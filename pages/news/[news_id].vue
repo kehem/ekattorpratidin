@@ -1,5 +1,7 @@
 <template>
     <NuxtLayout>
+
+
         <!-- MAIN SECTION -->
         <main class="z-1 relative w-100 h-auto">
             <div class="local-padding"></div>
@@ -11,8 +13,12 @@
                     <span class="w-100">
                         <!-- <NuxtImg class="img-w-res" v-if="newsnewsBody.ads" :src="newsnewsBody.ads.image" alt="বিজ্ঞাপন" /> -->
                     </span>
+                    <section class="pad-tb--10 newsBodyPrint" ref="newsBodyPrint">
 
-                    <section class="pad-tb--10" id="printThisSection">
+
+
+
+
                         <!-- CATEGORY -->
                         <div
                             class="cat-section f f-just-start f-align-items-center gap-05 w-100 b-bottom-sun pad-b--10">
@@ -26,7 +32,6 @@
                             <p v-if="newsBody?.title" class="text-nowrap text--m text-dotted-1 pad-r--10">
                                 {{ newsBody.title }}
                             </p>
-
                         </div>
 
                         <!-- TITLE -->
@@ -71,44 +76,44 @@
                             <div class="f f-wrap gap-05 f-just-center f-align-items-center sun-social-shares"
                                 id="sun-social-shares">
 
-                                <span class="relative t-0 cur-pointer" @click="facebook">
+                                <span class="relative t-0 cur-pointer" @click="facebook(currentURL)">
                                     <span class="share-wave">
                                         <i class="m-facebook"></i>
                                     </span>
                                 </span>
-                                <span class="relative t-0 cur-pointer" @click="messenger">
+                                <span class="relative t-0 cur-pointer" @click="messenger(currentURL)">
                                     <span class="share-wave">
                                         <i class="m-messenger"></i>
                                     </span>
                                 </span>
-                                <span class="relative t-0 cur-pointer" @click="whatsapp">
+                                <span class="relative t-0 cur-pointer" @click="whatsapp(currentURL)">
                                     <span class="share-wave">
                                         <i class="m-whatsapp"></i>
                                     </span>
                                 </span>
-                                <span class="relative t-0 cur-pointer" @click="twitter">
+                                <span class="relative t-0 cur-pointer" @click="twitter(currentURL)">
                                     <span class="share-wave">
                                         <i class="m-twitter"></i>
                                     </span>
                                 </span>
-                                <span class="relative t-0 cur-pointer" @click="linkedin">
+                                <span class="relative t-0 cur-pointer" @click="linkedin(currentURL)">
                                     <span class="share-wave">
                                         <i class="m-linkedin"></i>
                                     </span>
                                 </span>
 
                                 <!-- ACTION FUNCTIONALITIES -->
-                                <span id="printButton" class="relative t-0 cur-pointer" onclick="print()">
+                                <span id="printButton" class="relative t-0 cur-pointer" @click="print">
                                     <span class="share-wave">
                                         <i class="m-print"></i>
                                     </span>
                                 </span>
-                                <span class="relative t-0 plus-btn cur-pointer" onclick="plusButton()">
+                                <span class="relative t-0 plus-btn cur-pointer" @click="plusButton">
                                     <span class="share-wave">
                                         <i class="m-plus"></i>
                                     </span>
                                 </span>
-                                <span class="relative t-0 minus-btn cur-pointer" onclick="minusButton()">
+                                <span class="relative t-0 minus-btn cur-pointer" @click="minusButton">
                                     <span class="share-wave">
                                         <i class="m-minus"></i>
                                     </span>
@@ -116,6 +121,52 @@
                             </div>
                         </hgroup>
                         <aside class="m-auto">
+                            <!-- SOCIAL SHARE FLOAT-->
+                            <div ref="socialShares" class="socialShares opacity-0">
+
+                                <span class="relative t-0 cur-pointer" @click="facebook(currentURL)">
+                                    <span class="share-wave">
+                                        <i class="m-facebook"></i>
+                                    </span>
+                                </span>
+                                <span class="relative t-0 cur-pointer" @click="messenger(currentURL)">
+                                    <span class="share-wave">
+                                        <i class="m-messenger"></i>
+                                    </span>
+                                </span>
+                                <span class="relative t-0 cur-pointer" @click="whatsapp(currentURL)">
+                                    <span class="share-wave">
+                                        <i class="m-whatsapp"></i>
+                                    </span>
+                                </span>
+                                <span class="relative t-0 cur-pointer" @click="twitter(currentURL)">
+                                    <span class="share-wave">
+                                        <i class="m-twitter"></i>
+                                    </span>
+                                </span>
+                                <span class="relative t-0 cur-pointer" @click="linkedin(currentURL)">
+                                    <span class="share-wave">
+                                        <i class="m-linkedin"></i>
+                                    </span>
+                                </span>
+
+                                <!-- ACTION FUNCTIONALITIES -->
+                                <span id="printButton" class="relative t-0 cur-pointer" @click="print">
+                                    <span class="share-wave">
+                                        <i class="m-print"></i>
+                                    </span>
+                                </span>
+                                <span class="relative t-0 plus-btn cur-pointer" @click="plusButton">
+                                    <span class="share-wave">
+                                        <i class="m-plus"></i>
+                                    </span>
+                                </span>
+                                <span class="relative t-0 minus-btn cur-pointer" @click="minusButton">
+                                    <span class="share-wave">
+                                        <i class="m-minus"></i>
+                                    </span>
+                                </span>
+                            </div>
                             <!-- THUMBNAIL -->
                             <div class="news-thumbnail">
                                 <div class="news-thumbs">
@@ -127,13 +178,18 @@
                             </div>
 
                             <!-- ARTICLE -->
-                            <article id="article" class="text-color text-justify" v-if="newsBody?.news_details">
+                            <article ref="article" class="text-color text-justify" v-if="newsBody?.news_details">
+
+
+
+
+
+
+
                                 {{ newsBody.news_details }}
                             </article>
                         </aside>
-
                         <div class="local-padding"></div>
-
                     </section>
                 </aside>
 
@@ -158,7 +214,7 @@
                                     </div>
                                 </div>
                                 <span class="d-block f-flex-1 sun-res-img-width">
-                                    <NuxtImg class="img-w-res" :src="`https://newstest.kehem.com${news.image}`"
+                                    <NuxtImg class="img-w-res bordered" :src="`https://newstest.kehem.com${news.image}`"
                                         alt="" />
                                 </span>
                             </NuxtLink>
@@ -267,17 +323,112 @@ const { data: newsData } = await useFetch(`https://newstest.kehem.com/api/news_d
 const { data: catNews } = await useFetch('https://surajit-singha-sisir.github.io/mastorsCDN/JS/front-cat-news.json');
 
 
+
+
+
+
+const article = ref(null);
+const fontSize = ref(19);
+
+const plusButton = () => {
+    if (fontSize.value <= 30) {
+        fontSize.value++;
+        article.value.style.fontSize = fontSize.value + 'px';
+    }
+};
+const minusButton = () => {
+    if (fontSize.value >= 16) {
+        fontSize.value--;
+        article.value.style.fontSize = fontSize.value + 'px';
+    }
+};
+
+
+const newsBodyPrint = ref(null);
+
+// PRINT
+const print = () => {
+    // Create a new tab
+    const printTab = window.open('', '_blank');
+
+    // Check if the content exists
+    if (newsBodyPrint.value) {
+        // Write the basic structure for the new tab's document
+        printTab.document.write('<html><head><title>Print</title>');
+
+        // Copy styles from the current page to the new tab
+        const styles = document.querySelectorAll('style, link[rel="stylesheet"]');
+        styles.forEach(style => {
+            printTab.document.head.appendChild(style.cloneNode(true)); // Clone and append styles to the new tab
+        });
+
+        // Add custom styles for reducing the size of the images
+        printTab.document.write(`
+      <style>
+      .news-thumbnail {height: auto; justify-content: center;}
+        .news-thumbs {
+          max-width: 100%; /* Ensure images scale properly within the container */
+          width: 50%; /* Adjust the width as per your preference */
+          height: auto; /* Maintain aspect ratio */
+        }
+        .cat-section {
+        display: none;}
+      </style>
+    `);
+
+        printTab.document.write('</head><body>');
+
+        // Write the content of newsBodyPrint into the new tab
+        printTab.document.write(newsBodyPrint.value.innerHTML);
+        printTab.document.write('</body></html>');
+
+        // Close the document to finish writing
+        printTab.document.close();
+
+        // Wait for the new document to load and then trigger print
+        printTab.onload = () => {
+            printTab.print();
+            printTab.close();
+        };
+    } else {
+        console.log('No content to print');
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
 let currentURL = ref(null);
-
-
 // STAY TIME API
 const startTime = ref(null);
 const timeSpent = ref(0);
 
 const sendTimeAPI = async (news_id, time, totalShare) => {
+    const body = {
+        time,
+        news_id,
+    };
+
+    // Only include non-zero values from totalShare
+    const nonZeroShares = Object.fromEntries(
+        Object.entries(totalShare).filter(([key, value]) => value !== 0)
+    );
+
+    // Add totalShare only if there are non-zero values
+    if (Object.keys(nonZeroShares).length > 0) {
+        body.totalShare = nonZeroShares;
+    }
+
     const { data, error } = await useFetch('https://newstest.kehem.com/api/UpdateNewsEngagement', {
         method: 'POST',
-        body: { time, news_id, totalShare },
+        body: body,
         headers: {
             'Content-Type': 'application/json',
         },
@@ -285,8 +436,6 @@ const sendTimeAPI = async (news_id, time, totalShare) => {
 
     if (error.value) {
         console.error('Error sending time:', error.value);
-    } else {
-        console.log('Time sent successfully:', data.value);
     }
 };
 
@@ -347,8 +496,24 @@ const linkedin = () => {
 };
 
 
+const socialShares = ref(null);
+const handleScroll = () => {
+    if (window.scrollY >= 500) {
+        socialShares.value?.classList.remove("opacity-0");
+    } else {
+        socialShares.value?.classList.add("opacity-0");
+    }
+};
 
 onMounted(() => {
+    // SHARES ON MOBILE
+    if (isMobile()) {
+        document.addEventListener('scroll', handleScroll);
+    }
+    if (!isMobile()) {
+        socialShares.value.classList.add("hidei");
+    }
+
     currentURL.value = window.location.href;
 
     startTime.value = Date.now();
@@ -358,25 +523,73 @@ onMounted(() => {
     }, 1000);
 
 
-
     onBeforeUnmount(() => {
+
+        if (isMobile()) {
+            document.removeEventListener('scroll', handleScroll);
+        }
+
         clearInterval(checkEvery1Minute);
         const roundedTime = timeSpent.value;
 
+        // Construct totalShare object
+        totalShare.value = {
+            facebook: facebookCounter.value,
+            messenger: messengerCounter.value,
+            whatsapp: whatsappCounter.value,
+            twitter: twitterCounter.value,
+            linkedin: linkedinCounter.value
+        };
 
-        totalShare.value = { facebook: facebookCounter.value, messenger: messengerCounter.value, whatsapp: whatsappCounter.value, twitter: twitterCounter.value, linkedin: linkedinCounter.value }
-
-
-        sendTimeAPI(key, roundedTime, totalShare);
+        // Send the POST request
+        sendTimeAPI(key, roundedTime, totalShare.value);
     });
+
 });
-
-
 
 
 </script>
 
 <style>
+.modal {
+    display: block;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999999;
+}
+
+.modal-content {
+    display: inherit;
+    position: inherit;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: inherit;
+    overflow: auto;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 :root {
     --dark-color: #D9D9D9;
     --border: #A1A1A1;
@@ -384,6 +597,40 @@ onMounted(() => {
     --sub-text-color: #444444;
     --sub-span-text-color: #000;
     --transition: all 0.3s ease;
+}
+
+
+
+.socialShares {
+    position: sticky;
+    top: 4.5rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--dark-color);
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.socialShares::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 0.2rem 0.5rem;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid var(--border);
+    height: 3rem;
+    z-index: -1;
+}
+
+.socialShares .share-wave {
+    width: 1.2rem;
+    background-color: #c6d1d8;
 }
 
 .protibedok-author {
@@ -778,8 +1025,8 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 2rem;
+    aspect-ratio: 1;
     padding: 0.8rem;
     border-radius: 0.2rem;
     position: relative;

@@ -30,3 +30,22 @@
 স্বত্ব © ২০২৫ সোনার বাংলা কর্পোরেশন
 
 With lazy loading, only the images that are visible on the screen (or close to it) are loaded when the user scrolls down, and the rest are not loaded until the user gets near them.
+
+
+COMMANDS:
+1. Delete .nuxt Folder:
+rmdir /s /q .nuxt
+2. Clean Node modules .caches
+rmdir /s /q node_modules\.cache
+3. Delete Package-lock.json
+del package-lock.json
+4. dist/ Delete
+rmdir /s /q dist
+5. Clear .npm Cache (Optional)
+npm cache clean --force
+
+
+# Clear the cache and rebuild (Terminal: Base)
+rm -rf .nuxt node_modules/.cache dist
+npm install
+npm run dev

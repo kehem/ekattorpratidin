@@ -62,10 +62,9 @@ export default defineNuxtConfig({
     port: 3000
   },
   modules: ['@nuxt/image'],
-  // plugins: ['~/plugins/service-worker.ts'],
   plugins: [
     '~/plugins/service-worker.ts',
-    '~/plugins/page-observation.ts',
+    // '~/plugins/page-observation.ts',
   ],
 
   // nitro: {

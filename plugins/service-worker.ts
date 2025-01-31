@@ -4,7 +4,7 @@ import { Workbox } from 'workbox-window';
 
 export default defineNuxtPlugin(nuxtApp => {
   if (process.client && 'serviceWorker' in navigator) {
-    const wb = new Workbox('/pwa/service-worker.js');
+    const wb = new Workbox('/service-worker.js');
 
     wb.addEventListener('installed', (event) => {
       if (event.isUpdate) {

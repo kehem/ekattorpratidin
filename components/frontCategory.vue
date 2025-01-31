@@ -158,6 +158,3 @@ function convertToBanglaDigits(number) {
         .join('');
 }
 </script>
-
-<!-- https://newstest.kehem.com/api/frontCatNews?category=সিলেট -->
-<!-- https://surajit-singha-sisir.github.io/mastorsCDN/JS/sorbosesh.json -->
