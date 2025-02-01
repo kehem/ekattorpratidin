@@ -24,6 +24,7 @@ export default defineNuxtConfig({
       ],
 
       link: [
+        { rel: 'manifest', href: '/manifest.json' },
         { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/surajit-singha-sisir/mastorsCDN@v1.1.01/mastors.css' }, // Mastors CSS
         {
           rel: 'stylesheet',
