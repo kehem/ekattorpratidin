@@ -44,6 +44,6 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxt/image'],
   plugins: [
-    '~/plugins/service-worker.ts',
+    '~/plugins/service-worker.ts'
   ]
 });

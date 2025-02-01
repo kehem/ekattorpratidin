@@ -1,5 +1,4 @@
 <template>
-    <NuxtLayout>
         <LeadTop />
 
         <!-- AD-1 -->
@@ -53,7 +52,6 @@
         <!-- Footer -->
         <!-- <FooterDes /> -->
 
-    </NuxtLayout>
 </template>
 
 <script setup>

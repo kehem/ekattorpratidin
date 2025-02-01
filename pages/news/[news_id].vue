@@ -1,308 +1,310 @@
 <template>
-    <NuxtLayout>
 
+    <!-- MAIN SECTION -->
+    <main class="z-1 relative w-100 h-auto">
+        <div class="local-padding"></div>
 
-        <!-- MAIN SECTION -->
-        <main class="z-1 relative w-100 h-auto">
-            <div class="local-padding"></div>
+        <section class="relative g-res-3-col-container gap-20 fullWidth m-auto">
 
-            <section class="relative g-res-3-col-container gap-20 fullWidth m-auto">
+            <aside class="span-2">
 
-                <aside class="span-2">
-                    <!-- ADS -->
-                    <span class="w-100">
-                        <!-- <NuxtImg class="img-w-res" v-if="newsnewsBody.ads" :src="newsnewsBody.ads.image" alt="বিজ্ঞাপন" /> -->
-                    </span>
-                    <section class="pad-tb--10 newsBodyPrint" ref="newsBodyPrint">
-
-
-
-
-
-                        <!-- CATEGORY -->
-                        <div
-                            class="cat-section f f-just-start f-align-items-center gap-05 w-100 b-bottom-sun pad-b--10">
-                            <NuxtLink v-if="newsBody?.Catagory" :to="`/cat/${newsBody.Catagory}`"
-                                :key="newsBody.news_id" class="text-cat cat-hov-u">
-                                <h3 class="text--l">{{ newsBody.Catagory }}</h3>
-                            </NuxtLink>
-
-                            <i class="m-chevrons-right text--l"></i>
-                            <!-- TITLE -->
-                            <p v-if="newsBody?.title" class="text-nowrap text--m text-dotted-1 pad-r--10">
-                                {{ newsBody.title }}
-                            </p>
-                        </div>
-
-                        <!-- TITLE -->
-                        <div class="sun-title-text">
-                            <span class="f gap-05 f-align-items-center" title="টাইটেল">
-                                <h3 class="text--l" v-if="newsBody?.caption"> {{ newsBody.caption }}</h3>
-                                <span class="headingTitleCircle"></span>
-                            </span>
-                            <h1 class="text--20 pad-t--05" v-if="newsBody?.title"> {{ newsBody.title }}</h1>
-                        </div>
-
-                        <hgroup class="z-5 t--35 f gap-10 pad-b--15 f-wrap f-just-between f-align-items-center"
-                            id="onstickychange" data-top-height="">
-                            <!-- PROTIBEDOK -->
-                            <div class="f f-col" id="onstickyhide">
-                                <!-- SUBTITLE -->
-                                <span class="f gap-05">
-                                    <div class="relative w--30 h--30">
-                                        <NuxtImg v-if="newsBody?.reporter_profile"
-                                            class="b-rad-50 w-i h-i asp-r-1 obj-fit-h"
-                                            :src="`http://newstest.kehem.com${newsBody.reporter_profile}`"
-                                            :alt="newsBody.caption" />
-                                        <NuxtImg v-else src="./placeholder.svg"
-                                            class="b-rad-50 w-i h-i asp-r-1 obj-fit-h"></NuxtImg>
-                                    </div>
-                                    <div>
-                                        <p class="protibedok-author" v-if="newsBody?.reporter_name"> {{
-                                            newsBody.reporter_name }}
-                                        </p>
-                                        <!-- AUTHOR AND TIME -->
-                                        <span class="time-color f gap-05">
-                                            <p>প্রকাশ :</p>
-                                            <time :datetime="newsBody.published_date" v-if="newsBody?.published_date">
-                                                {{ newsBody.published_date
-                                                }}</time>
-                                        </span>
-                                    </div>
-                                </span>
-                            </div>
-
-                            <!-- SOCIAL SHARE -->
-                            <div class="f f-wrap gap-05 f-just-center f-align-items-center sun-social-shares"
-                                id="sun-social-shares">
-
-                                <span class="relative t-0 cur-pointer" @click="facebook(currentURL)">
-                                    <span class="share-wave">
-                                        <i class="m-facebook"></i>
-                                    </span>
-                                </span>
-                                <span class="relative t-0 cur-pointer" @click="messenger(currentURL)">
-                                    <span class="share-wave">
-                                        <i class="m-messenger"></i>
-                                    </span>
-                                </span>
-                                <span class="relative t-0 cur-pointer" @click="whatsapp(currentURL)">
-                                    <span class="share-wave">
-                                        <i class="m-whatsapp"></i>
-                                    </span>
-                                </span>
-                                <span class="relative t-0 cur-pointer" @click="twitter(currentURL)">
-                                    <span class="share-wave">
-                                        <i class="m-twitter"></i>
-                                    </span>
-                                </span>
-                                <span class="relative t-0 cur-pointer" @click="linkedin(currentURL)">
-                                    <span class="share-wave">
-                                        <i class="m-linkedin"></i>
-                                    </span>
-                                </span>
-
-                                <!-- ACTION FUNCTIONALITIES -->
-                                <span id="printButton" class="relative t-0 cur-pointer" @click="print">
-                                    <span class="share-wave">
-                                        <i class="m-print"></i>
-                                    </span>
-                                </span>
-                                <span class="relative t-0 plus-btn cur-pointer" @click="plusButton">
-                                    <span class="share-wave">
-                                        <i class="m-plus"></i>
-                                    </span>
-                                </span>
-                                <span class="relative t-0 minus-btn cur-pointer" @click="minusButton">
-                                    <span class="share-wave">
-                                        <i class="m-minus"></i>
-                                    </span>
-                                </span>
-                            </div>
-                        </hgroup>
-                        <aside class="m-auto">
-                            <!-- SOCIAL SHARE FLOAT-->
-                            <div ref="socialShares" class="socialShares opacity-0">
-
-                                <span class="relative t-0 cur-pointer" @click="facebook(currentURL)">
-                                    <span class="share-wave">
-                                        <i class="m-facebook"></i>
-                                    </span>
-                                </span>
-                                <span class="relative t-0 cur-pointer" @click="messenger(currentURL)">
-                                    <span class="share-wave">
-                                        <i class="m-messenger"></i>
-                                    </span>
-                                </span>
-                                <span class="relative t-0 cur-pointer" @click="whatsapp(currentURL)">
-                                    <span class="share-wave">
-                                        <i class="m-whatsapp"></i>
-                                    </span>
-                                </span>
-                                <span class="relative t-0 cur-pointer" @click="twitter(currentURL)">
-                                    <span class="share-wave">
-                                        <i class="m-twitter"></i>
-                                    </span>
-                                </span>
-                                <span class="relative t-0 cur-pointer" @click="linkedin(currentURL)">
-                                    <span class="share-wave">
-                                        <i class="m-linkedin"></i>
-                                    </span>
-                                </span>
-
-                                <!-- ACTION FUNCTIONALITIES -->
-                                <span id="printButton" class="relative t-0 cur-pointer" @click="print">
-                                    <span class="share-wave">
-                                        <i class="m-print"></i>
-                                    </span>
-                                </span>
-                                <span class="relative t-0 plus-btn cur-pointer" @click="plusButton">
-                                    <span class="share-wave">
-                                        <i class="m-plus"></i>
-                                    </span>
-                                </span>
-                                <span class="relative t-0 minus-btn cur-pointer" @click="minusButton">
-                                    <span class="share-wave">
-                                        <i class="m-minus"></i>
-                                    </span>
-                                </span>
-                            </div>
-                            <!-- THUMBNAIL -->
-                            <div class="news-thumbnail">
-                                <div class="news-thumbs">
-                                    <NuxtImg v-if="newsBody?.image" :src="`https://newstest.kehem.com${newsBody.image}`"
-                                        alt="" />
-                                </div>
-                                <span class="news-sub-heading" v-if="newsBody?.img_caption">চিত্রঃ {{
-                                    newsBody.img_caption }}</span>
-                            </div>
-
-                            <!-- ARTICLE -->
-                            <article ref="article" class="text-color text-justify" v-if="newsBody?.news_details">
-
-
-
-
-
-
-
-                                {{ newsBody.news_details }}
-                            </article>
-                        </aside>
-                        <div class="local-padding"></div>
-                    </section>
-                </aside>
-
-                <!-- সর্বশেষ পঠিত -->
-                <aside class="span-1">
-                    <p class="text--15 m-t---05 pad-b--05">সর্বশেষ খবর -</p>
-                    <span class="f b-bottom-sun pad-t--03"></span>
-                    <ul class="pad--05 b-all-sun">
-                        <!-- NEWS -->
-                        <li v-if="newsData?.by_date" v-for="news in newsData.by_date"
-                            class="b-bottom-sun pad-lr--05 pad-tb--10">
-                            <NuxtLink :to="`/news/${news.news_id}`" :key="news.news_id" class="f gap-10 text-color">
-                                <div class="f-flex-1">
-                                    <!-- HEADING -->
-                                    <h3 class="link-hov-u">{{ news.title }}</h3>
-                                    <!-- TIMER -->
-                                    <div class="f gap--05 f-just-start f-align-items-center">
-                                        <span class="w--08 f f-align-items-center">
-                                            <i class="m-time"></i>
-                                        </span>
-                                        <p class="text--08 text-color"> {{ news.published_time_ago }}</p>
-                                    </div>
-                                </div>
-                                <span class="d-block f-flex-1 sun-res-img-width">
-                                    <NuxtImg class="img-w-res bordered" :src="`https://newstest.kehem.com${news.image}`"
-                                        alt="" />
-                                </span>
-                            </NuxtLink>
-                        </li>
-                    </ul>
-
-                    <!-- সর্বাধিক  -->
-                    <br><br>
-                    <p class="text--15 m-t---05 pad-b--05">সর্বাধিক পঠিত -</p>
-                    <span class="f b-bottom-sun pad-t--03"></span>
-                    <ul class="pad--05 b-all-sun">
-                        <!-- NEWS -->
-                        <li v-if="newsData?.by_views" v-for="news in newsData.by_views"
-                            class="b-bottom-sun pad-lr--05 pad-tb--10">
-                            <NuxtLink :to="`/news/${news.news_id}`" :key="news.news_id" class="f gap-10 text-color">
-                                <div class="f-flex-1">
-                                    <!-- HEADING -->
-                                    <h3 class="link-hov-u">{{ news.title }}</h3>
-                                    <!-- TIMER -->
-                                    <div class="f gap--05 f-just-start f-align-items-center">
-                                        <span class="w--08 f f-align-items-center">
-                                            <i class="m-time"></i>
-                                        </span>
-                                        <p class="text--08 text-color"> {{ news.published_time_ago }}</p>
-                                    </div>
-                                </div>
-                                <span class="d-block f-flex-1 sun-res-img-width">
-                                    <NuxtImg class="img-w-res" :src="`https://newstest.kehem.com${news.image}`"
-                                        alt="" />
-                                </span>
-                            </NuxtLink>
-                        </li>
-                    </ul>
-                </aside>
-            </section>
-
-            <div class="local-padding"></div>
-            <!-- TAGS -->
-            <section class="fullWidth m-auto tags-define-sun">
-                <div class="pad-b--10 text--14">
-                    এই ক্যাটাগরি থেকে আরও পড়ুন -
-                </div>
-                <div class="f gap-05 f-wrap">
-                    <NuxtLink v-for="tag in newsBody.tag.split(',').map(item => item.trim()).filter(tag => tag)"
-                        :to="`/tag/${tag}`" :key="tag" v-if="newsBody?.tag"
-                        class="b-all-sun pad-lr--05 pad-tb--02 text-hov-Red text-White bg-cat">
-                        {{ tag }}
-                    </NuxtLink>
-                </div>
-            </section>
-            <div class="local-padding"></div>
-            <!-- CATEGORY NEWS -->
-            <section class="fullWidth m-auto">
-                <span class="f gap--05">
-                    <NuxtLink :to="`/cat/${newsBody.Catagory}`">
-                        <h2 class="sun-cat-name-u"> {{ newsBody.Catagory }}</h2>
-                    </NuxtLink>
-                    <p class="text--15">থেকে আরও পড়ুন -</p>
+                <!-- ADS -->
+                <span class="w-100">
+                    <!-- <NuxtImg class="img-w-res" v-if="newsnewsBody.ads" :src="newsnewsBody.ads.image" alt="বিজ্ঞাপন" /> -->
                 </span>
 
-                <div class="pad-tb--10">
-                    <ul class="f gap-10 f-wrap">
-                        <li class="f-flex-1 bordered pad--05" v-for="news in catNews.রাজনীতি.slice(0, 5)">
-                            <NuxtLink :to="`/news/${news.news_id}`" :key="news.news_id" class="text-color">
-                                <span class="d-block max-w--150 min-w--100 h-auto">
-                                    <NuxtImg class="w-100 h-auto" :src="news.image" alt="news.caption" />
-                                </span>
-                                <div class="pad-t--05">
-                                    <!-- HEADING -->
-                                    <h3 class="text-dotted-4 pad-l--01 link-hov-u"> {{ news.title }}</h3>
-                                    <!-- TIMER -->
-                                    <div class="f gap--05 f-just-start f-align-items-center">
-                                        <span class="w--08 f f-align-items-center">
-                                            <i class="m-time"></i>
-                                        </span>
-                                        <p class="text--08 text-color"> {{ news.published_time_ago }}</p>
-                                    </div>
+                <SkeletonLoader v-if="status === 'pending'" />
+
+
+                <section v-else class="pad-tb--10 newsBodyPrint" ref="newsBodyPrint">
+
+
+
+
+
+                    <!-- CATEGORY -->
+                    <div class="cat-section f f-just-start f-align-items-center gap-05 w-100 b-bottom-sun pad-b--10">
+                        <NuxtLink v-if="newsBody?.Catagory" :to="`/cat/${newsBody.Catagory}`" :key="newsBody.news_id"
+                            class="text-cat cat-hov-u">
+                            <h3 class="text--l">{{ newsBody.Catagory }}</h3>
+                        </NuxtLink>
+
+                        <i class="m-chevrons-right text--l"></i>
+                        <!-- TITLE -->
+                        <p v-if="newsBody?.title" class="text-nowrap text--m text-dotted-1 pad-r--10">
+                            {{ newsBody.title }}
+                        </p>
+                    </div>
+
+                    <!-- TITLE -->
+                    <div class="sun-title-text">
+                        <span class="f gap-05 f-align-items-center" title="টাইটেল">
+                            <h3 class="text--l" v-if="newsBody?.caption"> {{ newsBody.caption }}</h3>
+                            <span class="headingTitleCircle"></span>
+                        </span>
+                        <h1 class="text--20 pad-t--05" v-if="newsBody?.title"> {{ newsBody.title }}</h1>
+                    </div>
+
+                    <hgroup class="z-5 t--35 f gap-10 pad-b--15 f-wrap f-just-between f-align-items-center"
+                        id="onstickychange" data-top-height="">
+                        <!-- PROTIBEDOK -->
+                        <div class="f f-col" id="onstickyhide">
+                            <!-- SUBTITLE -->
+                            <span class="f gap-05">
+                                <div class="relative w--30 h--30">
+                                    <NuxtImg v-if="newsBody?.reporter_profile"
+                                        class="b-rad-50 w-i h-i asp-r-1 obj-fit-h"
+                                        :src="`http://newstest.kehem.com${newsBody.reporter_profile}`"
+                                        :alt="newsBody.caption" />
+                                    <NuxtImg v-else src="./placeholder.svg" class="b-rad-50 w-i h-i asp-r-1 obj-fit-h">
+                                    </NuxtImg>
                                 </div>
-                            </NuxtLink>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+                                <div>
+                                    <p class="protibedok-author" v-if="newsBody?.reporter_name"> {{
+                                        newsBody.reporter_name }}
+                                    </p>
+                                    <!-- AUTHOR AND TIME -->
+                                    <span class="time-color f gap-05">
+                                        <p>প্রকাশ :</p>
+                                        <time :datetime="newsBody.published_date" v-if="newsBody?.published_date">
+                                            {{ newsBody.published_date
+                                            }}</time>
+                                    </span>
+                                </div>
+                            </span>
+                        </div>
 
-            <div class="local-padding"></div>
+                        <!-- SOCIAL SHARE -->
+                        <div class="f f-wrap gap-05 f-just-center f-align-items-center sun-social-shares"
+                            id="sun-social-shares">
 
-        </main>
-    </NuxtLayout>
+                            <span class="relative t-0 cur-pointer" @click="facebook(currentURL)">
+                                <span class="share-wave">
+                                    <i class="m-facebook"></i>
+                                </span>
+                            </span>
+                            <span class="relative t-0 cur-pointer" @click="messenger(currentURL)">
+                                <span class="share-wave">
+                                    <i class="m-messenger"></i>
+                                </span>
+                            </span>
+                            <span class="relative t-0 cur-pointer" @click="whatsapp(currentURL)">
+                                <span class="share-wave">
+                                    <i class="m-whatsapp"></i>
+                                </span>
+                            </span>
+                            <span class="relative t-0 cur-pointer" @click="twitter(currentURL)">
+                                <span class="share-wave">
+                                    <i class="m-twitter"></i>
+                                </span>
+                            </span>
+                            <span class="relative t-0 cur-pointer" @click="linkedin(currentURL)">
+                                <span class="share-wave">
+                                    <i class="m-linkedin"></i>
+                                </span>
+                            </span>
+
+                            <!-- ACTION FUNCTIONALITIES -->
+                            <span id="printButton" class="relative t-0 cur-pointer" @click="print">
+                                <span class="share-wave">
+                                    <i class="m-print"></i>
+                                </span>
+                            </span>
+                            <span class="relative t-0 plus-btn cur-pointer" @click="plusButton">
+                                <span class="share-wave">
+                                    <i class="m-plus"></i>
+                                </span>
+                            </span>
+                            <span class="relative t-0 minus-btn cur-pointer" @click="minusButton">
+                                <span class="share-wave">
+                                    <i class="m-minus"></i>
+                                </span>
+                            </span>
+                        </div>
+                    </hgroup>
+                    <aside class="m-auto">
+                        <!-- SOCIAL SHARE FLOAT-->
+                        <div ref="socialShares" class="socialShares opacity-0">
+
+                            <span class="relative t-0 cur-pointer" @click="facebook(currentURL)">
+                                <span class="share-wave">
+                                    <i class="m-facebook"></i>
+                                </span>
+                            </span>
+                            <span class="relative t-0 cur-pointer" @click="messenger(currentURL)">
+                                <span class="share-wave">
+                                    <i class="m-messenger"></i>
+                                </span>
+                            </span>
+                            <span class="relative t-0 cur-pointer" @click="whatsapp(currentURL)">
+                                <span class="share-wave">
+                                    <i class="m-whatsapp"></i>
+                                </span>
+                            </span>
+                            <span class="relative t-0 cur-pointer" @click="twitter(currentURL)">
+                                <span class="share-wave">
+                                    <i class="m-twitter"></i>
+                                </span>
+                            </span>
+                            <span class="relative t-0 cur-pointer" @click="linkedin(currentURL)">
+                                <span class="share-wave">
+                                    <i class="m-linkedin"></i>
+                                </span>
+                            </span>
+
+                            <!-- ACTION FUNCTIONALITIES -->
+                            <span id="printButton" class="relative t-0 cur-pointer" @click="print">
+                                <span class="share-wave">
+                                    <i class="m-print"></i>
+                                </span>
+                            </span>
+                            <span class="relative t-0 plus-btn cur-pointer" @click="plusButton">
+                                <span class="share-wave">
+                                    <i class="m-plus"></i>
+                                </span>
+                            </span>
+                            <span class="relative t-0 minus-btn cur-pointer" @click="minusButton">
+                                <span class="share-wave">
+                                    <i class="m-minus"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <!-- THUMBNAIL -->
+                        <div class="news-thumbnail">
+                            <div class="news-thumbs">
+                                <NuxtImg v-if="newsBody?.image" :src="`https://newstest.kehem.com${newsBody.image}`"
+                                    alt="" />
+                            </div>
+                            <span class="news-sub-heading" v-if="newsBody?.img_caption">চিত্রঃ {{
+                                newsBody.img_caption }}</span>
+                        </div>
+
+                        <!-- ARTICLE -->
+                        <article ref="article" class="text-color text-justify" v-if="newsBody?.news_details">
+
+
+
+
+
+
+
+                            {{ newsBody.news_details }}
+                        </article>
+                    </aside>
+                    <div class="local-padding"></div>
+
+                </section>
+            </aside>
+
+            <!-- সর্বশেষ পঠিত -->
+            <aside class="span-1">
+                <p class="text--15 m-t---05 pad-b--05">সর্বশেষ খবর -</p>
+                <span class="f b-bottom-sun pad-t--03"></span>
+                <ul class="pad--05 b-all-sun">
+                    <!-- NEWS -->
+                    <li v-if="newsData?.by_date" v-for="news in newsData.by_date"
+                        class="b-bottom-sun pad-lr--05 pad-tb--10">
+                        <NuxtLink :to="`/news/${news.news_id}`" :key="news.news_id" class="f gap-10 text-color">
+                            <div class="f-flex-1">
+                                <!-- HEADING -->
+                                <h3 class="link-hov-u">{{ news.title }}</h3>
+                                <!-- TIMER -->
+                                <div class="f gap--05 f-just-start f-align-items-center">
+                                    <span class="w--08 f f-align-items-center">
+                                        <i class="m-time"></i>
+                                    </span>
+                                    <p class="text--08 text-color"> {{ news.published_time_ago }}</p>
+                                </div>
+                            </div>
+                            <span class="d-block f-flex-1 sun-res-img-width">
+                                <NuxtImg class="img-w-res bordered" :src="`https://newstest.kehem.com${news.image}`"
+                                    alt="" />
+                            </span>
+                        </NuxtLink>
+                    </li>
+                </ul>
+
+                <!-- সর্বাধিক  -->
+                <br><br>
+                <p class="text--15 m-t---05 pad-b--05">সর্বাধিক পঠিত -</p>
+                <span class="f b-bottom-sun pad-t--03"></span>
+                <ul class="pad--05 b-all-sun">
+                    <!-- NEWS -->
+                    <li v-if="newsData?.by_views" v-for="news in newsData.by_views"
+                        class="b-bottom-sun pad-lr--05 pad-tb--10">
+                        <NuxtLink :to="`/news/${news.news_id}`" :key="news.news_id" class="f gap-10 text-color">
+                            <div class="f-flex-1">
+                                <!-- HEADING -->
+                                <h3 class="link-hov-u">{{ news.title }}</h3>
+                                <!-- TIMER -->
+                                <div class="f gap--05 f-just-start f-align-items-center">
+                                    <span class="w--08 f f-align-items-center">
+                                        <i class="m-time"></i>
+                                    </span>
+                                    <p class="text--08 text-color"> {{ news.published_time_ago }}</p>
+                                </div>
+                            </div>
+                            <span class="d-block f-flex-1 sun-res-img-width">
+                                <NuxtImg class="img-w-res" :src="`https://newstest.kehem.com${news.image}`" alt="" />
+                            </span>
+                        </NuxtLink>
+                    </li>
+                </ul>
+            </aside>
+        </section>
+
+        <div class="local-padding"></div>
+        <!-- TAGS -->
+        <section class="fullWidth m-auto tags-define-sun">
+            <div class="pad-b--10 text--14">
+                এই ক্যাটাগরি থেকে আরও পড়ুন -
+            </div>
+            <div class="f gap-05 f-wrap">
+                <NuxtLink v-for="tag in newsBody.tag.split(',').map(item => item.trim()).filter(tag => tag)"
+                    :to="`/tag/${tag}`" :key="tag" v-if="newsBody?.tag"
+                    class="b-all-sun pad-lr--05 pad-tb--02 text-hov-Red text-White bg-cat">
+                    {{ tag }}
+                </NuxtLink>
+            </div>
+        </section>
+        <div class="local-padding"></div>
+        <!-- CATEGORY NEWS -->
+        <section class="fullWidth m-auto">
+            <span class="f gap--05">
+                <NuxtLink :to="`/cat/${newsBody.Catagory}`">
+                    <h2 class="sun-cat-name-u"> {{ newsBody.Catagory }}</h2>
+                </NuxtLink>
+                <p class="text--15">থেকে আরও পড়ুন -</p>
+            </span>
+
+            <div class="pad-tb--10">
+                <ul class="f gap-10 f-wrap">
+                    <li class="f-flex-1 bordered pad--05" v-for="news in catNews.রাজনীতি.slice(0, 5)">
+                        <NuxtLink :to="`/news/${news.news_id}`" :key="news.news_id" class="text-color">
+                            <span class="d-block max-w--150 min-w--100 h-auto">
+                                <NuxtImg class="w-100 h-auto" :src="news.image" alt="news.caption" />
+                            </span>
+                            <div class="pad-t--05">
+                                <!-- HEADING -->
+                                <h3 class="text-dotted-4 pad-l--01 link-hov-u"> {{ news.title }}</h3>
+                                <!-- TIMER -->
+                                <div class="f gap--05 f-just-start f-align-items-center">
+                                    <span class="w--08 f f-align-items-center">
+                                        <i class="m-time"></i>
+                                    </span>
+                                    <p class="text--08 text-color"> {{ news.published_time_ago }}</p>
+                                </div>
+                            </div>
+                        </NuxtLink>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="local-padding"></div>
+
+    </main>
+
 </template>
 
 <script setup>
@@ -313,8 +315,9 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 const route = useRoute();
 const key = route.params.news_id;
 
-// NEWS INFORMATION
-const { data: newsBody } = await useFetch(`https://newstest.kehem.com/api/newsbody?news_id=${key}`);
+
+
+const { data: newsBody, status } = await useFetch(`https://newstest.kehem.com/api/newsbody?news_id=${key}`);
 
 // ADS, LATEST, MAX READ INFORMATION
 const { data: newsData } = await useFetch(`https://newstest.kehem.com/api/news_data`);
@@ -348,21 +351,16 @@ const newsBodyPrint = ref(null);
 
 // PRINT
 const print = () => {
-    // Create a new tab
     const printTab = window.open('', '_blank');
 
-    // Check if the content exists
     if (newsBodyPrint.value) {
-        // Write the basic structure for the new tab's document
         printTab.document.write('<html><head><title>Print</title>');
 
-        // Copy styles from the current page to the new tab
         const styles = document.querySelectorAll('style, link[rel="stylesheet"]');
         styles.forEach(style => {
-            printTab.document.head.appendChild(style.cloneNode(true)); // Clone and append styles to the new tab
+            printTab.document.head.appendChild(style.cloneNode(true));
         });
 
-        // Add custom styles for reducing the size of the images
         printTab.document.write(`
       <style>
       .news-thumbnail {height: auto; justify-content: center;}
@@ -378,24 +376,21 @@ const print = () => {
 
         printTab.document.write('</head><body>');
 
-        // Write the content of newsBodyPrint into the new tab
         printTab.document.write(newsBodyPrint.value.innerHTML);
         printTab.document.write('</body></html>');
 
-        // Close the document to finish writing
         printTab.document.close();
 
-        // Wait for the new document to load and then trigger print
         printTab.onload = () => {
             printTab.print();
-            printTab.close();
+            setTimeout(() => {
+                printTab.close();
+            }, 2000);
         };
     } else {
         console.log('No content to print');
     }
 };
-
-
 
 
 
@@ -511,7 +506,7 @@ onMounted(() => {
         document.addEventListener('scroll', handleScroll);
     }
     if (!isMobile()) {
-        socialShares.value.classList.add("hidei");
+        socialShares.value?.classList.add("hidei");
     }
 
     currentURL.value = window.location.href;
@@ -547,6 +542,62 @@ onMounted(() => {
 
 });
 
+
+
+const structuredData = {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "headline": newsBody.value.title,
+    "description": newsBody.value.news_brief,
+    "author": newsBody.value.reporter_name,
+    "datePublished": newsBody.value.published_date,
+    "image": `http://newstest.kehem.com${newsBody.value.image}`,
+    "publisher": {
+        "@type": "Organization",
+        "name": "EkattorPratidin",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://newstest.kehem.com/media/user/sau_logo.png"
+        }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `http://ekattorpratidin.com/news/${key}`
+    }
+};
+
+useHead({
+    title: newsBody.value.title,
+    meta: [
+        { property: 'og:title', content: newsBody.value.title },
+        { property: 'og:type', content: "article" },
+        { name: 'og:description', content: newsBody.value.news_brief },
+        { property: 'og:site_name', content: 'Ekattor Pratidin' },
+        { property: 'og:url', content: `http://ekattorpratidin.com/news/${key}` },
+        { property: 'og:image', content: `http://newstest.kehem.com${newsBody.value.image}` },
+        { property: 'og:image:alt', content: newsBody.value.img_caption },
+        { property: 'article:author', content: newsBody.value.reporter_name },
+        { property: 'article:published_time', content: newsBody.value.published_date },
+        { property: 'article:section', content: newsBody.value.Catagory },
+        { property: 'article:tag', content: newsBody.value.tag },
+        { rel: 'canonical', href: `http://ekattorpratidin.com/news/${key}` },
+        { property: 'og:image:width', content: 1200 },
+        { property: 'og:image:height', content: 900 },
+
+        // Optional: Twitter card meta tags
+        { name: 'twitter:card', content: `http://newstest.kehem.com${newsBody.value.image}` },
+        { name: 'twitter:title', content: newsBody.value.title },
+        { name: 'twitter:description', content: newsBody.value.news_brief },
+        { name: 'twitter:image', content: `http://newstest.kehem.com${newsBody.value.image}` },
+        { name: 'robots', content: 'index, follow' }
+    ],
+    script: [
+        {
+            type: 'application/ld+json',
+            children: JSON.stringify(structuredData)
+        }
+    ]
+});
 
 </script>
 
@@ -756,16 +807,6 @@ onMounted(() => {
     .sun-chirkut-headings {
         overflow: auto;
     }
-}
-
-body {
-    width: 100%;
-    font-family: "SolaimanLipi", sans-serif;
-    color: var(--text-color);
-}
-
-a {
-    text-decoration: none;
 }
 
 a:hover {
