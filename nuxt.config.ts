@@ -1,3 +1,4 @@
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-01-18',
   devtools: { enabled: true },
@@ -16,19 +17,19 @@ export default defineNuxtConfig({
         { name: 'language', content: 'bn' },
 
         // Open Graph (for Social Media Sharing)
-        { property: 'og:title', content: 'Ekattor Pratidin Newspaper - Latest News and Updates' },
-        { property: 'og:description', content: 'Stay updated with the latest news, stories, and insights from Ekattor Pratidin Newspaper.' },
-        { property: 'og:image', content: 'https://ekattorpratidin.com/images/social-share.jpg' },
-        { property: 'og:url', content: 'https://ekattorpratidin.com/' },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:site_name', content: 'Ekattor Pratidin Newspaper' },
+        // { property: 'og:title', content: 'Ekattor Pratidin Newspaper - Latest News and Updates' },
+        // { property: 'og:description', content: 'Stay updated with the latest news, stories, and insights from Ekattor Pratidin Newspaper.' },
+        // { property: 'og:image', content: 'https://ekattorpratidin.com/images/social-share.jpg' },
+        // { property: 'og:url', content: 'https://ekattorpratidin.com/' },
+        // { property: 'og:type', content: 'website' },
+        // { property: 'og:site_name', content: 'Ekattor Pratidin Newspaper' },
 
         // Twitter Card (for Twitter Sharing)
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Ekattor Pratidin Newspaper - Latest News and Updates' },
-        { name: 'twitter:description', content: 'Get breaking news and updates from Ekattor Pratidin Newspaper.' },
-        { name: 'twitter:image', content: 'https://ekattorpratidin.com/images/social-share.jpg' },
-        { name: 'twitter:site', content: '@ekattorpratidin' },
+        // { name: 'twitter:card', content: 'summary_large_image' },
+        // { name: 'twitter:title', content: 'Ekattor Pratidin Newspaper - Latest News and Updates' },
+        // { name: 'twitter:description', content: 'Get breaking news and updates from Ekattor Pratidin Newspaper.' },
+        // { name: 'twitter:image', content: 'https://ekattorpratidin.com/images/social-share.jpg' },
+        // { name: 'twitter:site', content: '@ekattorpratidin' },
 
         // Verification Tags
         { name: 'google-site-verification', content: 'your-google-verification-code' }, // Google Search Console
@@ -64,13 +65,5 @@ export default defineNuxtConfig({
   modules: ['@nuxt/image'],
   plugins: [
     '~/plugins/service-worker.ts',
-    // '~/plugins/page-observation.ts',
-  ],
-
-  // nitro: {
-  //   prerender: {
-  //     routes: ['/sw.js']
-  //   }
-  // }
-
+  ]
 });

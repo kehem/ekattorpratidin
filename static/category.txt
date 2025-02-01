@@ -49,3 +49,5 @@ npm cache clean --force
 rm -rf .nuxt node_modules/.cache dist
 npm install
 npm run dev
+
+git pull origin main

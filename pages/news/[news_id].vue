@@ -398,7 +398,60 @@ const print = () => {
 
 
 
+const structuredData = {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "headline": newsBody.value.title,
+    "description": newsBody.value.news_brief,
+    "author": newsBody.value.reporter_name,
+    "datePublished": newsBody.value.published_date,
+    "image": `http://newstest.kehem.com${newsBody.value.image}`,
+    "publisher": {
+        "@type": "Organization",
+        "name": "EkattorPratidin",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://newstest.kehem.com/media/user/sau_logo.png"
+        }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `http://ekattorpratidin.com/news/${key}`
+    }
+};
 
+useHead({
+    title: newsBody.value.title,  // Dynamic title
+    meta: [
+        { property: 'og:title', content: newsBody.value.title },
+        { property: 'og:type', content: "article" },
+        { name: 'og:description', content: newsBody.value.news_brief },
+        { property: 'og:site_name', content: 'EkattorPratidin' },
+        { property: 'og:url', content: `http://ekattorpratidin.com/news/${key}` },
+        { property: 'og:image', content: `http://newstest.kehem.com${newsBody.value.image}` },
+        { property: 'og:image:alt', content: newsBody.value.img_caption },
+        { property: 'article:author', content: newsBody.value.reporter_name },
+        { property: 'article:published_time', content: newsBody.value.published_date },
+        { property: 'article:section', content: newsBody.value.Catagory },
+        { property: 'article:tag', content: newsBody.value.tag },
+        { rel: 'canonical', href: `http://ekattorpratidin.com/news/${key}` },
+        { property: 'og:image:width', content: 1200 },
+        { property: 'og:image:height', content: 900 },
+        // Optional: Twitter card meta tags
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: newsBody.value.title },
+        { name: 'twitter:description', content: newsBody.value.news_brief },
+        { name: 'twitter:image', content: `http://newstest.kehem.com${newsBody.value.image}` },
+        // Optional: robots meta tag for search engines
+        { name: 'robots', content: 'index, follow' }
+    ],
+    script: [
+        {
+            type: 'application/ld+json',
+            children: JSON.stringify(structuredData)
+        }
+    ]
+});
 
 
 
@@ -544,6 +597,19 @@ onMounted(() => {
         // Send the POST request
         sendTimeAPI(key, roundedTime, totalShare.value);
     });
+
+
+    // Set dynamic meta tags
+    useSeoMeta({
+        title: newsBody.value.title,
+        ogTitle: newsBody.value.title,
+        description: newsBody.value.news_details,
+        ogDescription: newsBody.value.news_details,
+        image: newsBody.value.image,
+        ogImage: newsBody.value.image,
+        // Add other OG tags as needed
+    });
+
 
 });
 
