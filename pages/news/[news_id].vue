@@ -385,7 +385,7 @@ const print = () => {
             printTab.print();
             setTimeout(() => {
                 printTab.close();
-            }, 2000);
+            }, 10);
         };
     } else {
         console.log('No content to print');
@@ -569,10 +569,11 @@ const structuredData = {
 useHead({
     title: newsBody.value.title,
     meta: [
+        { property: 'description', content: newsBody.value.news_details },
         { property: 'og:title', content: newsBody.value.title },
         { property: 'og:type', content: "article" },
-        { name: 'og:description', content: newsBody.value.news_brief },
-        { property: 'og:site_name', content: 'Ekattor Pratidin' },
+        { name: 'og:description', content: newsBody.value.news_details },
+        { property: 'og:site_name', content: 'Ekattor Pratidin- একাত্তর প্রতিদিন' },
         { property: 'og:url', content: `http://ekattorpratidin.com/news/${key}` },
         { property: 'og:image', content: `http://newstest.kehem.com${newsBody.value.image}` },
         { property: 'og:image:alt', content: newsBody.value.img_caption },
@@ -583,6 +584,8 @@ useHead({
         { rel: 'canonical', href: `http://ekattorpratidin.com/news/${key}` },
         { property: 'og:image:width', content: 1200 },
         { property: 'og:image:height', content: 900 },
+        { property: 'og:locale', content: 'bn_BD' },
+        { property: 'og:locale:alternate', content: 'en_US' },
 
         // Optional: Twitter card meta tags
         { name: 'twitter:card', content: `http://newstest.kehem.com${newsBody.value.image}` },
@@ -602,43 +605,8 @@ useHead({
 </script>
 
 <style>
-.modal {
-    display: block;
-    position: fixed;
-    top: 4rem;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 999999;
-}
-
-.modal-content {
-    display: inherit;
-    position: inherit;
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    z-index: inherit;
-    overflow: auto;
-}
-
-.close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.m-messenger:before {
+    color: var(--cat-color);
 }
 
 :root {
