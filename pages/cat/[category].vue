@@ -35,6 +35,7 @@
                                         <p> {{ newses[1].published_time_ago }}</p>
                                     </span>
                                 </div>
+
                                 <!-- THUMB -->
                                 <span class="relative asp-r-4-3 overflow-hidden">
                                     <NuxtImg class="img-w-res obj-fit-w-res img-hover-scale bordered"
@@ -77,10 +78,10 @@
                     </div>
 
                     <div class="sunGetMoreData">
-
                         <ul class="cat-xhr-news" ref="readMoreRef">
                             <li v-for="news in newses.slice(11, 15)">
                                 <span class="cat-left-border"></span>
+
                                 <NuxtLink :to="`/news/${news.news_id}`">
                                     <!-- HEADLINE -->
                                     <h3>
@@ -92,6 +93,7 @@
                                     </div>
                                 </NuxtLink>
                             </li>
+
                             <li v-if="condition" v-for="news in moreContents">
                                 <span class="cat-left-border"></span>
                                 <NuxtLink :to="`/news/${news.news_id}`">
@@ -105,18 +107,14 @@
                                     </div>
                                 </NuxtLink>
                             </li>
-
                         </ul>
 
-                        <button class="btn btn-primary f-centered" @click="readMore">
+                        <button  class="btn btn-primary f-centered " @click="readMore">
                             <i class="m-timer"></i>
-                            <p>আরও পড়ুন</p>
+                            <p>আরও পড়ুন </p>
                         </button>
                     </div>
                 </section>
-
-
-
             </aside>
 
 
